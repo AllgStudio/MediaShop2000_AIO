@@ -1,0 +1,50 @@
+/**
+ * Text Color
+ */
+.red {
+    color: red !important;
+}
+.blue {
+    color: blue !important;
+}
+.yellow {
+    color: yellow !important;
+}
+.green {
+    color: green !important;
+}
+.white {
+    color: white !important;
+}
+
+/**
+* Background Color
+*/
+.bg-red, .bg-danger {
+    background-color: red !important;
+}
+.bg-blue {
+    background-color: blue !important;
+}
+.bg-yellow {
+    background-color: yellow !important;
+}
+.bg-orange, .bg-warning {
+    background-color: orange !important;
+}
+/* .bg-green or bg-suc */
+.bg-green, .bg-succss {
+    background-color: green !important;
+}
+.bg-info {
+    background-color: #17a2b8 !important;
+}
+.bg-white {
+    background-color: white !important;
+}
+.bg-black {
+    background-color: black !important;
+}
+.bg-transparent{
+    background-color: transparent !important;
+}

@@ -1,0 +1,163 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+/* https://pictogrammers.com/library/mdi/ */
+@import url("https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css");
+@import url("./components/utilities.css");
+@import url("./components/header.css");
+@import url("./components/color.css");
+@import url("./components/button.css");
+@import url("./components/fab-button.css");
+@import url("./components/card.css");
+
+/* @import url("./components/typography.css"); */
+
+
+*{
+    /*rimuovo i margini prefdefiniti dal browser*/
+    margin: 0;
+    padding: 0;
+    font-family: "Noto Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+}
+
+
+/*Imposto dei colori e font principali da utilizzare per tutto il sito*/
+:root{
+    --headerBgColor: rgb(229, 226, 218);
+    --headerTxtColor: rgb(101, 67, 33);
+    --bgColor: rgb(229, 226, 218);
+    --txtColor: black;
+    --footerBgColor: rgb(101, 67, 33);
+    --footerTxtColor: white;
+    --visitedLinkColor: rgb(226, 158, 11);
+    --linkColor: rgb(101, 67, 33);
+    --flagColor: rgb(101, 67, 33);
+    --bordersColor: white;
+    --font-body-family: "roboto Condensed", sans-serif;
+    --font-header-family: "";
+
+    --headerHeight: 48px;
+    --footerHeight: 48px;
+}
+
+
+.vertical-line {
+    border: none;
+    border-left: 2px solid var(--linkColor); 
+    height: 35px; 
+    margin: 0 10px;
+}
+
+
+
+html {
+    scroll-behavior: smooth;
+    background-color: var(--bgColor);
+}
+main{
+    margin-top: calc(var(--headerHeight));
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - var(--headerHeight) - 2*10px);
+}
+
+
+
+main .cover-image {
+    width: 100%;
+    height: 75vh;
+    background-image: url(../img/cover.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+    font-size: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8),  4px 4px 8px rgba(0, 0, 0, 0.8); 
+}
+
+
+
+
+footer{
+    background-color: var(--footerBgColor);
+    color: var(--footerTxtColor);
+    border-top: 1px solid var(--bordersColor);
+    height: var(--footerHeight);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: calc(100%-40px);
+    padding: 0 20px;
+    padding-right: 80px;
+}
+
+footer a{
+    text-decoration: none;
+    color: var(--footerTxtColor);
+    font-size: 1.5rem;
+    margin: 0 10px;
+
+}
+
+
+
+
+
+
+.container {
+    margin: 0 15%;
+}
+
+
+@media screen and (max-width: 1440px){
+    .container {
+        margin: 0 10%;
+    }
+}
+
+@media screen and (max-width: 1024px){
+    .container {
+        margin: 0 5%;
+    }
+
+}
+/* Styles for screens with a maximum width of 767px (mobile devices) */
+@media screen and (max-width: 767px) {
+    .container {
+        margin: 0 5%;
+    }
+
+    .grid-container{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        margin: 0 10%;
+    }
+    .grid-container{
+        grid-template-columns: 1fr;
+    }
+    
+}
+
+
+
+#login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10%;
+}
+
