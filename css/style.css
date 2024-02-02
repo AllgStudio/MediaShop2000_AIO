@@ -8,6 +8,7 @@
 @import url("./components/button.css");
 @import url("./components/fab-button.css");
 @import url("./components/card.css");
+@import url("./components/flex.css");
 
 /* @import url("./components/typography.css"); */
 
@@ -39,7 +40,7 @@
     --font-body-family: "roboto Condensed", sans-serif;
     --font-header-family: "";
 
-    --headerHeight: 48px;
+    --headerHeight: 80px;
     --footerHeight: 48px;
 }
 

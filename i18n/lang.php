@@ -20,6 +20,75 @@ return [
         'it' => 'Unisciti a noi',
         'zh' => '加入我们',
     ],
+    'login' => [
+        'en' => 'Login',
+        'it' => 'Login',
+        'zh' => '登录',
+    ],
+    'username'=> [
+        'en' => 'Username',
+        'it' => 'Username',
+        'zh' => '用户名',
+    ],
+    'password' => [
+        'en' => 'Password',
+        'it' => 'Password',
+        'zh' => '密码',
+    ],
+    'logout' => [
+        'en' => 'Logout',
+        'it' => 'Logout',
+        'zh' => '登出',
+    ],
+    'usernotfound' => [
+        'en' => 'User not found!',
+        'it' => 'Utente non trovato!',
+        'zh' => '找不到用户！',
+    ],
+    'incorrectpassword' => [
+        'en' => 'Incorrect password!',
+        'it' => 'Password errata!',
+        'zh' => '密码错误！',
+    ],
+
+    'home' => [
+        'en' => 'Home',
+        'it' => 'Home',
+        'zh' => '首页',
+    ],
+    'shop' => [
+        'en' => 'Shop',
+        'it' => 'Shop',
+        'zh' => '商店',
+    ],
+    'about' => [
+        'en' => 'About',
+        'it' => 'About',
+        'zh' => '关于',
+    ],
+    'cart' => [
+        'en' => 'Cart',
+        'it' => 'Cart',
+        'zh' => '购物车',
+    ],
+    'account' => [
+        'en' => 'Account',
+        'it' => 'Account',
+        'zh' => '账户',
+    ],
+    'manage' => [
+        'en' => 'manage',
+        'it' => 'Gestione',
+        'zh' => '管理',
+    ],
+    'logout' => [
+        'en' => 'Logout',
+        'it' => 'Logout',
+        'zh' => '登出',
+    ],
+
+
+
 
 ];
 
