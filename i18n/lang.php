@@ -50,6 +50,11 @@ return [
         'it' => 'Password errata!',
         'zh' => '密码错误！',
     ],
+    'emptyfields' => [
+        'en' => 'Empty fields!',
+        'it' => 'Campi vuoti!',
+        'zh' => '空字段！',
+    ],
 
     'home' => [
         'en' => 'Home',
@@ -86,10 +91,6 @@ return [
         'it' => 'Logout',
         'zh' => '登出',
     ],
-
-
-
-
 ];
 
 ?>
