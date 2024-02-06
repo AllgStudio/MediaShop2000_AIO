@@ -28,6 +28,33 @@ A old style online shopping that sale all I.T. devices
 - **/templates** - HTML templates folder
 
 
+## Vscode tools
+- [Figma for VS Code](https://marketplace.visualstudio.com/items?itemName=figma.figma-vscode-extension)
+- [Draw.io Integration](https://marketplace.visualstudio.com/items?itemName=hediet.vscode-drawio)
+  
+## To best view the project
+### Install as [Docker](https://www.docker.com/)
+1. Install Docker
+2. Clone this reposity
+   ```bash
+   git clone
+   ```
+3. Build the docker image
+   ```bash
+   docker build -t mediashop2000 .
+   ```
+4. Run the docker container
+   ```bash
+   docker run -d -p 80:80 mediashop2000
+   ```
+5. Open your browser and go to http://localhost
+6. To stop the container
+   ```bash
+   docker stop <container_id>
+   ```
+   - To get the container id run `docker ps` and copy the container id
+   - To stop all running containers run `docker stop $(docker ps -a -q)`
+   - To remove all containers run `docker rm $(docker ps -a -q)`
 
 
 ## Install as [XAMPP](https://www.apachefriends.org/it/index.html)
