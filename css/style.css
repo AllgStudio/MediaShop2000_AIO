@@ -162,3 +162,8 @@ footer a{
     margin-top: 10%;
 }
 
+
+#about .card {
+    width: calc(50% - 20px);
+    margin: 10px;
+}

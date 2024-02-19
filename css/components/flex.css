@@ -10,9 +10,16 @@
 .d-flex {
     display: flex;
 }
+.d-flex-inline {
+    display: inline-flex;
+}
+
 .flex-row {
     flex-direction: row;
 }
 .flex-column {
     flex-direction: column;
+}
+.flex-wrap {
+    flex-wrap: wrap;
 }
