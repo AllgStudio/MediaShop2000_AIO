@@ -133,6 +133,9 @@ footer a{
 }
 /* Styles for screens with a maximum width of 767px (mobile devices) */
 @media screen and (max-width: 767px) {
+    main{
+        margin-top: calc(var(--headerHeight) * 1.5);
+    }
     .container {
         margin: 0 5%;
     }

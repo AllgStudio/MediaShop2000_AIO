@@ -8,7 +8,7 @@ header{
     align-items: center;
     position: fixed;
     top: 0;
-    width: calc(100% - 2*10px);
+    width: calc(100vw - 2*10px);
     z-index: 100;
     height: calc(var(--headerHeight) - 2*10px);
 }
@@ -55,45 +55,47 @@ header nav ul li a:hover{
 }
 
 
-#humbuerge_menu {
-    font-size: large;
+#language_select{
+    flex-direction: column;
 }
+
 /* humbuerge menu */
 @media screen and (max-width: 767px) {
+
     nav {
         display: none;
     }
 
-
-    
-
-    nav[active] {
+    nav{
         margin-top: var(--headerHeight);
         display: block;
         position: fixed;
         top: 0;
         left: 0;
-        height: 100vh;
-        width: 50vh;
+        width: calc(100% - 2*10px);
         background-color: var(--headerBgColor);
         color: var(--headerTxtColor);
         border-bottom: 1px solid var(--bordersColor);
-        padding: 10px;
+        padding: 5px 10px;
         z-index: 999;
+        height: calc(var(--headerHeight)/2);
     }
     
-
     nav ul {
         display: flex;
         align-items: center;
-        flex-direction: column;
-
-        justify-content: center;
+        flex-direction: row;
         list-style-type: none;
+        justify-content: space-around;
     }
-    header nav ul li{
-        padding: 15px 0px;
 
+   
+    #language_select{
+        flex-direction: row;
+    }
+
+    header nav ul li{
+        padding: 0px 3px;
     }
 }
 

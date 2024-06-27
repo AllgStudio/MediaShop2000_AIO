@@ -72,7 +72,7 @@ function create_page_header()
 
     $is_logged_in = isset($_COOKIE['logged_in']) ? $_COOKIE['logged_in'] : false;
     $lang = get_language();
-    $i18n = include('i18n/lang.php');
+    $i18n = include('includes/i18n/lang.php');
 
     if ($is_logged_in) {
         $login_logout  = '<li><a href="profile.php" aria-label="{{ account }}" title="{{ account }}"><span class="mdi mdi-account" aria-hidden="true"><span id="username">{{ username }}</span></span></a></li>';

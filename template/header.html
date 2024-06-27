@@ -1,31 +1,21 @@
 <header>
     <div class="logo-container">
-        <button id="humbuerge_menu" class="btn bg-transparent small-screen-only"><i class="mdi mdi-menu"></i></button>
         <div class="logo"></div>
         <p class="logo-title">{{ title }}</p>
     </div>
 
-    <form action="#" class="search-container ">
+    <!-- <form action="#" class="search-container ">
         <input type="text" placeholder="Search..." class="search-input">
         <button class="btn bg-transparent"><i class="mdi mdi-magnify"></i></button>
-    </form>
+    </form> -->
 
     <nav >
         <ul>
             <li><a href="index.php" aria-label="{{ home }}" title="{{ home }}"><span class="mdi mdi-home" aria-hidden="true">{{ home }}</span></a></li>
             <li><a href="shop.php"  aria-label="{{ shop }}" title="{{ shop }}"><span class="mdi mdi-shopping" aria-hidden="true">{{ shop }}</span></a></li>
             <li><a href="about.php" aria-label="{{ about }}" title="{{ about }}"><span class="mdi mdi-account-multiple" aria-hidden="true">{{ about }}</span></a></li>
-            <hr class="vertical-line desktop-only">
+            <hr class="vertical-line">
             {{ login_logout }}
-            <hr class="vertical-line desktop-only">
-            <!-- language select -->
-            <li>
-                <ul class="d-flex flex-column">
-                    <li><a href="index.php?lang=zh" lang="zh">中文</a></li>
-                    <li><a href="index.php?lang=en" lang="en">English</a></li>
-                    <li><a href="index.php?lang=it" lang="it">Italiano</a></li>
-                </ul>
-            </li>
         </ul>
     </nav>
 </header>

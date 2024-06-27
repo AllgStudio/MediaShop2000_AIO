@@ -1,10 +1,10 @@
 <?php 
     session_start();
     include "includes/utils.php";
-    $i18n = include('i18n/lang.php');
+    $i18n = include('includes/i18n/lang.php');
     $lang = get_language();
 
-    if(!isset(json_decode($_COOKIE['user'], true))){
+    if(!isset($_COOKIE['user'])){
         echo "<script>alert('You are not logged in!')</script>";
         header("Location: login.php");
         exit();
