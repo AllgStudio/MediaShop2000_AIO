@@ -1,3 +1,7 @@
+CREATE DATABASE IF NOT EXISTS `tecweb` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+
+USE `tecweb`;
+
 CREATE TABLE IF NOT EXISTS `User` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(255) NOT NULL,

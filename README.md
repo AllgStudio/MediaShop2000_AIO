@@ -32,29 +32,48 @@ A old style online shopping that sale all I.T. devices
 - [Figma for VS Code](https://marketplace.visualstudio.com/items?itemName=figma.figma-vscode-extension)
 - [Draw.io Integration](https://marketplace.visualstudio.com/items?itemName=hediet.vscode-drawio)
   
-## To best view the project
+Certainly! Here is a corrected version of the Markdown for your instructions:
+
+
+## To Best View the Project
+
 ### Install as [Docker](https://www.docker.com/)
-1. Install Docker
-2. Clone this reposity
+
+1. **Install Docker**
+
+2. **Clone this Repository**
    ```bash
-   git clone
+   git clone https://github.com/AllgStudio/MediaShop2000_frontend.git .
    ```
-3. Build the docker image
+
+3. **Build the Docker Image**
    ```bash
    docker build -t mediashop2000 .
    ```
-4. Run the docker container
+
+4. **Run the Docker Container**
    ```bash
    docker run -d -p 80:80 mediashop2000
    ```
-5. Open your browser and go to http://localhost
-6. To stop the container
-   ```bash
-   docker stop <container_id>
-   ```
-   - To get the container id run `docker ps` and copy the container id
-   - To stop all running containers run `docker stop $(docker ps -a -q)`
-   - To remove all containers run `docker rm $(docker ps -a -q)`
+
+5. **Open Your Browser and Go to [http://localhost](http://localhost)**
+
+6. **To Stop the Container**
+   - To stop a specific container, run:
+     ```bash
+     docker stop <container_id>
+     ```
+     To get the container ID, run `docker ps` and copy the container ID.
+
+   - To stop all running containers, run:
+     ```bash
+     docker stop $(docker ps -a -q)
+     ```
+
+   - To remove all containers, run:
+     ```bash
+     docker rm $(docker ps -a -q)
+     ```
 
 
 ## Install as [XAMPP](https://www.apachefriends.org/it/index.html)
