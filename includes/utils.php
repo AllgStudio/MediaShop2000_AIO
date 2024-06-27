@@ -35,7 +35,7 @@ function create_card($card_data)
 function get_language()
 {
     $lang = 'it';
-    $lang = isset($_SESSION['language']) ? $_SESSION['language'] : $lang;
+    $lang = isset($_COOKIE['language']) ? $_COOKIE['language'] : $lang;
     $lang = isset($_GET['lang']) ? $_GET['lang'] : $lang;
     // check language it zh en
     if ($lang != 'it' && $lang != 'zh' && $lang != 'en')
@@ -70,14 +70,14 @@ function create_page_header()
 {
     $header = file_get_contents('template/header.html');
 
-    $is_logged_in = isset($_SESSION['logged_in']) ? $_SESSION['logged_in'] : false;
+    $is_logged_in = isset($_COOKIE['logged_in']) ? $_COOKIE['logged_in'] : false;
     $lang = get_language();
     $i18n = include('i18n/lang.php');
 
     if ($is_logged_in) {
         $login_logout  = '<li><a href="profile.php" aria-label="{{ account }}" title="{{ account }}"><span class="mdi mdi-account" aria-hidden="true"><span id="username">{{ username }}</span></span></a></li>';
         $login_logout .= '<li><a href="cart.php" aria-label="{{ cart }}"    title="{{ cart }}"><span class="mdi mdi-cart" aria-hidden="true"><span id="cart_counter">{{ cart_counter }}</span></span></a></li>';
-        if ($_SESSION['role'] == 'admin') {
+        if (json_decode($_COOKIE['user'], true)['role'] == 'admin') {
             $login_logout .= '<li><a href="categorymanage.php" aria-label="{{ manage }}"    title="{{ manage }}"><span class="mdi mdi-cog" aria-hidden="true"></span></a></li>';
         }
         $login_logout .= '<li><a href="logout.php"  aria-label="{{ logout }}"  title="{{ logout }}"><span class="mdi mdi-logout"   aria-hidden="true"></span></a></li>';
@@ -94,8 +94,8 @@ function create_page_header()
             'logout' => $i18n['logout'][$lang],
             'manage' => $i18n['manage'][$lang],
 
-            'username' => isset($_SESSION['username']) ? $_SESSION['username'] : '',
-            'cart_counter' => isset($_SESSION['cart_counter']) ? $_SESSION['cart_counter'] : 0,
+            'username' => isset($_COOKIE['username']) ? $_COOKIE['username'] : '',
+            'cart_counter' => isset($_COOKIE['cart_counter']) ? $_COOKIE['cart_counter'] : 0,
         ]),
         'home' => $i18n['home'][$lang],
         'about' => $i18n['about'][$lang],

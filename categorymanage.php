@@ -5,12 +5,12 @@
     $lang = get_language();
 
     // TODO: replace javascript alert with html alert
-    if (!isset($_SESSION['user'])) {
+    if (isset($_COOKIE['user'])) {
         echo "<script>alert('You are not logged in!')</script>";
         header("Location: login.php");
         exit();
     }
-    if($_SESSION['user']['role'] != 'admin'){
+    if(json_decode($_COOKIE['user'], true)['role'] != 'admin'){
         echo "<script>alert('You are not admin!')</script>";
         header("Location: index.php");
         exit();

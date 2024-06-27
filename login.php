@@ -1,5 +1,4 @@
 <?php
-session_start();
 include "includes/utils.php";
 $i18n = include('i18n/lang.php');
 $lang = get_language();
@@ -14,7 +13,6 @@ $username = isset($_POST['username']) ? $_POST['username'] : '';
 $password = isset($_POST['password']) ? $_POST['password'] : '';
 
 // TODO: check filds server side
-
 
 if (isset($_POST['username']) && isset($_POST['password'])) {
     if ($password == '' || $username == '') {
@@ -40,8 +38,11 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
             // Verify the password
             if (password_verify($password, $user['password'])) {
                 // Password is correct, perform login actions
-                $_SESSION['user'] = $user;
-                $_SESSION['logged_in'] = true;
+                $user['password'] = null;
+
+                $cookie_expiry = time() + (86400 * 30); // 30 days
+                setcookie("user",json_encode($user), $cookie_expiry, "/"); 
+                setcookie("logged_in",true, $cookie_expiry, "/");
 
                 // Redirect to the home page
                 header('Location: index.php');
@@ -77,3 +78,5 @@ echo create_page('template/index.html', [
     ]),
     'page_footer' => create_page_footer(),
 ]);
+
+?>

@@ -4,7 +4,7 @@
     $i18n = include('i18n/lang.php');
     $lang = get_language();
 
-    if(!isset($_SESSION['username'])){
+    if(!isset($_COOKIE['username'])){
         echo "<script>alert('You are not logged in!')</script>";
         header("Location: login.php");
         exit();
@@ -23,7 +23,7 @@
 
         'page_header' => create_page_header(),
         'page_main' => render(file_get_contents('template/profile.html'), [
-                            "hello" => "Hello World!, Profile welcome to your profile" . $_SESSION['user'],
+                            "hello" => "Hello World!, Profile welcome to your profile" . json_decode($_COOKIE['user'], true),
                         ]),
         'page_footer' => create_page_footer(),
     ]);
