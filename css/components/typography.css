@@ -1,0 +1,38 @@
+.text-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.text-subtitle {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.text-paragraph {
+    font-size: 1rem;
+    margin-left: 10px;
+    margin-right: 10px;
+    line-height: 1.5;
+}
+
+.justified {
+    text-align: justify;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.text-right {
+    text-align: right !important;
+}
+
+.text-left {
+    text-align: left !important;
+}
+
+.text-bold {
+    font-weight: bold;
+}

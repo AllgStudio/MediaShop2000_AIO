@@ -1,0 +1,64 @@
+.form-group {
+    margin-bottom: 1rem;
+    width: 48%;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+}
+
+
+.form-group input[type="text"], .form-group input[type="email"], .form-group input[type="password"] {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-group input[type="text"]:focus, .form-group input[type="email"]:focus, .form-group input[type="password"]:focus {
+    outline: none;
+    border-color: var(--primaryColor);
+}
+
+.form-group input[type="number"] {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-group input[type="number"]:focus {
+    outline: none;
+    border-color: var(--primaryColor);
+}
+
+.form-group input[type="tel"] {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-group input[type="tel"]:focus {
+    outline: none;
+    border-color: var(--primaryColor);
+}
+
+
+
+
+
+.form-group input[type="submit"] {
+    background-color: var(--primaryColor);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form-group input[type="submit"]:hover {
+    background-color: var(--primaryColorDark);
+}
+
