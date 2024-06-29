@@ -1,3 +1,233 @@
-<div>
-    <h1>{{ hello }}</h1> 
+<div class="container mt-3">
+    <div class="d-flex w-100">
+        <div class="card pa-2 w-100">
+            <div class="card-text">
+                <!-- Product image and info -->
+                <section class="my-2">
+                    <div class="d-flex flex-wrap">
+                        <div id="detail_image" class="flex-shrink-0">
+                            <img src="https://picsum.photos/200/200?a=1"
+                                alt="A descriptive text about the content of the image 1" class="w-100">
+                        </div>  
+                        <div id="detail_info"class="d-flex flex-column space-between">
+                            <div class="d-flex space-between flex-wrap">
+                                <div class="flex-shrink-0 flex-grow-1">
+                                    <div class="text-title no-wrap">Prodotto 1</div>
+                                    <div class="text-subtitle no-wrap">Type of the seria</div>
+                                </div>
+                                <div class="d-flex flex-shrink-0 flex-grow-1 justify-end">
+                                    <div class="text-subtitle no-wrap"><del>100.00 €</del></div>   
+                                    <div class="text-bigtitle no-wrap">80.00 €</div>
+                                </div>
+                            </div>
+                            <hr>
+                            <h2 class="text-title mt-2">Color</h2>
+                            <div class="mx-4">
+                                <input type="radio" id="color1" name="color" value="color1" checked>
+                                <label for="color1">Color 1</label>
+
+                                <input type="radio" id="color2" name="color" value="color2">
+                                <label for="color2">Color 2</label>
+
+                                <input type="radio" id="color3" name="color" value="color3">
+                                <label for="color3">Color 3</label>
+                            </div>
+
+                            <h2 class="text-title mt-2">Size</h2>
+                            <div class="mx-4">
+                                <input type="radio" id="size1" name="size" value="size1" checked>
+                                <label for="size1">Size 1</label>
+
+                                <input type="radio" id="size2" name="size" value="size2">
+                                <label for="size2">Size 2</label>
+
+                                <input type="radio" id="size3" name="size" value="size3">
+                                <label for="size3">Size 3</label>
+                            </div>
+
+                            <h2 class="text-title mt-2">Quantity</h2>
+                            <div class="mx-4">
+                                <input type="number" id="quantity" name="quantity" value="1" min="1" max="10">
+                            </div>
+
+                            <div class="d-flex flex-wrap mx-2">
+                                <a href="#" class="btn btn-success ma-2">Add to cart</a>
+                                <a href="#" class="btn ma-2">Buy now</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <hr>
+
+                <!-- Product description-->
+                <section class="my-2">
+                    <h2 class="text-title">Descrizione</h2>
+                    <p class="text-paragraph">
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias id placeat culpa animi architecto maiores fugit atque quod laboriosam ratione. Quidem saepe, asperiores quia libero consectetur est quam possimus adipisci?
+                    </p>
+                    <p class="text-paragraph">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius nesciunt, est repellendus, quo amet ut beatae sit exercitationem at, esse nisi ea enim dolorem quos sunt quia laborum voluptatem facilis.
+                    </p>
+                    <p class="text-paragraph">
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus sed suscipit harum odit totam molestias ea non repellendus omnis perspiciatis ducimus vero rerum fuga velit quasi nisi, enim alias eligendi.
+                    </p>
+                </section>
+
+                <hr>
+
+                <!-- comment -->
+                <section class="my-2">
+                    <h2 class="text-title">Commenti</h2>
+                    <div class="d-flex flex-wrap">
+                        <!-- 产品评分 -->
+                        <div id="detail_rate" class="card pa-2 ma-2">
+                            <div class="card-title text-center">Voto</div>
+                            <div class="card-text text-center">⭐⭐⭐⭐⭐</div>
+                            <div class="card-text text-center">5/5</div>
+                        </div>
+                            
+                        <div id="detail_comment" class="d-flex flex-wrap">
+                            <div class="card pa-2 ma-2 w-100">
+                                <div class="d-flex card-title space-between">
+                                    <h2 class="text-title">User 1</h2>
+                                    <small>2024-06-01</small>
+                                </div>
+                                ⭐⭐⭐⭐⭐
+                                <span class="card-text">
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptates.
+                                    </p>
+                                </span>
+                            </div>
+                            <div class="card pa-2 ma-2 w-100">
+                                <div class="d-flex card-title space-between">
+                                    <h2 class="text-title">User 2</h2>
+                                    <small>2024-06-01</small>
+                                </div>
+                                ⭐⭐⭐⭐⭐
+                                <span class="card-text">
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptates.
+                                    </p>
+                                </span>
+                            </div>
+                            <div class="card pa-2 ma-2 w-100">
+                                <div class="d-flex card-title space-between">
+                                    <h2 class="text-title">User 3</h2>
+                                    <small>2024-06-01</small>
+                                </div>
+                                ⭐⭐⭐⭐⭐
+                                <span class="card-text">
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptates.
+                                    </p>
+                                </span>
+                            </div>
+
+
+
+                            <div class="card pa-2 ma-2 w-100">
+                                <div class="d-flex card-title space-between">
+                                    <h2 class="text-title">User 3</h2>
+                                    <small>2024-06-01</small>
+                                </div>
+                                ⭐⭐⭐⭐⭐
+                                <span class="card-text">
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptates.
+                                    </p>
+                                </span>
+                            </div>
+                            <div class="card pa-2 ma-2 w-100">
+                                <div class="d-flex card-title space-between">
+                                    <h2 class="text-title">User 3</h2>
+                                    <small>2024-06-01</small>
+                                </div>
+                                ⭐⭐⭐⭐⭐
+                                <span class="card-text">
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptates.
+                                    </p>
+                                </span>
+                            </div>
+                            <div class="card pa-2 ma-2 w-100">
+                                <div class="d-flex card-title space-between">
+                                    <h2 class="text-title">User 3</h2>
+                                    <small>2024-06-01</small>
+                                </div>
+                                ⭐⭐⭐⭐⭐
+                                <span class="card-text">
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptates.
+                                    </p>
+                                </span>
+                            </div>
+                            <div class="card pa-2 ma-2 w-100">
+                                <div class="d-flex card-title space-between">
+                                    <h2 class="text-title">User 3</h2>
+                                    <small>2024-06-01</small>
+                                </div>
+                                ⭐⭐⭐⭐⭐
+                                <span class="card-text">
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptates.
+                                    </p>
+                                </span>
+                            </div>
+                            <div class="card pa-2 ma-2 w-100">
+                                <div class="d-flex card-title space-between">
+                                    <h2 class="text-title">User 3</h2>
+                                    <small>2024-06-01</small>
+                                </div>
+                                ⭐⭐⭐⭐⭐
+                                <span class="card-text">
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptates.
+                                    </p>
+                                </span>
+                            </div>
+                            <div class="card pa-2 ma-2 w-100">
+                                <div class="d-flex card-title space-between">
+                                    <h2 class="text-title">User 3</h2>
+                                    <small>2024-06-01</small>
+                                </div>
+                                ⭐⭐⭐⭐⭐
+                                <span class="card-text">
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptates.
+                                    </p>
+                                </span>
+                            </div>
+                            <div class="card pa-2 ma-2 w-100">
+                                <div class="d-flex card-title space-between">
+                                    <h2 class="text-title">User 3</h2>
+                                    <small>2024-06-01</small>
+                                </div>
+                                ⭐⭐⭐⭐⭐
+                                <span class="card-text">
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptates.
+                                    </p>
+                                </span>
+                            </div>
+                            <div class="card pa-2 ma-2 w-100">
+                                <div class="d-flex card-title space-between">
+                                    <h2 class="text-title">User 3</h2>
+                                    <small>2024-06-01</small>
+                                </div>
+                                ⭐⭐⭐⭐⭐
+                                <span class="card-text">
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptates.
+                                    </p>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </div>
 </div>

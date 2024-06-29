@@ -149,7 +149,7 @@ footer a{
 
 @media screen and (max-width: 480px) {
     .container {
-        margin: 0 10%;
+        margin: 0 2%;
     }
     .grid-container{
         grid-template-columns: 1fr;
@@ -210,3 +210,48 @@ footer a{
     border-bottom: 1px solid lightgray;
 }
 
+#detail_image{
+    width: 45%;
+}
+
+#detail_info{
+    width: 55%;
+}
+
+@media screen and (max-width: 767px) {
+
+    #detail_image{
+        width: 100%;
+    }
+
+    #detail_info{
+        width: 100%;
+    }
+}
+
+
+#detail_info input{
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#detail_rate{
+    width: 28%;
+}
+
+#detail_comment{
+    width: 68%;
+}
+
+@media screen and (max-width: 767px) {
+
+    #detail_rate{
+        width: 100%;
+    }
+
+    #detail_comment{
+        width: 100%;
+    }
+    
+}
