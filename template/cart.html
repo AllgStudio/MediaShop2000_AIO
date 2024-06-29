@@ -1,3 +1,54 @@
-<div>
-    <h1>{{ hello }}</h1> 
+<div class="container">
+    <h2 class="text-title">Carello</h2>
+    <div class="ma-2" style="overflow-x: auto;">
+    <table id="cart_table" class="table">
+        <thead>
+            <tr>
+                <th width="10%">Immagine</th>
+                <th>Descrizione</th>
+                <th>Variante</th>
+                <th>Quantità</th>
+                <th>Subtotale</th>
+                <th width="10%">Azione</th>
+            </tr>
+        </thead>
+        <tbody>
+           <tr>
+                <td><img src="https://picsum.photos/200/300?a=1" alt="A descriptive text about the content of the image 1"></td>
+                <td>Prodotto 1</td>
+                <td>100</td>
+                <td>1</td>
+                <td>100</td>
+                <td><a href="#" class="btn btn-icon bg-transparent red"><span class="mdi mdi-delete" aria-hidden="true"></span></span></a></td>
+            </tr>
+            <tr>
+                <td><img src="https://picsum.photos/200/300?a=2" alt="A descriptive text about the content of the image 2"></td>
+                <td>Prodotto 2</td>
+                <td>200</td>
+                <td>1</td>
+                <td>200</td>
+                <td><a href="#" class="btn btn-icon bg-transparent red"><span class="mdi mdi-delete" aria-hidden="true"></span></span></a></td>
+            </tr>
+            <tr>
+                <td><img src="https://picsum.photos/200/300?a=3" alt="A descriptive text about the content of the image 3"></td>
+                <td>Prodotto 3</td>
+                <td>300</td>
+                <td>1</td>
+                <td>300</td>
+                <td><a href="#" class="btn btn-icon bg-transparent red"><span class="mdi mdi-delete" aria-hidden="true"></span></span></a></td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="4">Totale</td>
+                <td colspan="2" class="text-right">1234.00 EURO</td>
+            </tr>
+        </tfoot>
+    </table>
+    <br>
+</div>
+<div class="d-flex space-between flex-wrap ">
+    <a href="shop.php" class="btn ma-2">Continua lo shopping</a>
+    <a href="checkout.php" class="btn btn-success ma-2">Procedi al pagamento</a>
+</div>
 </div>
