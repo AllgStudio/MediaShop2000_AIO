@@ -1,7 +1,7 @@
 <?php 
     session_start();
     include "includes/utils.php";
-    $i18n = include('includes/i18n/lang.php');
+    $i18n = include('i18n/lang.php');
     $lang = get_language();
 
     $product_id = isset($_GET['product_id'])?$_GET['product_id']:'';

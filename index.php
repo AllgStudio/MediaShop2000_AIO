@@ -1,14 +1,9 @@
 <?php
     include "includes/utils.php";
-    $i18n = include('includes/i18n/lang.php');
+    $i18n = include('i18n/lang.php');
     $lang = get_language();
 
     
-    $carousel ='
-        <h1>Welocome to our website</h1>
-        <p>Enjoy to find what your are need!!</p>
-        <button class="btn btn-large bg-white black mt-2">' .
-         $i18n['join_us'][$lang] . '</button>';
 
     $selection_1 = "";
     $selection_2 = "";

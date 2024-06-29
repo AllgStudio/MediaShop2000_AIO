@@ -7,27 +7,11 @@
     position: relative;
     overflow: hidden;
     transform: translate3d(0, 0, 0);
-    cursor: pointer;
 }
-/* .card::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 0;
-    height: 0;
-    background-color: rgba(0, 0, 0, 0.2);
-    border-radius: 50%;
-    opacity: 0;
-    transition: width 0.3s ease, height 0.3s ease, opacity 0.3s ease;
+
+.card-body {
+    padding: 20px;
 }
-.card:hover::after {
-    width: 200%;
-    height: 400%;
-    opacity: 1;
-}
- */
 
 .card  .card-title {
     font-size: 1.5rem;

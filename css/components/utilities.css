@@ -1,19 +1,25 @@
-
-.grid-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 10px;
-}
-.grid-3-col {
-    grid-template-columns: 1fr 1fr 1fr;
-}
-.grid-4-col {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-}
-.grid-5-col {
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+.text-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-left: 10px;
 }
 
+.text-subtitle {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.text-paragraph {
+    font-size: 1rem;
+    margin-left: 10px;
+    margin-right: 10px;
+    line-height: 1.5;
+}
+
+.justified {
+    text-align: justify;
+}
 
 
 

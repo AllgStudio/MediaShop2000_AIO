@@ -15,16 +15,8 @@
  */
 function create_card($card_data)
 {
-    $card_template = '
-            <div class="card" tabindex="0">
-                <div class="card-img">
-                    <img src="' . $card_data['card_image_url'] . '" alt="' . $card_data['card_image_desk'] . '">
-                </div>
-                <div class="card-title">' . $card_data['card_title'] . '</div>
-                <div class="card-subtitle">' . $card_data['card_subtitle'] . '</div>
-                <div class="card-text">' . $card_data['card_text'] . '</div>
-            </div>';
-
+    $card_template = file_get_contents('template/card.html');
+    return render($card_template, $card_data);
     return $card_template;
 }
 
@@ -72,7 +64,7 @@ function create_page_header()
 
     $is_logged_in = isset($_COOKIE['logged_in']) ? $_COOKIE['logged_in'] : false;
     $lang = get_language();
-    $i18n = include('includes/i18n/lang.php');
+    $i18n = include('i18n/lang.php');
 
     if ($is_logged_in) {
         $login_logout  = '<li><a href="profile.php" aria-label="{{ account }}" title="{{ account }}"><span class="mdi mdi-account" aria-hidden="true"><span id="username">{{ username }}</span></span></a></li>';
