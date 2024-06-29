@@ -10,6 +10,7 @@
 @import url("./components/card.css");
 @import url("./components/flex.css");
 @import url("./components/grid.css");
+@import url("./pages/shop.css");
 
 /* @import url("./components/typography.css"); */
 
@@ -109,10 +110,6 @@ footer a{
     margin: 0 10px;
 
 }
-
-
-
-
 
 
 .container {

@@ -1,9 +1,5 @@
 <?php
 include "includes/utils.php";
-$i18n = include('i18n/lang.php');
-$lang = get_language();
-
-
 include "includes/db.php";
 
 
@@ -16,7 +12,7 @@ $password = isset($_POST['password']) ? $_POST['password'] : '';
 
 if (isset($_POST['username']) && isset($_POST['password'])) {
     if ($password == '' || $username == '') {
-        $error_msg = $i18n['emptyfields'][$lang];
+        $error_msg ='emptyfields';
     } else {
         // Hash the password
         $hash = password_hash($password, PASSWORD_DEFAULT);
@@ -48,11 +44,11 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
                 header('Location: index.php');
             } else {
                 // Password is incorrect
-                $error_msg = $i18n['incorrectpassword'][$lang];
+                $error_msg ='incorrectpassword';
             }
         } else {
             // No matching user
-            $error_msg = $i18n['usernotfound'][$lang];
+            $error_msg = 'usernotfound';
         }
         $stmt->close();
     }

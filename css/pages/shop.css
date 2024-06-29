@@ -1,0 +1,134 @@
+
+.cover-image {
+    background-color: #f4f4f4;
+    text-align: center;
+    padding: 20px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.cover-image h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.cover-image small {
+    color: #555;
+}
+
+.container {
+    display: flex;
+    padding: 20px;
+}
+
+aside {
+    width: 250px;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-right: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+aside h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+aside ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+aside li {
+    margin: 5px 0;
+}
+
+aside li ul {
+    margin-left: 15px;
+}
+
+.products {
+    flex-grow:1;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content:flex-start;
+}
+
+.product {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    display: grid;
+    align-items: center;
+    text-align: center;
+    height: 280px;
+    width: 185px;
+    background-color:whitesmoke;
+}
+
+.product img {
+    width: 80%;
+    height: auto;
+}
+
+.product-info {
+    display: flex;
+    flex-flow: column;
+    align-items: left;
+    text-align: left;
+}
+
+.product-name {
+    width: 100%;
+    font-size: 16px;
+    color: inherit; 
+    text-decoration: none;
+}
+
+.product-name:hover {
+    text-decoration: underline;
+} 
+
+.product-rating {
+    font-size: 20px;
+    width: 100%;
+    color: #ffd700;
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+
+.product-price{
+    display: flex;
+    flex-direction: row;
+    align-items: left;
+    width: 100%;
+}
+
+.product-new-price {
+    color: #b12704;
+    font-weight: bold;
+    margin-left: 5px;
+    font-size: 20px;
+}
+
+.product-old-price {
+    text-decoration: line-through;
+    color: #999;
+    font-size: 14px;
+    margin-left: auto;
+}
+.product-discount {
+    font-weight: bold; 
+    background-color: rgb(96, 150, 42);
+    color: #ffffff;
+    padding: 1px 5px;
+    font-size: 16px;
+}
+
+.product-tags {
+    font-size: 14px;
+    color: #555;
+    width: 100%;
+}
