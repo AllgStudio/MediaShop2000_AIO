@@ -4,6 +4,15 @@
 .align-center {
     align-items: center;
 }
+.align-start {
+    align-items: flex-start;
+}
+.justify-end {
+    justify-content: flex-end;
+}
+.align-end {
+    align-items: flex-end;
+}
 .space-between {
     justify-content: space-between;
 }
