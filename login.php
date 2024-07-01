@@ -57,12 +57,12 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 
 
 echo create_page('template/index.html', [
-    'header_title' =>'title',
-    'header_description' => 'description',
+    'header_title' =>'Login | MediaShop2000',
+    'header_description' => 'La pagina di login',
     'header_keywords' => "Shop, media, games",
-    'header_author' => "Author",
+    'header_author' => "MediaShop2000",
 
-    'skip_to_main' => 'skip_to_main',
+    'skip_to_main' => 'Salta al contenuto principale',
 
     'page_header' => create_page_header(),
     'page_main' => render(file_get_contents('template/login.html'), [

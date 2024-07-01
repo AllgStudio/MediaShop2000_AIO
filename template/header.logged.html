@@ -1,0 +1,24 @@
+<li>
+    <a href="profile.php" aria-labelledby="header_profile" title="Profilo">
+        <span class="mdi mdi-account" aria-hidden="true"></span>
+        <span id="header_profile">Profilo</span>
+    </a>
+</li>
+<li>
+    <a href="cart.php" aria-labelledby="header_cart" title="Carrello">
+        <span class="mdi mdi-cart" aria-hidden="true"></span>
+        <span id="header_cart">Carrello {{ cart_count }}</span>
+    </a>
+</li>
+<li class="{{ isAdmin }}">
+    <a href="categorymanage.php" aria-labelledby="header_gestion" title="Gestione">
+        <span class="mdi mdi-cog" aria-hidden="true"></span>
+        <span id="header_gestion">Gestione</span>
+    </a>
+</li>
+<li>
+    <a href="logout.php" aria-labelledby="header_logout" title="Logout">
+        <span class="mdi mdi-logout" aria-hidden="true"></span>
+        <span id="header_logout">Logout</span>
+    </a>
+</li>

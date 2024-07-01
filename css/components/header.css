@@ -8,7 +8,7 @@ header{
     align-items: center;
     position: fixed;
     top: 0;
-    width: calc(100vw - 2*10px);
+    width: calc(100% - 2*10px);
     z-index: 100;
     height: calc(var(--headerHeight) - 2*10px);
 }
@@ -30,7 +30,18 @@ header .logo-title {
     font-size: 1.5rem;
     font-weight: bold;
     margin-left: 10px;
+    align-content: center;
 }
+header .logo-container a{
+    text-decoration: none;
+}
+header .logo-container a:visited{
+    color: var(--linkColor);
+}
+header .logo-container a:link {
+    color: var(--linkColor)
+}
+
 
 header nav ul{
     display: flex;

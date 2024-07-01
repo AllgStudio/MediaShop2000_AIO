@@ -1,19 +1,17 @@
-<div class="col-4" tabindex="-1" aria-labelledby="product-name-{{ id }}" aria-describedby="product-info-{{ id }}">
-    <div class="card pa-2 ma-2">
-        <a href="productdetail.php?id={{ id }}">
-            <img class="w-100" src="{{ url }}" alt="Immagine del prodotto '{{ name }}'" role="img">
-        </a>
-        <div class="product-info" id="product-info-{{ id }}">
-            <div class="product-price">
-                <div class="product-discount" aria-label="Sconto">{{ discount }}</div>
-                <div class="product-old-price" aria-label="Prezzo vecchio">{{ old_price }}</div>
-                <div class="product-new-price" aria-label="Prezzo nuovo">{{ new_price }}</div>
+<div class="col-4">
+        <div class="card pa-2 ma-2">
+            <img class="w-100" src="{{ url }}" alt="" role="presentation">
+
+            <div class="product-info">
+                <div id="product_price-{{ id }}" class="product-price">
+                    <div class="product-discount {{ discount_class }}" aria-label="Sconto di {{ discount }}">{{ discount }}</div>
+                    <div class="product-old-price {{ discount_class }}" aria-label="Prezzo vecchio {{ old_price }}">{{ old_price }}</div>
+                    <div class="product-new-price flex-grow-1 text-right" aria-label="Prezzo attuale {{ new_price }}">{{ new_price }}</div>
+                </div>
+                <a href="productdetail.php?id={{ id }}" aria-describedby="product_price-{{ id }} product_rating-{{ id }} product_type-{{ id }}" class="product-name"><span>{{ brand }} {{ name }}</span></a>
+                <span id="product_rating-{{ id }}" class="product-rating" aria-label="Valutazione {{ rate_count }} stelle">{{ rate }}</span>
+                <span id="product_type-{{ id }}" class="product-tags" aria-label="Tipo {{ type }}">Tipo: {{ type }}</span>
             </div>
-            <a href="productdetail.php?id={{ id }}" class="product-name" id="product-name-{{ id }}">{{ name }}</a>
-            <div class="product-rating" aria-label="Valutazione">{{ rate }}</div>
-            <div class="product-tags" aria-label="Marca">Marca: {{ brand }}</div>
-            <div class="product-tags" aria-label="Tipo">Tipo: {{ type }}</div>
-            <div class="product-tags" aria-label="Anno">Anno: {{ anno }}</div>
         </div>
-    </div>
+
 </div>

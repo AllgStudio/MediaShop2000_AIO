@@ -1,20 +1,32 @@
 <header>
     <div class="logo-container">
-        <div class="logo"></div>
-        <p class="logo-title">{{ title }}</p>
+        <a href="index.php" aria-label="Home page" title="Home page" class="d-flex" lang="en">
+            <div role="logo" class="logo" aria-label="il logo del sito"></div>
+            <span class="logo-title" lang="en">Mediashop 2000</span>
+        </a>
     </div>
 
-    <!-- <form action="#" class="search-container ">
-        <input type="text" placeholder="Search..." class="search-input">
-        <button class="btn bg-transparent"><i class="mdi mdi-magnify"></i></button>
-    </form> -->
-
-    <nav >
-        <ul>
-            <li><a href="index.php" aria-label="{{ home }}" title="{{ home }}"><span class="mdi mdi-home" aria-hidden="true">{{ home }}</span></a></li>
-            <li><a href="shop.php"  aria-label="{{ shop }}" title="{{ shop }}"><span class="mdi mdi-shopping" aria-hidden="true">{{ shop }}</span></a></li>
-            <li><a href="about.php" aria-label="{{ about }}" title="{{ about }}"><span class="mdi mdi-account-multiple" aria-hidden="true">{{ about }}</span></a></li>
-            <hr class="vertical-line">
+    <nav>
+        <ul role="navigation" aria-label="principale navigazione">
+            <li role="listitem">
+                <a href="index.php" aria-labelledby="header_home" title="Pagina home">
+                    <span class="mdi mdi-home" aria-hidden="true"></span>
+                    <span id="header_home" lang="en">Home</span>
+                </a>
+            </li>
+            <li role="listitem">
+                <a href="shop.php" aria-labelledby="header_shop" title="Pagina negozio">
+                    <span class="mdi mdi-shopping" aria-hidden="true"></span>
+                    <span id="header_shop" lang="en">Shop</span>
+                </a>
+            </li>
+            <li role="listitem">
+                <a href="about.php" aria-labelledby="header_about" title="Pagina chi siamo noi">
+                    <span class="mdi mdi-account-multiple" aria-hidden="true"></span>
+                    <span id="header_about" lang="en">About</span>
+                </a>
+            </li>
+            <hr class="vertical-line" aria-hidden="true">
             {{ login_logout }}
         </ul>
     </nav>
