@@ -53,8 +53,7 @@ class UserManager {
         $stmt->execute();
     }
 
-    public function deleteUser($id) {
-        
+    public function deleteUser($id) { 
         $query = "DELETE FROM user WHERE id = :id";
         $stmt = $this->db->prepare($query);
         $stmt->bindParam(':id', $id);
