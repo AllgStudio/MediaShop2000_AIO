@@ -35,20 +35,33 @@
         $rate_map[$row->product_id] = (int)$row->rate;
     }
 
+    $discout_map_percent = [];
+    $discout_map_price = [];
+    $sql = "SELECT * FROM PriceCut";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    while($row = $result->fetch_object()){
+        $discout_map_percent[$row->product_id] = $row->discountInPercentage;
+        $discout_map_price[$row->product_id] = $row->new_price;
+    }
 
+    
     $products_html = "";
     for($i = 0; $i < count($products); $i++){
         $products_html .= render(file_get_contents('template/shop.product.html'), [
             "id" => $products[$i]->product_id,
             "name" => $products[$i]->product_name,
             "brand" => $products[$i]->brand,
-            "new_price" => $products[$i]->price,
-            "old_price" => "",
-            "discount" => "0%",
+            "new_price" => $discout_map_price[$products[$i]->product_id]??false?$discout_map_price[$products[$i]->product_id]:$products[$i]->price . "€",
+            "old_price" => $discout_map_price[$products[$i]->product_id]??false?$products[$i]->price ."€" : "",
+            "discount" => $discout_map_percent[$products[$i]->product_id]??false?"-".$discout_map_percent[$products[$i]->product_id] . "%" : "0%",
             "rate" => str_repeat("⭐", $rate_map[$products[$i]->product_id]??0) ?? "",
+            "rate_count" => round($rate_map[$products[$i]->product_id]??0,1)??0,
             "url" => $products[$i]->url,
             "type" => $products[$i]->category_name,
-            "anno" => ""
+            "anno" => "",
+            "discount_class" => $discout_map_percent[$products[$i]->product_id]??false?"":"d-none",
         ]);
     }
 
@@ -75,15 +88,18 @@
         ]);
     }
 
+
+    // get dicount map group by product_id
+ 
     
 
     echo create_page('template/index.html',[
-        'header_title' =>'title',
-        'header_description' =>'description',
+        'header_title' =>'Shop | MediaShop2000',
+        'header_description' => 'La pagina di shop del sito MediaShop2000',
         'header_keywords' => "Shop, media, games",
-        'header_author' =>"Author",
+        'header_author' =>"MediaShop2000",
 
-        'skip_to_main' => 'skip_to_main',
+        'skip_to_main' => 'Salta al contenuto principale',
 
         'page_header' => create_page_header(),
 

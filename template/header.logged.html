@@ -1,0 +1,25 @@
+<li role="listitem">
+    <a href="profile.php" aria-labelledby="header_profile" title="Profilo">
+        <span class="mdi mdi-account" aria-hidden="true"></span>
+        <span id="header_profile" class="sr-only">Profilo</span>
+    </a>
+</li>
+<li role="listitem">
+    <a href="cart.php" aria-labelledby="header_cart" title="Carrello">
+        <span class="mdi mdi-cart" aria-hidden="true">{{ cart_count }}</span>
+        <span id="header_cart" class="sr-only" aria-label="Carrello con {{ cart_count }} prodotti">Carrello</span>
+        
+    </a>
+</li>
+<li role="listitem" class="{{ isAdmin }}">
+    <a href="categorymanage.php" aria-labelledby="header_gestion" title="Gestione">
+        <span class="mdi mdi-cog" aria-hidden="true"></span>
+        <span id="header_gestion"  class="sr-only">Gestione</span>
+    </a>
+</li>
+<li role="listitem">
+    <a href="logout.php" aria-labelledby="header_logout" title="Esci profile">
+        <span class="mdi mdi-logout" aria-hidden="true"></span>
+        <span id="header_logout" class="sr-only" lang="en">Logout</span>
+    </a>
+</li>

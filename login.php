@@ -12,7 +12,7 @@ $password = isset($_POST['password']) ? $_POST['password'] : '';
 
 if (isset($_POST['username']) && isset($_POST['password'])) {
     if ($password == '' || $username == '') {
-        $error_msg ='emptyfields';
+        $error_msg ='Campo nome utente o password è vuoto';
     } else {
         // Hash the password
         $hash = password_hash($password, PASSWORD_DEFAULT);
@@ -44,11 +44,11 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
                 header('Location: index.php');
             } else {
                 // Password is incorrect
-                $error_msg ='incorrectpassword';
+                $error_msg ='Password errata';
             }
         } else {
             // No matching user
-            $error_msg = 'usernotfound';
+            $error_msg = 'Utente non trovato';
         }
         $stmt->close();
     }
@@ -57,19 +57,16 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 
 
 echo create_page('template/index.html', [
-    'header_title' =>'title',
-    'header_description' => 'description',
+    'header_title' =>'Login | MediaShop2000',
+    'header_description' => 'La pagina di login',
     'header_keywords' => "Shop, media, games",
-    'header_author' => "Author",
+    'header_author' => "MediaShop2000",
 
-    'skip_to_main' => 'skip_to_main',
+    'skip_to_main' => 'Salta al contenuto principale',
 
     'page_header' => create_page_header(),
     'page_main' => render(file_get_contents('template/login.html'), [
         "error_msg" => $error_msg,
-        'login' => 'login',
-        'username' => 'username',
-        'password' => 'password',
     ]),
     'page_footer' => create_page_footer(),
 ]);

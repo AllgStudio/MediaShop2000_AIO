@@ -246,6 +246,7 @@ footer a{
 
 #detail_rate{
     width: 28%;
+    height: min-content;
 }
 
 #detail_comment{
@@ -264,12 +265,12 @@ footer a{
     
 }
 
-#home .card {
-    height: 390px;
+#home .presentation {
+     height: 390px;
 }
 
 
-aside {
+#category_nav {
     width: 250px;
     padding: 20px;
     background-color: #f4f4f4;
@@ -277,21 +278,21 @@ aside {
     box-sizing: border-box;
 }
 
-aside h2 {
+#category_nav  h2 {
     font-size: 20px;
     margin-bottom: 10px;
 }
 
-aside ul {
+#category_nav  ul {
     list-style-type: none;
     padding: 0;
 }
 
-aside li {
+#category_nav  li {
     margin: 5px 0;
 }
 
-aside li ul {
+#category_nav li ul {
     margin-left: 15px;
 }
 

@@ -60,39 +60,29 @@ function render($html, $data)
  */
 function create_page_header()
 {
-    $header = file_get_contents('template/header.html');
-
-    $is_logged_in = isset($_COOKIE['logged_in']) ? $_COOKIE['logged_in'] : false;
-    $lang = get_language();
-    $i18n = include('i18n/lang.php');
-
-    if ($is_logged_in) {
-        $login_logout  = '<li><a href="profile.php" aria-label="{{ account }}" title="{{ account }}"><span class="mdi mdi-account" aria-hidden="true"><span id="username">{{ username }}</span></span></a></li>';
-        $login_logout .= '<li><a href="cart.php" aria-label="{{ cart }}"    title="{{ cart }}"><span class="mdi mdi-cart" aria-hidden="true"><span id="cart_counter">{{ cart_counter }}</span></span></a></li>';
-        if (json_decode($_COOKIE['user'], true)['role'] == 'admin') {
-            $login_logout .= '<li><a href="categorymanage.php" aria-label="{{ manage }}"    title="{{ manage }}"><span class="mdi mdi-cog" aria-hidden="true"></span></a></li>';
+    $userRoleClass = 'd-none';
+    if (isset($_COOKIE['user'])) {
+        $userData = json_decode($_COOKIE['user'], true);
+        if ($userData && isset($userData['role']) && trim($userData['role']) === 'admin') {
+            $userRoleClass = ''; // Admin users don't get the 'd-none' class
+        } else {
+            $userRoleClass = 'd-none'; // Non-admin users get the 'd-none' class
         }
-        $login_logout .= '<li><a href="logout.php"  aria-label="{{ logout }}"  title="{{ logout }}"><span class="mdi mdi-logout"   aria-hidden="true"></span></a></li>';
     } else {
-        $login_logout = '<li><a href="login.php"    aria-label="{{ login }}"   title="{{ login }}"><span class="mdi mdi-login"     aria-hidden="true"></span></a></li>';
+        $userRoleClass = 'd-none'; // If there's no user cookie, default to 'd-none'
     }
 
-    return render($header, [
-        'title' => $i18n['title'][$lang],
-        'login_logout' => render($login_logout, [
-            'login' => $i18n['login'][$lang],
-            'cart' => $i18n['cart'][$lang],
-            'account' => $i18n['account'][$lang],
-            'logout' => $i18n['logout'][$lang],
-            'manage' => $i18n['manage'][$lang],
-
-            'username' => isset($_COOKIE['username']) ? $_COOKIE['username'] : '',
-            'cart_counter' => isset($_COOKIE['cart_counter']) ? $_COOKIE['cart_counter'] : 0,
-        ]),
-        'home' => $i18n['home'][$lang],
-        'about' => $i18n['about'][$lang],
-        'shop' => $i18n['shop'][$lang],
-
+    $is_logged_in = isset($_COOKIE['logged_in']) ? $_COOKIE['logged_in'] : false;
+    if ($is_logged_in) {
+        $login_logout  = render(file_get_contents("template/header.logged.html"), [
+            'isAdmin' => $userRoleClass,
+            'cart_count' => isset($_COOKIE['cart'])? count(json_decode($_COOKIE['cart'], true)??[]) : 0,
+        ]);
+    } else {
+        $login_logout = render(file_get_contents("template/header.nologin.html"),[]);
+    }
+    return render(file_get_contents('template/header.html'), [
+        'login_logout' => $login_logout
     ]);
 }
 

@@ -8,16 +8,16 @@
 
     echo create_page('template/index.html',[
         // 'lang' => $lang,
-        'header_title' =>'title',
-        'header_description' => 'description',
-        'header_keywords' => "Shop, media, games",
-        'header_author' =>"Author",
+        'header_title' =>'Chi siamo | MediaShop2000',
+        'header_description' => 'La pagina di chi siamo',
+        'header_keywords' => "info, about, media, games",
+        'header_author' =>"MediaShop2000",
 
-        'skip_to_main' =>'skip_to_main',
+        'skip_to_main' =>'Salta al contenuto principale',
 
         'page_header' => create_page_header(),
         'page_main' => render(file_get_contents('template/about.html'), [
-                            "hello" => "Hello World!, About",
+                           
                         ]),
         'page_footer' => create_page_footer(),
     ]);

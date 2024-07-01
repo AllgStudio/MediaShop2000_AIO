@@ -1,20 +1,20 @@
 <div id="category_manager" class="container">
     <div class="d-flex flex-wrap w-100">
-        <aside class="bg-lightgray flex-shrink-0">
+        <aside class="bg-lightgray flex-shrink-0" aria-label="Category Management Navigation">
             <ul class="list-group">
                 <li class="list-group-item active">
                     <a href="categorymanage.php" aria-label="Gestione Categorie" title="Gestione Categorie">
-                        <span class="mdi mdi-format-list-bulleted" aria-hidden="true">Gestione Categorie</span>
+                        <span class="mdi mdi-shape-plus" aria-hidden="true"></span> Gestione Categorie
                     </a>
                 </li>
                 <li class="list-group-item">
                     <a href="productmanage.php" aria-label="Gestione Prodotti" title="Gestione Prodotti">
-                        <span class="mdi mdi-store" aria-hidden="true">Gestione Prodotti</span>
+                        <span class="mdi mdi-store" aria-hidden="true"></span> Gestione Prodotti
                     </a>
                 </li>
                 <li class="list-group-item">
-                    <a href="ordermanage.php" aria-label="Gestione Ordini" title="Gestione Ordini">
-                        <span class="mdi mdi-receipt" aria-hidden="true">Gestione Ordini</span>
+                    <a href="adminordermanage.php" aria-label="Gestione Ordini" title="Gestione Ordini">
+                        <span class="mdi mdi-format-list-bulleted" aria-hidden="true"></span> Gestione Ordini
                     </a>
                 </li>
             </ul>
@@ -25,41 +25,18 @@
                     <div class="d-flex space-between mb-4">
                         <h2 class="text-title">Categoria</h2>
                         <!-- button -->
-                        <button class="btn btn-primary" data-toggle="modal" data-target="#category_modal">
-                            <span class="mdi mdi-plus" aria-hidden="true">Aggiungi Categoria</span>
-                        </button>
+                        <a class="btn btn-primary" href="newcategory.php" aria-label="Aggiungi Categoria">
+                            <span class="mdi mdi-plus" aria-hidden="true"></span>
+                            Nuovo
+                        </a>
                     </div>
-                </div>  
+                </div>
                 <div class="card-text">
                     <ul class="list-group">
-                        <li class="list-group-item d-flex space-between">
-                            <p>Cellulare</p>
-                            <button class="btn btn-icon bg-transparent red" data-toggle="modal" data-target="#category_modal">
-                                <span class="mdi mdi-delete" aria-hidden="true"></span>
-                            </button>
-                        </li>
-                        <li class="list-group-item d-flex space-between">
-                            <p>Cellulare</p>
-                            <button class="btn btn-icon bg-transparent red" data-toggle="modal" data-target="#category_modal">
-                                <span class="mdi mdi-delete" aria-hidden="true"></span>
-                            </button>
-                        </li>
-                        <li class="list-group-item d-flex space-between">
-                            <p>Cellulare</p>
-                            <button class="btn btn-icon bg-transparent red" data-toggle="modal" data-target="#category_modal">
-                                <span class="mdi mdi-delete" aria-hidden="true"></span>
-                            </button>
-                        </li>
-                        <li class="list-group-item d-flex space-between">
-                            <p>Cellulare</p>
-                            <button class="btn btn-icon bg-transparent red" data-toggle="modal" data-target="#category_modal">
-                                <span class="mdi mdi-delete" aria-hidden="true"></span>
-                            </button>
-                        </li>
+                       {{ category_items }}
                     </ul>
                 </div>
             </div>
         </div>
-
     </div>
 </div>

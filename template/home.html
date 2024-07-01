@@ -1,30 +1,73 @@
 <div class="cover-image">
-    <h1>Benvenuti a nostro webshop</h1>
+    <h2>Benvenuti a nostro webshop</h2>
     <p>Qui troverai tutto quello che ti serve</p>
-    <button class="btn btn-large bg-white black mt-2">Chi Siamo Noi</button>
 </div>
 
-<div class="container">
-    <br>
-    <h2 class="text-title">Obiettivo</h2>
-    <p class="text-paragraph justified">
-        <
-        <div class="flex-2">
-            MediaShop2000 è un negozio online che vende prodotti elettronici,
-            elettrodomestici e accessori per la casa.
-            Il nostro obiettivo è quello di offrire ai nostri clienti prodotti di alta qualità a prezzi accessibili.
-            Siamo un'azienda giovane e dinamica che si impegna a soddisfare le esigenze dei nostri clienti.
-            Siamo sempre alla ricerca di nuovi prodotti e marchi da aggiungere al nostro assortimento.
-            Se hai domande o suggerimenti, non esitare a contattarci.
-            Siamo qui per aiutarti.
+<div id="home" class="container">
+    <div class="d-flex flex-wrap mt-2">
+        <div class="col-4">
+            <div class="card presentation ma-1 pa-3 text-center" tabindex="0">
+                <span class="mdi mdi-account-multiple text-icon-xxl" aria-hidden="true"></span>
+                <div class="card-title">
+                    <h3>Chi siamo?</h3>
+                </div>
+                <div class="card-text justified">
+                    <p>Noi siamo un gruppo di studenti del corso di laurea in Informatica dell'Università di Padova.
+                        Questo sito è stato creato come progetto per il corso di Tecnologie Web.
+                        Il nostro obiettivo è quello di offrire ai nostri clienti prodotti di alta qualità a prezzi
+                        accessibili.
+                        Siamo un'azienda giovane e dinamica che si impegna a soddisfare le esigenze dei nostri clienti.
+                    </p>
+                </div>
+            </div>
         </div>
-        <div class="flex-1">
-            <img src="https://picsum.photos/200/300?a=fgj0" alt="A descriptive text about the content of the image 1">
+        <div class="col-4">
+            <div class="card presentation ma-1 pa-3 text-center" tabindex="0">
+                <span class="mdi mdi-school text-icon-xxl" aria-hidden="true"></span>
+                <div class="card-title">
+                    <h3>Nostro team</h3>
+                </div>
+                <div class="card-text justified">
+                    <p>
+                        Composto da quattro studenti del corso di laurea in Informatica dell'Università di Padova.
+                    </p>
+                </div>
+            </div>
         </div>
+        <div class="col-4">
+            <div class="card presentation ma-1 pa-3 text-center" tabindex="0">
+                <span class="mdi mdi-point-of-sale text-icon-xxl" aria-hidden="true"></span>
+                <div class="card-title">
+                    <h3>Obietivo</h3>
+                </div>
+                <div class="card-text justified">
+                    <p>MediaShop2000 è un negozio online che vende prodotti elettronici, elettrodomestici e accessori
+                        per la casa.
+                        Il nostro obiettivo è quello di offrire ai nostri clienti prodotti di alta qualità a prezzi
+                        accessibili.
+                        Siamo un'azienda giovane e dinamica che si impegna a soddisfare le esigenze dei nostri clienti.
+                        Siamo sempre alla ricerca di nuovi prodotti e marchi da aggiungere al nostro assortimento.
+                        Se hai domande o suggerimenti, non esitare a contattarci.
+                        Siamo qui per aiutarti.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="text-title mt-2" tabindex="0">Obiettivo</h2>
+    <p class="text-paragraph justified" tabindex="0">
+        MediaShop2000 è un negozio online che vende prodotti elettronici,
+        elettrodomestici e accessori per la casa.
+        Il nostro obiettivo è quello di offrire ai nostri clienti prodotti di alta qualità a prezzi accessibili.
+        Siamo un'azienda giovane e dinamica che si impegna a soddisfare le esigenze dei nostri clienti.
+        Siamo sempre alla ricerca di nuovi prodotti e marchi da aggiungere al nostro assortimento.
+        Se hai domande o suggerimenti, non esitare a contattarci.
+        Siamo qui per aiutarti.
     </p>
-    <br>
-    <h2 class="text-title">Storia</h2>
-    <p class="text-paragraph justified">
+
+    <h2 class="text-title mt-2" tabindex="0">Storia</h2>
+    <p class="text-paragraph justified" tabindex="0">
         MediaShop2000 è stata fondata nel 2024 da un gruppo di tecweb che condividevano la passione per lo sviluppo di
         un sito web.
         In base Html5 e Css3, il nostro sito web è stato progettato per essere facile da usare e accessibile a tutti.
@@ -39,9 +82,9 @@
     </p>
 
     <br>
-    <h2 class="text-title">Popular products</h2>
-    <div class="grid-container grid-4-col pa-2">
+    <h2 class="text-title" tabindex="0">Prodotti popolari</h2>
+    <div class="d-flex flex-wrap pa-2">
         {{ selection_2 }}
     </div>
-    
+
 </div>
