@@ -6,23 +6,21 @@
                     <!-- Product image and info -->
                     <section class="my-2">
                         <form action="api/cart/addToCart.php" method="post">
-                            <input type="hidden" name="id" value="{{ id }}">
-
+                            <input tabindex="-1" type="hidden" name="id" value="{{ id }}">
 
                             <div class="d-flex flex-wrap">
                                 <div id="detail_image" class="flex-shrink-0">
-                                    <img src="{{ url }}" alt="Immagine del prodotto {{ brand }} {{ name }}"
-                                        class="w-100">
+                                    <img role="presentation" src="{{ url }}" alt="Immagine del prodotto {{ brand }} {{ name }}" class="w-100">
                                 </div>
                                 <div id="detail_info" class="d-flex flex-column space-between">
                                     <div class="d-flex space-between flex-wrap">
                                         <div class="flex-shrink-0 flex-grow-1">
-                                            <h1 class="text-title no-wrap">{{ brand }} {{ name }}</h1>
-                                            <p class="text-paragraph no-wrap">{{ specific }}</p>
+                                            <h1 tabindex="0" class="text-title no-wrap">{{ brand }} {{ name }}</h1>
+                                            <p tabindex="0" class="text-paragraph no-wrap">{{ specific }}</p>
                                         </div>
                                         <div class="d-flex flex-shrink-0 flex-grow-1 justify-end">
-                                            <p class="text-subtitle no-wrap"><del>{{ old_price }}</del></p>
-                                            <p class="text-bigtitle no-wrap">{{ new_price }}</p>
+                                            <p class="text-subtitle no-wrap" aria-label="Old price"><del>{{ old_price }}</del></p>
+                                            <p class="text-bigtitle no-wrap" aria-label="New price">{{ new_price }}</p>
                                         </div>
                                     </div>
                                     <hr>
@@ -38,12 +36,12 @@
 
                                     <h2 class="text-title mt-2">Quantità</h2>
                                     <div class="mx-4">
-                                        <input type="number" id="quantity" name="quantity" value="1" min="1" max="10"
-                                            aria-label="Quantity">
+                                        <label for="quantity" class="sr-only">Quantity</label>
+                                        <input type="number" id="quantity" name="quantity" value="1" min="1" max="10" aria-label="Quantity">
                                     </div>
 
                                     <div class="d-flex flex-wrap mx-2">
-                                        <button type="submit" class="btn btn-success ma-2">Aggiunge a carello</button>
+                                        <button type="submit" class="btn btn-success ma-2" aria-label="Add to cart">Aggiunge a carello</button>
                                     </div>
                                 </div>
                             </div>
@@ -54,8 +52,8 @@
 
                     <!-- Product description-->
                     <section class="my-2">
-                        <h2 class="text-title">Descrizione</h2>
-                        <p class="text-paragraph">
+                        <h2 class="text-title" tabindex="0">Descrizione</h2>
+                        <p class="text-paragraph" tabindex="0">
                             {{ description }}
                         </p>
                     </section>
@@ -64,13 +62,12 @@
 
                     <!-- comment -->
                     <section class="my-2">
-                        <h2 class="text-title">Commenti</h2>
+                        <h2 class="text-title" tabindex="0">Commenti</h2>
                         <div class="d-flex flex-wrap">
                             <!-- 产品评分 -->
                             <div id="detail_rate" class="card pa-2 ma-2" tabindex="0">
-                                <div class="card-title text-center">Voto</div>
-                                <div class="card-text text-center" role="img"
-                                    aria-label="Valutazione {{ rate }} stelle su 5">{{ rate_star }}</div>
+                                <div class="card-title text-center" aria-label="Rating">Voto</div>
+                                <div class="card-text text-center" role="img" aria-label="Valutazione {{ rate }} stelle su 5">{{ rate_star }}</div>
                                 <div class="card-text text-center">{{ rate }}/5</div>
                             </div>
 
@@ -79,7 +76,6 @@
                             </div>
                         </div>
                     </section>
-
                 </div>
             </div>
         </div>

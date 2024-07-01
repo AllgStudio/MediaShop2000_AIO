@@ -4,13 +4,13 @@
 
             <div class="product-info">
                 <div id="product_price-{{ id }}" class="product-price">
-                    <div class="product-discount {{ discount_class }}" aria-label="Sconto di {{ discount }}">{{ discount }}</div>
-                    <div class="product-old-price {{ discount_class }}" aria-label="Prezzo vecchio {{ old_price }}">{{ old_price }}</div>
-                    <div class="product-new-price flex-grow-1 text-right" aria-label="Prezzo attuale {{ new_price }}">{{ new_price }}</div>
+                    <p class="product-discount {{ discount_class }}" aria-label="Sconto di {{ discount }}">{{ discount }}</p>
+                    <p class="product-old-price flex-grow-1 text-right {{ discount_class }}" aria-label="Prezzo vecchio {{ old_price }}">{{ old_price }}</p>
+                    <p class="product-new-price flex-grow-1 text-right" aria-label="Prezzo attuale {{ new_price }}">{{ new_price }}</p>
                 </div>
                 <a href="productdetail.php?id={{ id }}" aria-describedby="product_price-{{ id }} product_rating-{{ id }} product_type-{{ id }}" class="product-name"><span>{{ brand }} {{ name }}</span></a>
-                <span id="product_rating-{{ id }}" class="product-rating" aria-label="Valutazione {{ rate_count }} stelle">{{ rate }}</span>
-                <span id="product_type-{{ id }}" class="product-tags" aria-label="Tipo {{ type }}">Tipo: {{ type }}</span>
+                <p id="product_rating-{{ id }}" class="product-rating" aria-label="Valutazione {{ rate_count }} stelle">{{ rate }}</p>
+                <p id="product_type-{{ id }}" class="product-tags" aria-label="Tipo {{ type }}">Tipo: {{ type }}</p>
             </div>
         </div>
 

@@ -20,6 +20,17 @@
         $products[] = $row;
     }
 
+    $discout_map_percent = [];
+    $discout_map_price = [];
+    $sql = "SELECT * FROM PriceCut";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    while($row = $result->fetch_object()){
+        $discout_map_percent[$row->product_id] = $row->discountInPercentage;
+        $discout_map_price[$row->product_id] = $row->new_price;
+    }
+
     //Product.product_id, Product.product_name, Product.brand, Product.price, Product.description, ProductImage.url, Category.category_name, AVG(Feedback.star_rating) as star FROM Product 
 
     $products_html = "";
@@ -28,17 +39,19 @@
             "id" => $products[$i]->product_id,
             "name" => $products[$i]->product_name,
             "brand" => $products[$i]->brand,
-            "new_price" => $products[$i]->price . "€",
-            "old_price" => "",
-            "discount" => "0%",
+            "new_price" => $discout_map_price[$products[$i]->product_id]??false?$discout_map_price[$products[$i]->product_id]:$products[$i]->price . "€",
+            "old_price" => $discout_map_price[$products[$i]->product_id]??false?$products[$i]->price ."€" : "",
+            "discount" => $discout_map_percent[$products[$i]->product_id]??false?"-".$discout_map_percent[$products[$i]->product_id] . "%" : "0%",
             "rate" => str_repeat("⭐", $products[$i]->star) ?? "",
             "rate_count" => round($products[$i]->star??0,1)??0,
             "url" => $products[$i]->url,
             "type" => $products[$i]->category_name,
             "anno" => "",
-            "discount_class" => "d-none",
+            "discount_class" => $discout_map_percent[$products[$i]->product_id]??false?"":"d-none",
         ]);
     }
+
+
 
 
     echo create_page('template/index.html',[
