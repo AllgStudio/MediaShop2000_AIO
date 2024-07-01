@@ -57,20 +57,19 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 
 
 echo create_page('template/index.html', [
-    'lang' => $lang,
-    'header_title' => $i18n['title'][$lang],
-    'header_description' => $i18n['description'][$lang],
+    'header_title' =>'title',
+    'header_description' => 'description',
     'header_keywords' => "Shop, media, games",
     'header_author' => "Author",
 
-    'skip_to_main' => $i18n['skip_to_main'][$lang],
+    'skip_to_main' => 'skip_to_main',
 
     'page_header' => create_page_header(),
     'page_main' => render(file_get_contents('template/login.html'), [
         "error_msg" => $error_msg,
-        'login' => $i18n['login'][$lang],
-        'username' => $i18n['username'][$lang],
-        'password' => $i18n['password'][$lang],
+        'login' => 'login',
+        'username' => 'username',
+        'password' => 'password',
     ]),
     'page_footer' => create_page_footer(),
 ]);

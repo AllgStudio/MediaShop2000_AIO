@@ -1,0 +1,94 @@
+.team-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.team-card {
+    width: 100%;
+    height: 120px;
+    margin: 5px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: row;
+    align-items: left;
+    overflow: hidden;
+}
+
+.team-img {
+    width: 15%;
+    height: auto;
+    margin: 10px;
+    object-fit: contain;
+}
+
+.team-info {
+    font-size: 18px;
+    width: 50%;
+    height: 80%;
+    margin: auto 10px auto 0px ;
+    border-left: 3px solid skyblue;
+    padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content:end;
+    white-space: nowrap;
+}
+
+.team-info .team-info-title {
+    font-size: 24px;
+    font-weight: bold;
+}
+.team-info .team-info-subtitle {
+    font-size: 14px;
+    font-weight: bold;
+    color:gray;
+}
+.team-info .team-info-text {
+    font-size: 18px;
+}
+
+@media screen and (max-width: 768px){
+    .team-card {
+        height: 100px;
+    }
+
+    .team-info .team-info-title {
+        font-size: 20px;
+    }
+    .team-info .team-info-subtitle {
+        font-size: 12px;
+    }
+    .team-info .team-info-text {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 480px){
+    .team-info .team-info-title {
+        font-size: 18px;
+    }
+    .team-info .team-info-subtitle {
+        font-size: 10px;
+    }
+    .team-info .team-info-text {
+        font-size: 14px;
+    }
+}
+
+.team-background-box {
+    width: 35%;
+    height: 100%;
+    display: flex;
+}
+
+.team-background {   
+    opacity: 40%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    mask-image: linear-gradient(to right, transparent, black);
+}
