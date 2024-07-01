@@ -1,53 +1,27 @@
 
-.cover-image {
+#shop .cover-image {
     background-color: #f4f4f4;
     text-align: center;
     padding: 20px 0;
     border-bottom: 1px solid #ccc;
 }
 
-.cover-image h2 {
+#shop .cover-image h2 {
     margin: 0;
     font-size: 24px;
 }
 
-.cover-image small {
+#shop .cover-image small {
     color: #555;
 }
 
 
-aside {
-    width: 250px;
-    padding: 20px;
-    background-color: #f4f4f4;
-    border-right: 1px solid #ccc;
-    box-sizing: border-box;
-}
-
-aside h2 {
-    font-size: 20px;
-    margin-bottom: 10px;
-}
-
-aside ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-aside li {
-    margin: 5px 0;
-}
-
-aside li ul {
-    margin-left: 15px;
-}
 
 .products {
     flex-grow:1;
     padding: 20px;
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
     justify-content:flex-start;
 }
 
