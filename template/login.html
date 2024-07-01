@@ -1,21 +1,21 @@
 <div class="container">
     <div class="login">
-        <div class="login-title" tabindex="0">Benvenuti a MediaShop2000</div>
-        <div class="login-subtitle" tabindex="0">Un negozio di passato</div>
-        <div class="login-text">
+        <div class="title" tabindex="0">Benvenuti a MediaShop2000</div>
+        <div class="subtitle" tabindex="0">Un negozio di passato</div>
+        <div class="panel">
             <!-- A accessibile login form -->
             <form action="login.php" method="POST" aria-describedby="error-msg">
-                <div class="login-input">
+                <div class="input">
                     <div role="alert" id="error-msg" class="invalid-feedback" aria-live="assertive">{{ error_msg }}</div>
-                    <div class="login-input-title">
+                    <div class="title">
                         <label for="username">Nome utente: </label>
                         <input type="text" id="username" name="username" placeholder="" class="form-control" required aria-required="true">
                     </div>
-                    <div class="login-input-title">
+                    <div class="title">
                         <label for="password" lang="en">Password: </label>
                         <input type="password" id="password" name="password" placeholder="" class="form-control" required aria-required="true">
                     </div>
-                    <div class="login-input-title">
+                    <div class="title">
                         <input type="submit" value="Accendi" class="btn btn-primary">
                     </div>
                 </div>
