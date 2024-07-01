@@ -245,6 +245,7 @@ footer a{
 
 #detail_rate{
     width: 28%;
+    height: min-content;
 }
 
 #detail_comment{
