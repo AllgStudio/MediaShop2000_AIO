@@ -8,7 +8,7 @@
     width: auto;
     height: 400px;
     margin-top: 20px;
-    background-image: url('img/cover.jpg');
+    background-image: url('../../img/cover.jpg');
 }
 
 .login-text{
@@ -39,14 +39,12 @@
     font-weight: 700;
     width: 100%;
     text-align: center;
-    color: whitesmoke;
 }
 
 .login-subtitle{
     font-size: 16px;
     font-weight: 500;
     margin-bottom: 24px;
-    color: whitesmoke;
 }
 
 

@@ -42,13 +42,15 @@
             "id" => $products[$i]->product_id,
             "name" => $products[$i]->product_name,
             "brand" => $products[$i]->brand,
-            "new_price" => $products[$i]->price,
+            "new_price" => $products[$i]->price . "€",
             "old_price" => "",
             "discount" => "0%",
             "rate" => str_repeat("⭐", $rate_map[$products[$i]->product_id]??0) ?? "",
+            "rate_count" => round($rate_map[$products[$i]->product_id]??0,1)??0,
             "url" => $products[$i]->url,
             "type" => $products[$i]->category_name,
-            "anno" => ""
+            "anno" => "",
+            "discount_class" => "d-none"
         ]);
     }
 
@@ -78,12 +80,12 @@
     
 
     echo create_page('template/index.html',[
-        'header_title' =>'title',
-        'header_description' =>'description',
+        'header_title' =>'Shop | MediaShop2000',
+        'header_description' => 'La pagina di shop del sito MediaShop2000',
         'header_keywords' => "Shop, media, games",
-        'header_author' =>"Author",
+        'header_author' =>"MediaShop2000",
 
-        'skip_to_main' => 'skip_to_main',
+        'skip_to_main' => 'Salta al contenuto principale',
 
         'page_header' => create_page_header(),
 

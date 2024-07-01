@@ -1,19 +1,21 @@
 
 <div class="cover-image">
     <h2>NEGOZIO</h2>
-    <small>Home > Shop</small>
+    <small aria-label="Stai nella pagina shop">Home > Shop</small>
 </div>
 
 <div id="shop" class="container d-flex">
-    <br/>
-    <aside aria-labelledby="categorie-heading" class="col-3">
-        <h2 id="categorie-heading">Categorie</h2>
-        <ul class="list-group">
+    <div id="category_nav" class="col-3 col-md-5">
+        <h2 class="text-title" tabindex="0">Categorie</h2>
+        <ul role="navigation" class="list-group">
             {{ categories }}
         </ul>
-    </aside>
-    <br>
+    </div>
+    
     <section class="products">
+        <div class="col-12">
+            <h2 class="text-title" tabindex="0">Prodotti</h2>
+        </div>
         {{ products }}
     </section>
     
