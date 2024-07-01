@@ -1,0 +1,9 @@
+#category_manager ul{
+    list-style-type: none;
+    padding: 0;
+}
+
+#category_manager aside {
+    width: unset;
+    padding: unset;
+}

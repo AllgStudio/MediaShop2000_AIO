@@ -172,14 +172,14 @@
     height: 30px;
     border-radius: 50%;
     text-align: center;
-    line-height: 30px;
+    line-height: 0px;
     overflow: hidden;
     position: relative;
     border: none;
     font-size: large;
 }
 
-.btn-icon {
+/* .btn-icon {
     padding: 6px 6px;
     width: 30px;
     height: 30px;
@@ -188,4 +188,4 @@
     line-height: 30px;
     overflow: hidden;
     position: relative;
-}
+} */

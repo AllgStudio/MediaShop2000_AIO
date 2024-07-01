@@ -1,0 +1,41 @@
+
+.list-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.list-group-item {
+    padding: 10px;
+    color: black;
+    text-align: start;
+    vertical-align: middle;
+    border: 1px solid #ccc;
+    white-space: nowrap;
+    user-select: none;
+    flex-shrink: 0;
+}
+
+.list-group-item a {
+    text-decoration: none;
+}
+.list-group-item a:visited {
+    color: black;
+}
+
+.list-group-item a:link {
+    color: black;
+}
+
+.list-group-item.active {
+    background-color: #bbb;
+}
+
+
+.list-group-item span {
+    font-weight: bold;
+}
+
+.list-group-item span::before {
+    font-weight: bold;
+    margin-right: 5px;
+}

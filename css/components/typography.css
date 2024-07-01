@@ -46,3 +46,7 @@
 .no-wrap {
     white-space: nowrap;
 }
+
+.text-icon-xxl {
+    font-size: xxx-large;
+}
