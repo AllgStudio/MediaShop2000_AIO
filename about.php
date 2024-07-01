@@ -7,7 +7,7 @@
     include "includes/db.php";
 
     echo create_page('template/index.html',[
-        'lang' => $lang,
+        // 'lang' => $lang,
         'header_title' =>'title',
         'header_description' => 'description',
         'header_keywords' => "Shop, media, games",

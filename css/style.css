@@ -11,6 +11,8 @@
 @import url("./components/flex.css");
 @import url("./components/grid.css");
 @import url("./pages/shop.css");
+@import url("./pages/login.css");
+@import url("./pages/about.css");
 
 @import url("./components/form.css");
 @import url("./components/typography.css");
