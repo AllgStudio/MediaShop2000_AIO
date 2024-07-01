@@ -1,21 +1,21 @@
 <div class="container" >
     <div class="login">
-        <div class="login-title">Benvenuti a MediaShop2000</div>
-        <div class="login-subtitle">Un negozio di passato</div>
-        <div class="login-text">
+        <div class="title">Benvenuti a MediaShop2000</div>
+        <div class="subtitle">Un negozio di passato</div>
+        <div class="panel">
             <!--A accessibile login form-->
             <form action="login.php" method="POST">
-                <div class="login-input">
+                <div class="input">
                     <div class="invalid-feedback">{{ error_msg }}</div>
-                    <div class="login-input-title">
+                    <div class="title">
                         <label for="username">{{ username }} :</label>
                         <input type="text" id="username" name="username" placeholder="" class="form-control" required>
                     </div>
-                    <div class="login-input-title">
+                    <div class="title">
                         <label for="password">{{ password }} :</label>
                         <input type="password" id="password" name="password" placeholder="" class="form-control" required>
                     </div>
-                    <div class="login-input-title">
+                    <div class="title">
                         <input type="submit" value="{{ login }}" class="btn btn-primary">
                     </div>         
                 </div>
