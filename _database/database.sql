@@ -64,7 +64,6 @@ CREATE TABLE User (
 CREATE TABLE Orders(
     order_id INT AUTO_INCREMENT PRIMARY KEY,
     total DECIMAL(20,2),
-    status TINYINT,
     order_datetime DATETIME DEFAULT CURRENT_TIMESTAMP,
     user_id INT,
     FOREIGN KEY (user_id) REFERENCES User(user_id) ON DELETE CASCADE
@@ -119,10 +118,10 @@ INSERT INTO User(user_id, username, password, email, role) VALUES (1,'admin', '$
 INSERT INTO User(user_id, username, password, email, role) VALUES (2,'user', '$2y$10$/XHfArdPL0gGkMEpKMfmde4sw5XfdqW/hoqBHKQi9N4rjbEw7Xb06','user@user.com', 'user');
 INSERT INTO User(user_id, username, password, email, role) VALUES (3,'test', '$2y$10$/XHfArdPL0gGkMEpKMfmde4sw5XfdqW/hoqBHKQi9N4rjbEw7Xb06','test@user.com', 'user');
 
-INSERT INTO Orders(order_id, total, status, user_id) VALUES (1, 1099.98, 1, 1);
-INSERT INTO Orders(order_id, total, status, user_id) VALUES (2, 19.99, 0, 2);
-INSERT INTO Orders(order_id, total, status, user_id) VALUES (3, 24.99, 0, 2);
-INSERT INTO Orders(order_id, total, status, user_id) VALUES (4, 109.99, 1, 1);
+INSERT INTO Orders(order_id, total, user_id) VALUES (1, 1099.98, 1, 1);
+INSERT INTO Orders(order_id, total, user_id) VALUES (2, 19.99, 0, 2);
+INSERT INTO Orders(order_id, total, user_id) VALUES (3, 24.99, 0, 2);
+INSERT INTO Orders(order_id, total, user_id) VALUES (4, 109.99, 1, 1);
 
 INSERT INTO OrderDetail (quantity, order_id, product_id) VALUES (1, 1, 1);
 INSERT INTO OrderDetail (quantity, order_id, product_id) VALUES (2, 1, 2);
