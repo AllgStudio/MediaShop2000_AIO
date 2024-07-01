@@ -60,10 +60,22 @@ function render($html, $data)
  */
 function create_page_header()
 {
+    $userRoleClass = 'd-none';
+    if (isset($_COOKIE['user'])) {
+        $userData = json_decode($_COOKIE['user'], true);
+        if ($userData && isset($userData['role']) && trim($userData['role']) === 'admin') {
+            $userRoleClass = ''; // Admin users don't get the 'd-none' class
+        } else {
+            $userRoleClass = 'd-none'; // Non-admin users get the 'd-none' class
+        }
+    } else {
+        $userRoleClass = 'd-none'; // If there's no user cookie, default to 'd-none'
+    }
+
     $is_logged_in = isset($_COOKIE['logged_in']) ? $_COOKIE['logged_in'] : false;
     if ($is_logged_in) {
         $login_logout  = render(file_get_contents("template/header.logged.html"), [
-            'isAdmin' => isset($_COOKIE['role']) && $_COOKIE['role'] == 'admin' ? true : false,
+            'isAdmin' => $userRoleClass,
             'cart_count' => isset($_COOKIE['cart'])? count(json_decode($_COOKIE['cart'], true)??[]) : 0,
         ]);
     } else {

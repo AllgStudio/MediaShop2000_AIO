@@ -16,3 +16,8 @@ if (isset($_COOKIE['cart'])) {
     }
     setcookie('cart', json_encode($new_cart), time() + (86400 * 30), "/");
 }
+
+// go back to product detail and dont let possible go back this page
+header("Location: ../../cart.php");
+exit();
+
