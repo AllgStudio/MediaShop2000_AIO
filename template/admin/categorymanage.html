@@ -1,3 +1,65 @@
-<div>
-    <h1>{{ hello }}</h1> 
+<div id="category_manager" class="container">
+    <div class="d-flex flex-wrap w-100">
+        <aside class="bg-lightgray flex-shrink-0">
+            <ul class="list-group">
+                <li class="list-group-item active">
+                    <a href="categorymanage.php" aria-label="Gestione Categorie" title="Gestione Categorie">
+                        <span class="mdi mdi-format-list-bulleted" aria-hidden="true">Gestione Categorie</span>
+                    </a>
+                </li>
+                <li class="list-group-item">
+                    <a href="productmanage.php" aria-label="Gestione Prodotti" title="Gestione Prodotti">
+                        <span class="mdi mdi-store" aria-hidden="true">Gestione Prodotti</span>
+                    </a>
+                </li>
+                <li class="list-group-item">
+                    <a href="ordermanage.php" aria-label="Gestione Ordini" title="Gestione Ordini">
+                        <span class="mdi mdi-receipt" aria-hidden="true">Gestione Ordini</span>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+        <div class="col-9">
+            <div class="d-flex flex-column card pa-4">
+                <div class="card-title">
+                    <div class="d-flex space-between mb-4">
+                        <h2 class="text-title">Categoria</h2>
+                        <!-- button -->
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#category_modal">
+                            <span class="mdi mdi-plus" aria-hidden="true">Aggiungi Categoria</span>
+                        </button>
+                    </div>
+                </div>  
+                <div class="card-text">
+                    <ul class="list-group">
+                        <li class="list-group-item d-flex space-between">
+                            <p>Cellulare</p>
+                            <button class="btn btn-icon bg-transparent red" data-toggle="modal" data-target="#category_modal">
+                                <span class="mdi mdi-delete" aria-hidden="true"></span>
+                            </button>
+                        </li>
+                        <li class="list-group-item d-flex space-between">
+                            <p>Cellulare</p>
+                            <button class="btn btn-icon bg-transparent red" data-toggle="modal" data-target="#category_modal">
+                                <span class="mdi mdi-delete" aria-hidden="true"></span>
+                            </button>
+                        </li>
+                        <li class="list-group-item d-flex space-between">
+                            <p>Cellulare</p>
+                            <button class="btn btn-icon bg-transparent red" data-toggle="modal" data-target="#category_modal">
+                                <span class="mdi mdi-delete" aria-hidden="true"></span>
+                            </button>
+                        </li>
+                        <li class="list-group-item d-flex space-between">
+                            <p>Cellulare</p>
+                            <button class="btn btn-icon bg-transparent red" data-toggle="modal" data-target="#category_modal">
+                                <span class="mdi mdi-delete" aria-hidden="true"></span>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
 </div>

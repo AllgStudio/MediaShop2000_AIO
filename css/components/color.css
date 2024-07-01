@@ -17,6 +17,10 @@
     color: white !important;
 }
 
+.lightgray {
+    color: lightgray !important;
+}
+
 /**
 * Background Color
 */
@@ -47,4 +51,8 @@
 }
 .bg-transparent{
     background-color: transparent !important;
+}
+
+.bg-lightgray {
+    background-color: lightgray !important;
 }
