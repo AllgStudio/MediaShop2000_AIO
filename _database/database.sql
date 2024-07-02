@@ -18,7 +18,6 @@ CREATE TABLE Product (
     product_name VARCHAR(50) NOT NULL,
     brand VARCHAR(50),
     color TEXT,
-    size TEXT,
     price DECIMAL(20,2),
     description VARCHAR(255)
 );
@@ -94,10 +93,10 @@ INSERT INTO Category (category_id, category_name) VALUES (3, 'Game Station');
 INSERT INTO Category (category_id, category_name) VALUES (4, 'Smartwatch');
 
 INSERT INTO Product (product_id, product_name, brand, color, size, price, description) 
-VALUES (1, 'iPhone 12', 'Apple', 'black,white', 'Standard', 299.99, 'A high-end smartphone'),
-       (2, 'MacBook Pro', 'Apple', 'silver', 'Standard', 999.99, 'A powerful laptop'),
-       (3, 'PlayStation 5', 'Sony', 'black,White', 'Standard', 499.99, 'A next-gen game console'),
-       (4, 'Apple Watch', 'Apple', 'silver,black', 'Standard', 199.99, 'A smartwatch with health features');
+VALUES (1, 'iPhone 12', 'Apple', 'black,white', 299.99, 'A high-end smartphone'),
+       (2, 'MacBook Pro', 'Apple', 'silver',  999.99, 'A powerful laptop'),
+       (3, 'PlayStation 5', 'Sony', 'black,White', 499.99, 'A next-gen game console'),
+       (4, 'Apple Watch', 'Apple', 'silver,black', 199.99, 'A smartwatch with health features');
 
 INSERT INTO CategoryProduct (category_id, product_id) VALUES (1, 1);
 INSERT INTO CategoryProduct (category_id, product_id) VALUES (2, 2);

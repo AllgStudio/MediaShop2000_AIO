@@ -3,7 +3,7 @@
         <aside class="bg-lightgray flex-shrink-0">
             <ul class="list-group">
                 <li class="list-group-item">
-                    <a href="userprofile.php" aria-label="Torna in dietro" title="Torna in dietro">
+                    <a href="{{ callback }}" aria-label="Torna in dietro" title="Torna in dietro">
                         <span class="mdi mdi-keyboard-backspace" aria-hidden="true">Torna in dietro</span>
                     </a>
                 </li>
@@ -13,36 +13,32 @@
                 <div class="card-title">
                     <div class="d-flex space-between mb-4">
                         <h2 class="text-title">Dettaglio Ordine</h2>
-                        <h2 class="text-title">Numero di Ordine</h2>
+                        <h2 class="text-title">#{{ order_id }}</h2>
                     </div>
                 </div>
-                <div class="card-text">
-                    <ul class="list-group">
-                        <li class="list-group-item d-flex space-between">
-                            <p>Nome prodotto</p>
-                            <p>Quantità</p>
-                            <p>costo</p>
-                        </li>
-                        <li class="list-group-item d-flex space-between">
-                            <p>Nome prodotto</p>
-                            <p>Quantità</p>
-                            <p>costo</p>
-                        </li>
-                        <li class="list-group-item d-flex space-between">
-                            <p>Nome prodotto</p>
-                            <p>Quantità</p>
-                            <p>costo</p>
-                        </li>
-                        <li class="list-group-item d-flex space-between">
-                            <p>Nome prodotto</p>
-                            <p>Quantità</p>
-                            <p>costo</p>
-                        </li>
-                        <li class="list-group-item d-flex space-between">
-                            <p>Totale</p>
-                            <p>costo</p>
-                        </li>
-                    </ul>
+                <div class="card-text overflow-x-auto">
+
+                    <!-- accessible table -->
+                    <table class="table text-center">
+                        <thead>
+                            <tr>
+                                <th scope="col">Prodotto</th>
+                                <th scope="col">Quantità</th>
+                                <th scope="col">Prezzo</th>
+                                <th scope="col">Totale</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                         {{ items }}
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="3" class="text-right">Totale</td>
+                                <td>{{ total }}</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                    
                 </div>
             </div>
         </div>

@@ -25,37 +25,31 @@
                     <div class="d-flex space-between mb-4">
                         <h2 class="text-title">Prodotti</h2>
                         <!-- button -->
-                        <button class="btn btn-primary" data-toggle="modal">Aggiungi prodotto</span>
-                        </button>
+                        <a href="newproduct.php" class="btn btn-primary">
+                            <span class="mdi mdi-plus" aria-hidden="true"></span>Nuovo
+                         </a>
+                        
                     </div>
                 </div>
-                <div class="card-text">
-                    <ul class="list-group">
-                        <li class="list-group-item d-flex space-between">
-                            <p>Prodotto</p>
-                            <button class="btn btn-icon bg-transparent red">
-                                <span class="mdi mdi-delete" aria-hidden="true"></span>
-                            </button>
-                        </li>
-                        <li class="list-group-item d-flex space-between">
-                            <p>Prodotto</p>
-                            <button class="btn btn-icon bg-transparent red">
-                                <span class="mdi mdi-delete" aria-hidden="true"></span>
-                            </button>
-                        </li>
-                        <li class="list-group-item d-flex space-between">
-                            <p>Prodotto</p>
-                            <button class="btn btn-icon bg-transparent red">
-                                <span class="mdi mdi-delete" aria-hidden="true"></span>
-                            </button>
-                        </li>
-                        <li class="list-group-item d-flex space-between">
-                            <p>Prodotto</p>
-                            <button class="btn btn-icon bg-transparent red">
-                                <span class="mdi mdi-delete" aria-hidden="true"></span>
-                            </button>
-                        </li>
-                    </ul>
+                <div class="card-text overflow-x-auto">
+                    <!-- <ul class="list-group">
+                        {{ lidst }}
+                    </ul> -->
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Marca</th>
+                                <th scope="col">Modello</th>
+                                <th scope="col">Categoria</th>
+                                <th scope="col">Prezzo</th>
+                                <th scope="col">Azioni</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{ list }}
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>

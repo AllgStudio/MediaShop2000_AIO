@@ -1,11 +1,8 @@
 <?php 
-    session_start();
     include "includes/utils.php";
-    $i18n = include('i18n/lang.php');
-    $lang = get_language();
 
-    if(!isset($_COOKIE['username'])){
-        echo "<script>alert('You are not logged in!')</script>";
+
+    if(!isset($_COOKIE['user'])){
         header("Location: login.php");
         exit();
     }
@@ -13,7 +10,6 @@
     include "includes/db.php";
 
     echo create_page('template/index.html',[
-        'lang' => $lang,
         'header_title' =>$i18n['title'][$lang],
         'header_description' => $i18n['description'][$lang],
         'header_keywords' => "Shop, media, games",

@@ -54,6 +54,8 @@
 .ma-auto { margin: auto !important; }
 .mt-auto { margin-top: auto !important; }
 .mb-auto { margin-bottom: auto !important; }
+.mx-auto { margin-left: auto; margin-right: auto !important; }
+.my-auto { margin-top: auto; margin-bottom: auto !important; }
 
 /* Padding classes */
 .px-0 { padding-left: 0; padding-right: 0 !important; }
@@ -148,4 +150,28 @@
         display: none !important;
     }    
     
+}
+
+.overflow-hidden {
+    overflow: hidden !important;
+}
+
+.overflow-auto {
+    overflow: auto !important;
+}
+
+.overflow-x-hidden {
+    overflow-x: hidden !important;
+}
+
+.overflow-x-auto {
+    overflow-x: auto !important;
+}
+
+.overflow-y-hidden {
+    overflow-y: hidden !important;
+}
+
+.overflow-y-auto {
+    overflow-y: auto !important;
 }

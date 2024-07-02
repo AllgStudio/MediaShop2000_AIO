@@ -26,73 +26,24 @@
                         <h2 class="text-title">Ordini</h2>
                     </div>
                 </div>
-                <div class="card-text">
-                    <ul class="list-group">
-                        <li class="list-group-item d-flex space-between">
-                            <div>
-                                <p>User</p>
-                                <p>Order ID</p>
-                            </div>
-                            <div>
-                                <a href="orderdetails.php" aria-label="I Miei Ordini" title="I Miei Ordini">
-                                <button class="btn btn-icon bg-transparent blue">
-                                    <span class="mdi mdi-information-outline" aria-hidden="true"></span>
-                                </button>
-                                </a>
-                                <button class="btn btn-icon bg-transparent red">
-                                    <span class="mdi mdi-delete" aria-hidden="true"></span>
-                                </button>
-                            </div>
-                        </li>
-                        <li class="list-group-item d-flex space-between">
-                            <div>
-                                <p>User</p>
-                                <p>Order ID</p>
-                            </div>
-                            <div>
-                                <a href="orderdetails.php" aria-label="I Miei Ordini" title="I Miei Ordini">
-                                    <button class="btn btn-icon bg-transparent blue">
-                                        <span class="mdi mdi-information-outline" aria-hidden="true"></span>
-                                    </button>
-                                    </a>
-                                <button class="btn btn-icon bg-transparent red">
-                                    <span class="mdi mdi-delete" aria-hidden="true"></span>
-                                </button>
-                            </div>
-                        </li>
-                        <li class="list-group-item d-flex space-between">
-                            <div>
-                                <p>User</p>
-                                <p>Order ID</p>
-                            </div>
-                            <div>
-                                <a href="orderdetails.php" aria-label="I Miei Ordini" title="I Miei Ordini">
-                                    <button class="btn btn-icon bg-transparent blue">
-                                        <span class="mdi mdi-information-outline" aria-hidden="true"></span>
-                                    </button>
-                                    </a>
-                                <button class="btn btn-icon bg-transparent red">
-                                    <span class="mdi mdi-delete" aria-hidden="true"></span>
-                                </button>
-                            </div>
-                        </li>
-                        <li class="list-group-item d-flex space-between">
-                            <div>
-                                <p>User</p>
-                                <p>Order ID</p>
-                            </div>
-                            <div>
-                                <a href="orderdetails.php" aria-label="I Miei Ordini" title="I Miei Ordini">
-                                    <button class="btn btn-icon bg-transparent blue">
-                                        <span class="mdi mdi-information-outline" aria-hidden="true"></span>
-                                    </button>
-                                    </a>
-                                <button class="btn btn-icon bg-transparent red">
-                                    <span class="mdi mdi-delete" aria-hidden="true"></span>
-                                </button>
-                            </div>
-                        </li>
-                    </ul>
+                <div class="card-text overflow-y-auto">
+                    <!-- <ul class="list-group">
+                        {{ order_ items }}
+                    </ul> -->
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Ordine ID</th>
+                                <th scope="col">Utente</th>
+                                <th scope="col">Data</th>
+                                <th scope="col">Totale</th>
+                                <th scope="col">Azioni</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {{ order_items }}
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>

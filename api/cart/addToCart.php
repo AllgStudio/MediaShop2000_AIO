@@ -1,7 +1,6 @@
 <?php
 $product_id = $_POST['id'] ?? "";
 $color = $_POST['color'] ?? "";
-$size = $_POST['size'] ?? "";
 $quantity = $_POST['quantity'] ?? 1;
 
 // add to cart cookie
@@ -9,14 +8,13 @@ if(isset($_COOKIE['cart'])){
     $new_array = array([
         "product_id" => $product_id,
         "color" => $color,
-        "size" => $size,
         "quantity" => $quantity
     ]);
 
     $cart = json_decode($_COOKIE['cart'], true);
     // check if product already in cart
     foreach($cart as $item){
-        if($item['product_id'] == $product_id && $item['color'] == $color && $item['size'] == $size){
+        if($item['product_id'] == $product_id && $item['color'] == $color){
             $item['quantity'] += $quantity;
             setcookie('cart', json_encode($cart), time() + (86400 * 30), "/");
             header("Location: ../../productdetail.php?id=$product_id");

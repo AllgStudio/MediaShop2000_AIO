@@ -1,0 +1,25 @@
+<!-- <li class="list-group-item d-flex space-between" role="listitem">
+    <div>
+        <span>{{ brand }} {{ product_name }}</span> · 
+        <span class="text-small">{{ category_name }}</span> · 
+        <span class="text-small">{{ price }}</span>
+    </div>
+    <a class="red" href="api/product/removeProduct.php?product_id={{ product_id }}"
+        aria-label="Elimina {{ product_name }}" title="Elimina {{ product_name }}">
+        <span class="mdi mdi-delete" aria-hidden="true"></span>
+    </a>
+</li> -->
+
+<tr>
+    <td>{{ product_id }}</td>
+    <td>{{ brand }}</td>
+    <td>{{ product_name }}</td>
+    <td>{{ category_name }}</td>
+    <td>{{ price }}</td>
+    <td>
+        <a class="red" href="api/product/removeProduct.php?product_id={{ product_id }}"
+            aria-label="Elimina {{ product_name }}" title="Elimina {{ product_name }}">
+            <span class="mdi mdi-delete" aria-hidden="true"></span>
+        </a>
+    </td>
+</tr>

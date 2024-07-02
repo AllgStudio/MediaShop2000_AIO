@@ -6,9 +6,9 @@
     $category = $_GET['category_id'] ?? "";
 
     $sql = "SELECT * FROM Product 
-            INNER JOIN ProductImage ON Product.product_id = ProductImage.product_id
-            INNER JOIN CategoryProduct ON Product.product_id = CategoryProduct.product_id
-            INNER JOIN Category ON CategoryProduct.category_id = Category.category_id";
+            Left JOIN ProductImage ON Product.product_id = ProductImage.product_id
+            LEFT JOIN CategoryProduct ON Product.product_id = CategoryProduct.product_id
+            left JOIN Category ON CategoryProduct.category_id = Category.category_id";
     
     if($category != ''){
         $sql .= " WHERE Category.category_id = ?";
@@ -56,10 +56,10 @@
             "new_price" => $discout_map_price[$products[$i]->product_id]??false?$discout_map_price[$products[$i]->product_id]:$products[$i]->price . "€",
             "old_price" => $discout_map_price[$products[$i]->product_id]??false?$products[$i]->price ."€" : "",
             "discount" => $discout_map_percent[$products[$i]->product_id]??false?"-".$discout_map_percent[$products[$i]->product_id] . "%" : "0%",
-            "rate" => str_repeat("⭐", $rate_map[$products[$i]->product_id]??0) ?? "",
+            "rate" => str_repeat("⭐", $rate_map[$products[$i]->product_id]??5) ?? "",
             "rate_count" => round($rate_map[$products[$i]->product_id]??0,1)??0,
-            "url" => $products[$i]->url,
-            "type" => $products[$i]->category_name,
+            "url" => $products[$i]->url??"img/logo.png",
+            "type" => $products[$i]->category_name??"Generale",
             "anno" => "",
             "discount_class" => $discout_map_percent[$products[$i]->product_id]??false?"":"d-none",
         ]);
