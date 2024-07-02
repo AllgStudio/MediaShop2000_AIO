@@ -4,7 +4,7 @@
     justify-content: center;
 }
 
-.team-card {
+.team-list .team-item {
     width: 100%;
     height: 120px;
     margin: 5px;
@@ -17,14 +17,14 @@
     overflow: hidden;
 }
 
-.team-img {
+.team-item .pic {
     width: 15%;
     height: auto;
     margin: 10px;
     object-fit: contain;
 }
 
-.team-info {
+.team-item .info {
     font-size: 18px;
     width: 50%;
     height: 80%;
@@ -38,54 +38,56 @@
     white-space: nowrap;
 }
 
-.team-info .team-info-title {
+.team-item .info .title {
     font-size: 24px;
     font-weight: bold;
 }
-.team-info .team-info-subtitle {
+.team-item .info .subtitle {
     font-size: 14px;
     font-weight: bold;
     color:gray;
 }
-.team-info .team-info-text {
+.team-item .info .text {
     font-size: 18px;
 }
 
 @media screen and (max-width: 768px){
-    .team-card {
+    .team-item {
         height: 100px;
     }
 
-    .team-info .team-info-title {
+    .team-item .info .title {
         font-size: 20px;
     }
-    .team-info .team-info-subtitle {
+    .team-item .info .subtitle {
         font-size: 12px;
     }
-    .team-info .team-info-text {
+    .team-item .info .text{
         font-size: 16px;
     }
 }
 
 @media screen and (max-width: 480px){
-    .team-info .team-info-title {
+    .team-item .info .title {
         font-size: 18px;
     }
-    .team-info .team-info-subtitle {
+    .team-item .info .subtitle {
         font-size: 10px;
     }
-    .team-info .team-info-text {
+    .team-item .info .text{
         font-size: 14px;
     }
 }
 
-.team-background-box {
+.team-item .background-box{
     width: 35%;
     height: 100%;
     display: flex;
 }
 
-.team-background {   
+
+
+.team-item .background-box .background{   
     opacity: 40%;
     width: 100%;
     height: 100%;
