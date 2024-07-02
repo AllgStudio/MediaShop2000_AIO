@@ -50,3 +50,13 @@
 .text-icon-xxl {
     font-size: xxx-large;
 }
+
+.align-content-center {
+    align-content: center;
+}
+.align-content-start {
+    align-content: start;
+}
+.align-content-end {
+    align-content: end;
+}

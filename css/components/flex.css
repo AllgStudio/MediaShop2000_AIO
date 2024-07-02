@@ -126,6 +126,29 @@
     max-width: 100%;
 }
 
+.order-1 {
+    order: 1;
+}
+
+.order-2 {
+    order: 2;
+}
+
+.order-3 {
+    order: 3;
+}
+
+.order-4 {
+    order: 4;
+}
+
+.order-5 {
+    order: 5;
+}
+
+
+
+
 @media screen and (max-width: 767px) {
     .col-1,
     .col-2,
@@ -141,7 +164,7 @@
     .col-12 {
         flex: 0 0 100%;
         max-width: 100%;
-        margin-top: 10px;
+        margin-top: 5px;
     }
 
     .col-md-1 {
@@ -193,3 +216,4 @@
         max-width: 100%;
     }
 }
+

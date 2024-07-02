@@ -1,33 +1,65 @@
 <header>
-    <div class="logo-container">
-        <a href="index.php" aria-label="Home page" title="Home page" class="d-flex" lang="en">
-            <div class="logo"></div>
-            <span class="logo-title" lang="en">Mediashop 2000</span>
-        </a>
+    <!-- Logo e navigazione -->
+    <div class="d-flex space-between flex-wrap order-1">
+        <!-- LOGO -->
+        <div class="logo-container col-6 col-md-9">
+            <a href="index.php" aria-label="Home page" title="Home page" class="d-flex" lang="en">
+                <div class="logo"></div>
+                <span class="logo-title" lang="en">Mediashop 2000</span>
+            </a>
+        </div>
+
+        <!-- NAVIGAZIONE -->
+        <nav class="col-md-12 order-3 col-6">
+            <ul aria-label="principale navigazione" class="space-between">
+                <li>
+                    <a href="index.php" title="Pagina home">
+                        <span class="mdi mdi-home" aria-hidden="true"></span>
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="shop.php" title="Pagina negozio">
+                        <span class="mdi mdi-shopping" aria-hidden="true"></span>
+                        Shop
+                    </a>
+                </li>
+                <li>
+                    <a href="about.php" title="Pagina chi siamo noi">
+                        <span class="mdi mdi-account-multiple" aria-hidden="true"></span>
+                        About
+                    </a>
+                </li>
+                <li class="vertical-line"></li>
+                {{ login_logout }}
+            </ul>
+        </nav>
+
+        <!-- Breadcumbs -->
+        <nav class="col-md-12 order-4 align-content-end" {{ aria_label_attr }}>
+            <ol class="breadcrumbs">
+               {{ breadcrumbs }}
+            </ol>
+        </nav>
+
+        <!-- Ricerca -->
+        <div id="header_search_container" class="order-5 text-right align-content-center">
+            <form action="/search.php" method="get" class="desktop-only h-100">
+                <div class="form-group d-flex w-100 mb-0">
+                    <label for="header_search" class="sr-only">Cerca</label>
+                    <input class="flex-grow-1" type="search" id="header_search" name="search" placeholder="Cerca" required>
+                    <button class="btn btn-icon bg-transparent text-title" type="submit" aria-label="Cerca">
+                        <span class="mdi mdi-magnify" aria-hidden="true"></span>
+                    </button>
+                </div>
+            </form>
+            <a class="btn btn-icon bg-transparent text-title small-screen-only h-100 "
+                type="submit" aria-label="Vai alla pagina di ricerca">
+                <span class="mdi mdi-magnify" aria-hidden="true"></span>
+            </a>
+        </div>
     </div>
 
-    <nav>
-        <ul role="list" aria-label="principale navigazione">
-            <li role="listitem">
-                <a href="index.php" aria-labelledby="header_home" title="Pagina home">
-                    <span class="mdi mdi-home" aria-hidden="true"></span>
-                    <span id="header_home" lang="en">Home</span>
-                </a>
-            </li>
-            <li role="listitem">
-                <a href="shop.php" aria-labelledby="header_shop" title="Pagina negozio">
-                    <span class="mdi mdi-shopping" aria-hidden="true"></span>
-                    <span id="header_shop" lang="en">Shop</span>
-                </a>
-            </li>
-            <li role="listitem">
-                <a href="about.php" aria-labelledby="header_about" title="Pagina chi siamo noi">
-                    <span class="mdi mdi-account-multiple" aria-hidden="true"></span>
-                    <span id="header_about" lang="en">About</span>
-                </a>
-            </li>
-            <hr class="vertical-line" aria-hidden="true">
-            {{ login_logout }}
-        </ul>
-    </nav>
+
+
 </header>

@@ -1,5 +1,28 @@
 <?php
 
+
+$CURRENT_PAGE = basename($_SERVER['PHP_SELF'], ".php");
+$PAGELINKS = [
+    "home" => [
+        "name"=> "Home",
+        "url" => "index.php"
+    ],
+    "shop" => [
+        "name"=> "Shop",
+        "url" => "shop.php"
+    ],
+    "about" => [
+        "name"=> "About",
+        "url" => "about.php"
+    ],
+];
+
+$BREADCRUMB = [
+    "index" => [],
+    "shop" => ["home","shop"],
+    "about" => ["home","about"],
+];
+
 /**
  * Creates a card
  *
@@ -60,6 +83,8 @@ function render($html, $data)
  */
 function create_page_header()
 {
+    global $CURRENT_PAGE, $PAGELINKS, $BREADCRUMB;
+
     $userRoleClass = 'd-none';
     if (isset($_COOKIE['user'])) {
         $userData = json_decode($_COOKIE['user'], true);
@@ -81,8 +106,26 @@ function create_page_header()
     } else {
         $login_logout = render(file_get_contents("template/header.nologin.html"),[]);
     }
+    
+    $breadcrumb_html = "";
+    if($BREADCRUMB[$CURRENT_PAGE]??false){
+        $size = count($BREADCRUMB[$CURRENT_PAGE]);
+        for($i=0; $i<$size; $i++){
+            if($i == $size-1){
+                $breadcrumb_html .= "<li aria-current='page'>". $PAGELINKS[$BREADCRUMB[$CURRENT_PAGE][$i]]['name'] ."</li>";
+            }else{
+                $breadcrumb_html .= render(file_get_contents('template/breadcrumb.html'), [
+                    'label' => $PAGELINKS[$BREADCRUMB[$CURRENT_PAGE][$i]]['name'],
+                    'url' => $PAGELINKS[$BREADCRUMB[$CURRENT_PAGE][$i]]['url'],
+                    'label_attr' => "aria-label='Tornare a pagina " . $PAGELINKS[$BREADCRUMB[$CURRENT_PAGE][$i]]['name'] . "'",
+                ]);
+            }
+        }
+    }
     return render(file_get_contents('template/header.html'), [
-        'login_logout' => $login_logout
+        'login_logout' => $login_logout,
+        "aria_label_attr" => $BREADCRUMB[$CURRENT_PAGE]??false?"aria-label='percorso di navigazione'":'',
+        'breadcrumbs' => $breadcrumb_html,
     ]);
 }
 
