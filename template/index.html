@@ -4,22 +4,27 @@
     <meta charset="utf-8">
     <title>{{ header_title }}</title>
     <meta name="description" content="{{ header_description }}">
-    <meta name="author" content="{{ header_author }}">
+    <meta name="author" content="Yi Hao Zhuo, Yixin Huang, Guirong Lan, Valerio Occhinegro">
     <meta name="keywords" content="{{ header_keywords }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="favicon.ico">
     <link rel="stylesheet" href="css/style.css?218">
-
-    <javascript src="js/script.js"></javascript>
+    <script src="js/validator.js"></script>
 </head>
 
 <body>
+    <!-- Salto al contenuto principale -->
     <a href="#main" class="sr-only">Salta a contenuto principale</a>
-
+    
+    <!-- Header -->
     {{ page_header }}
+    
+    <!-- Main -->
+    <main id="main"> 
+        {{ page_main }}
+    </main>
 
-    <main id="main"> {{ page_main }}</main>
-
+    <!-- Footer -->
     {{ page_footer }}
 </body>
 
