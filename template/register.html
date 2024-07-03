@@ -1,66 +1,40 @@
 <section class="container login" aria-labelledby="login_title">
-    <h1 id="login_title" class="title" tabindex="0">Benvenuti a MediaShop2000</h1>
-    <h2 class="subtitle" tabindex="0">Un negozio di passato</h2>
+    <h1 id="login_title" class="title">Benvenuti a MediaShop2000</h1>
+    <h2 class="subtitle">Un negozio di passato</h2>
     
     <div class="panel">
         <!-- Accessible login form -->
-        <form id="loginForm" action="register.php" method="POST" aria-describedby="error-msg" onsubmit="return validateLoginForm();">
+        <form id="registerForm" action="register.php" method="POST" aria-describedby="error-msg" onsubmit="return validateRegisterForm();">
             <div class="input">
                 <!-- Error message -->
-                <div role="alert" id="error-msg" class="text-paragraph red" aria-live="assertive">{{ error_msg }}</div>
+                <div role="alert" id="error-msg" class="text-paragraph red" aria-live="assertive"></div>
                 
                 <!-- Username field -->
-                <div class="title">
+                <div class="form-group d-flex w-100">
                     <label for="username" lang="en">Username:</label>
                     <input type="text" id="username" name="username" placeholder="" required aria-required="true">
                 </div>
                 
                 <!-- Password field -->
-                <div class="title">
+                <div class="form-group d-flex w-100">
                     <label for="password" lang="en">Password:</label>
                     <input type="password" id="password" name="password" placeholder="" required aria-required="true">
                 </div>
 
-                <div class="title">
+                <div class="form-group d-flex w-100">
                     <label for="password_repeat" >Ripeti Password:</label>
-                    <input type="password_repeat" id="password_repeat" name="password_repeat" placeholder="" required aria-required="true">
+                    <input type="password" id="password_repeat" name="password_repeat" placeholder="" required aria-required="true">
                 </div>
                 
-                <div class="title">
+                <div class="form-group d-flex w-100">
                     <label for="email" lang="en">Email:</label>
                     <input type="email" id="email" name="email" placeholder="" required aria-required="true">
                 </div>
 
                 <!-- Submit button -->
-                <div class="title">
-                    <input type="submit" value="Registra" class="btn btn-primary">
-                </div>
+                <input type="submit" value="Registra" class="btn btn-primary">
             </div>
         </form>
     </div>
 </section>
 
-<script>
-    function validateLoginForm() {
-    var form = document.getElementById('loginForm');
-    var username = form.username.value;
-    var password = form.password.value;
-
-    // 简单的用户名验证示例：必须包含至少 3 个字符
-    if (username.length < 3) {
-        document.getElementById('error-msg').innerText = 'Il nome utente deve contenere almeno 3 caratteri.';
-        document.getElementById('username').focus();
-        return false;
-    }
-
-    // 密码验证示例：确保密码长度至少为 3 个字符，并且确认密码一致
-    if (password.length < 3) {
-        document.getElementById('error-msg').innerText = 'La password deve contenere almeno 3 caratteri.';
-        document.getElementById('password').focus();
-        return false;
-    }
-
-    return true;
-}
-
-</script>

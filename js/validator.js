@@ -1,69 +1,59 @@
-// Function to validate form inputs
-function validateForm(event) {
-    event.preventDefault(); // Prevent the form from submitting
+function validateLoginForm() {
+    var form = document.getElementById('loginForm');
+    var username = form.username.value;
+    var password = form.password.value;
 
-    // Fetch form inputs
-    const username = document.getElementById('username').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const password = document.getElementById('password').value.trim();
-    const confirmPassword = document.getElementById('confirmPassword').value.trim();
-
-    // Reset error messages
-    resetErrors();
-
-    // Validate each input
-    let isValid = true;
-
-    if (username === '') {
-        isValid = false;
-        setError('usernameError', 'Username is required');
+    // check usename min length 3
+    if (username.length < 3) {
+        document.getElementById('error-msg').innerText = 'Il nome utente deve contenere almeno 3 caratteri.';
+        document.getElementById('username').focus();
+        return false;
     }
 
-    if (email === '') {
-        isValid = false;
-        setError('emailError', 'Email is required');
-    } else if (!isValidEmail(email)) {
-        isValid = false;
-        setError('emailError', 'Invalid email format');
+    // check password min length 3
+    if (password.length < 3) {
+        document.getElementById('error-msg').innerText = 'La password deve contenere almeno 3 caratteri.';
+        document.getElementById('password').focus();
+        return false;
     }
 
-    if (password === '') {
-        isValid = false;
-        setError('passwordError', 'Password is required');
-    }
-
-    if (confirmPassword === '') {
-        isValid = false;
-        setError('confirmPasswordError', 'Please confirm your password');
-    } else if (password !== confirmPassword) {
-        isValid = false;
-        setError('confirmPasswordError', 'Passwords do not match');
-    }
-
-    // If form is valid, submit it
-    if (isValid) {
-        alert('Form submitted successfully!');
-        document.getElementById('registrationForm').reset();
-    }
+    return true;
 }
 
-// Function to display error message
-function setError(id, errorMessage) {
-    const errorElement = document.getElementById(id);
-    errorElement.textContent = errorMessage;
-}
+function validateRegisterForm() {
+    var form = document.getElementById('registerForm');
+    var username = form.username.value;
+    var password = form.password.value;
+    var confirmPassword = form.password_repeat.value;
+    var email = form.email.value;
 
-// Function to reset all error messages
-function resetErrors() {
-    document.getElementById('usernameError').textContent = '';
-    document.getElementById('emailError').textContent = '';
-    document.getElementById('passwordError').textContent = '';
-    document.getElementById('confirmPasswordError').textContent = '';
-}
+    // check usename min length 3
+    if (username.length < 3) {
+        document.getElementById('error-msg').innerText = 'Il nome utente deve contenere almeno 3 caratteri.';
+        document.getElementById('username').focus();
+        return false;
+    }
 
-// Function to validate email format
-function isValidEmail(email) {
-    // Simple email format validation using regular expression
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return regex.test(email);
+    // check password min length 3
+    if (password.length < 3) {
+        document.getElementById('error-msg').innerText = 'La password deve contenere almeno 3 caratteri.';
+        document.getElementById('password').focus();
+        return false;
+    }
+
+    // check password match
+    if (password !== confirmPassword) {
+        document.getElementById('error-msg').innerText = 'Le password non corrispondono.';
+        //document.getElementById('password_repeat').focus();
+        return false;
+    }
+
+    // check email
+    if (email.length < 5 || email.indexOf('@') === -1 || email.indexOf('.') === -1) {
+        document.getElementById('error-msg').innerText = 'Email non valida.';
+        document.getElementById('email').focus();
+        return false;
+    }
+
+    return true;
 }

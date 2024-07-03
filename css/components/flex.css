@@ -13,6 +13,9 @@
 .align-end {
     align-items: flex-end;
 }
+.align-content-flex-end {
+    align-content: flex-end;
+}
 .space-between {
     justify-content: space-between;
 }

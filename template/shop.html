@@ -5,21 +5,18 @@
 </section>
 
 
-<div id="shop" class="container d-flex">
-    <div id="category_nav" class="col-3 col-md-5">
-        <h2 class="text-title" tabindex="0">Categorie</h2>
+<section id="shop" class="container d-flex flex-wrap" aria-labelledby="shop_content">
+    <h2 id="shop_content" class="sr-only">Prodotti</h2>
+    
+    <aside id="category_nav" class="col-3 col-md-12" aria-labelledby="shop_nav">
+        <h2 id="shop_nav" class="text-title">Categorie</h2>
         <ul role="list" class="list-group">
             {{ categories }}
         </ul>
-    </div>
+    </aside>
     
-    <section class="products">
-        <div class="col-12">
-            <h2 class="text-title" tabindex="0">Prodotti</h2>
-        </div>
+    <div class="products col-9" aria-labelledby="shop_products">
+        <h2 id="shop_products" class="col-12 text-title">Prodotti</h2>
         {{ products }}
-    </section>
-    
-    <br/>
-
-</div>
+    </div>
+</section>

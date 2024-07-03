@@ -45,6 +45,7 @@ function findProductById($products, $id) {
         $total += $price;
         $cart_html .= render(file_get_contents('template/cart.item.html'), [
             'id' => $id,
+            'brand' => findProductById($products, $id)['brand'], // 'Apple
             'name' => findProductById($products, $id)['product_name'],
             'price' => $price,
             'url' => findProductById($products, $id)['url'],

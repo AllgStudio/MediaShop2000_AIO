@@ -19,27 +19,16 @@
 
 .products {
     flex-grow:1;
-    padding: 20px;
     display: flex;
     flex-wrap: wrap;
     justify-content:flex-start;
 }
 
-.product {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 10px;
-    display: grid;
-    align-items: center;
-    text-align: center;
-    height: 280px;
-    width: 185px;
-    background-color:whitesmoke;
-}
+
 
 .product img {
-    width: 80%;
-    height: auto;
+    width: 150px;
+    height: 250px;
 }
 
 .product-info {
@@ -52,7 +41,10 @@
 .product-name {
     width: 100%;
     font-size: 16px;
-
+    /* max take 1 line */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .product-rating {
@@ -69,6 +61,10 @@
     flex-direction: row;
     align-items: left;
     width: 100%;
+}
+
+.product-price-info {
+    height: 50px;
 }
 
 .product-new-price {

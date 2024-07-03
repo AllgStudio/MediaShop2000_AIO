@@ -34,7 +34,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
             $hash = password_hash($password, PASSWORD_DEFAULT);
 
             // Prepare the SQL query
-            $sql = "INSERT INTO User (usernam, password, email, role) VALUES (?, ?, ?, ?)";
+            $sql = "INSERT INTO User (username, password, email, role) VALUES (?, ?, ?, ?)";
 
             $stmt = $conn->prepare($sql);
             $stmt->bind_param('ssss', $username, $hash, $email, $role);
@@ -47,7 +47,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
             header('Location: login.php');
         }
     } catch (Exception $e) {
-        create_error_page("La registrazione non è andata a buon fine");
+        create_error_page("La registrazione non è andata a buon fine" . $e->getMessage());
     }
 }
 
