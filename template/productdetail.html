@@ -64,15 +64,42 @@
                     <section class="my-2">
                         <h2 class="text-title" tabindex="0">Commenti</h2>
                         <div class="d-flex flex-wrap">
-                            <!-- 产品评分 -->
-                            <div id="detail_rate" class="card pa-2 ma-2" tabindex="0">
-                                <div class="card-title text-center" aria-label="Rating">Voto</div>
-                                <div class="card-text text-center" role="img" aria-label="Valutazione {{ rate }} stelle su 5">{{ rate_star }}</div>
-                                <div class="card-text text-center">{{ rate }}/5</div>
+                            <div id="rating" class="card pa-2 ma-2" tabindex="0">
+                                <div id="rate_vote" class="card-title text-center">{{ rate }}/5</div>
+                                <div class = "card-text text-center">
+                                    <input type="radio" id="star5" name="rating" value="1">
+                                    <label for="star5"></label>
+                                    <input type="radio" id="star4" name="rating" value="2">
+                                    <label for="star4"></label>
+                                    <input type="radio" id="star3" name="rating" value="3">
+                                    <label for="star3"></label>
+                                    <input type="radio" id="star2" name="rating" value="4">
+                                    <label for="star2"></label>
+                                    <input type="radio" id="star1" name="rating" value="5">
+                                    <label for="star1"></label>
+                                </div>
                             </div>
-
-                            <div id="detail_comment" class="d-flex flex-wrap">
-                                {{ comments }}
+                            <div class="bar-chart pa-2 ma-2">
+                                <div class="bar-single">
+                                    <div class="bar-label">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                                    <div class="bar-fill {{ bar_5 }}" ></div>
+                                </div>
+                                <div class="bar-single">
+                                    <div class="bar-label">&#9733;&#9733;&#9733;&#9733;</div>
+                                    <div class="bar-fill {{ bar_4 }}"></div>
+                                </div>
+                                <div class="bar-single">
+                                    <div class="bar-label">&#9733;&#9733;&#9733;</div>
+                                    <div class="bar-fill {{ bar_3 }}"></div>
+                                </div>
+                                <div class="bar-single">
+                                    <div class="bar-label">&#9733;&#9733;</div>
+                                    <div class="bar-fill {{ bar_2 }}"></div>
+                                </div>
+                                <div class="bar-single">
+                                    <div class="bar-label">&#9733;</div>
+                                    <div class="bar-fill {{ bar_1 }}"></div>
+                                </div>
                             </div>
                         </div>
                     </section>

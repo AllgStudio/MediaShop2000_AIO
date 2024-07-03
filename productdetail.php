@@ -22,7 +22,7 @@ $product = $result->fetch_object();
 
 $colors_html = "";
 $colors = str_contains($product->color, ",") ? explode(",", $product->color) : [$product->color];
-print_r($colors);
+
 foreach ($colors as $color) {
     $colors_html .= render(file_get_contents('template/productdetail.radio.html'), [
         "id" => $product->product_id,
@@ -40,8 +40,9 @@ $size_html .= render(file_get_contents('template/productdetail.radio.html'), [
 ]);
 
 $comments_html = "";
-$avg_media_rate = 0;
+$avg_media_rate = 0.0;
 $tot_rate = 0;
+$star_rating = 0;
 
 $sql = "SELECT * FROM Feedback INNER JOIN User ON Feedback.user_id = User.user_id WHERE product_id = ?";
 $stmt = $conn->prepare($sql);
@@ -49,16 +50,45 @@ $stmt->bind_param("s", $product_id);
 $stmt->execute();
 $result = $stmt->get_result();
 
+$ratings_count = [0, 1, 0, 1, 0];
+for($result->data_seek(0); $row = $result->fetch_object();){
+    $ratings_count[$row->star_rating - 1]++;
+}
+// 计算评分的总数
+$total_ratings = array_sum($ratings_count);
+
+// 初始化百分比数组
+$bar_fills = [];
+
+// 遍历每个评分，计算百分比
+for ($i = 0; $i < count($ratings_count); $i++) {
+    // 如果总评分数量大于0，计算百分比；否则设置为0
+    $percentage = ($total_ratings > 0) ? round(($ratings_count[$i] / $total_ratings) * 100) : 0;
+    // 添加到百分比数组中
+    $bar_fills[] = $percentage;
+}
+
+$bar_fills[0] = $bar_fills[0] - ($bar_fills[0]%10);
+$bar_fills[1] = $bar_fills[1] - ($bar_fills[1]%10);
+$bar_fills[2] = $bar_fills[2] - ($bar_fills[2]%10);
+$bar_fills[3] = $bar_fills[3] - ($bar_fills[3]%10);
+$bar_fills[4] = $bar_fills[4] - ($bar_fills[4]%10);
+
+
 for($result->data_seek(0); $row = $result->fetch_object();){
     $avg_media_rate += $row->star_rating;
     $tot_rate++;
     $comments_html .= render(file_get_contents('template/productdetail.comment.html'), [
         "name" => $row->username,
         "comment" => $row->description,
-        "rate_star" => str_repeat("⭐", $row->star_rating),
+        "rate_star" => str_repeat("&#9733;", $row->star_rating),
         "rate" => $row->star_rating,
     ]);
 }
+
+$avg_media_rate = $tot_rate ? $avg_media_rate / $tot_rate : 0;
+
+
 
 
 echo create_page('template/index.html', [
@@ -82,9 +112,15 @@ echo create_page('template/index.html', [
         "description" => $product->description,
         "colors" => $colors_html,
         "sizes" => $size_html,
-        "rate_star" => str_repeat("⭐", round($avg_media_rate / $tot_rate, 1) ?? 1) ?? "",
-        "rate" => round($avg_media_rate / $tot_rate, 1) ?? 1,
+        "rate_star" => str_repeat("&#9733;", round($avg_media_rate / $tot_rate, 1) ?? 1) ?? "",
+        "rate" => round($avg_media_rate,1) ?? 1,
+        // "rate" => round($avg_media_rate / $tot_rate, 1) ?? 1,
         "comments" => $comments_html,
+        "bar_5" => "w-".round($bar_fills[4], 0),
+        "bar_4" => "w-".round($bar_fills[3], 0),
+        "bar_3" => "w-".round($bar_fills[2], 0),
+        "bar_2" => "w-".round($bar_fills[1], 0),
+        "bar_1" => "w-".round($bar_fills[0], 0),
     ]),
     'page_footer' => create_page_footer(),
 ]);
