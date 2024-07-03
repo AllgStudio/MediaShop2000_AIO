@@ -35,7 +35,7 @@ try {
 }
 echo create_page('template/index.html', [
     'header_title' => "I miei ordini | MediaShop2000",
-    'header_description' => "Gestisci i tuoi ordini, MediaShop2000",
+    'header_description' => "La pagina consente di gestire i propri ordini",
     'header_keywords' => "Ordini ,Shop, media, games",
     'page_header' => create_page_header(),
     'page_main' => render(file_get_contents('template/user/userordermanage.html'), [

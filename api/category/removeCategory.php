@@ -21,7 +21,7 @@ try{
     $stmt->execute();
     $conn->close();
 } catch(Exception $e){
-    create_error_page("Errore nella rimozione della categoria");
+    header("Location: ../../500.php");
 }
 
 header("Location: ../../categorymanage.php");

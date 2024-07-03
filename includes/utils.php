@@ -47,6 +47,62 @@ $PAGELINKS = [
         "name"=> "Login",
         "url" => "login.php"
     ],
+    "productpaid" => [
+        "name"=> "Prodotto Pagato",
+        "url" => "productpaid.php"
+    ],
+    "checkout" => [
+        "name"=> "Checkout",
+        "url" => "checkout.php"
+    ],
+    "cart" => [
+        "name"=> "Carrello",
+        "url" => "cart.php"
+    ],
+    "404" => [
+        "name"=> "404",
+        "url" => "404.php"
+    ],
+    "500" => [
+        "name"=> "500",
+        "url" => "500.php"
+    ],
+    "about" => [
+        "name"=> "About",
+        "url" => "about.php"
+    ],
+    "categorymanage" => [
+        "name"=> "Gestione Categorie",
+        "url" => "categorymanage.php"
+    ],
+    "productmanage" => [
+        "name"=> "Gestione Prodotti",
+        "url" => "productmanage.php"
+    ],
+    "adminordermanage" => [
+        "name"=> "Gestione Ordini",
+        "url" => "adminordermanage.php"
+    ],
+    "newproduct" => [
+        "name"=> "Nuovo Prodotto",
+        "url" => "newproduct.php"
+    ],
+    "editproduct" => [
+        "name"=> "Modifica Prodotto",
+        "url" => "editproduct.php"
+    ],
+    "addcategory" => [
+        "name"=> "Aggiungi Categoria",
+        "url" => "addcategory.php"
+    ],
+    "addproduct" => [
+        "name"=> "Aggiungi Prodotto",
+        "url" => "addproduct.php"
+    ],
+    "newcategory" => [
+        "name"=> "Nuova Categoria",
+        "url" => "newcategory.php"
+    ],
 
 ];
 
@@ -62,6 +118,21 @@ $BREADCRUMB = [
     "search" => ["home","search"],
     "register" => ["home","login", "register"],
     "login" => ["home","login"],
+    "productpaid" => ["home","cart","checkout","productpaid"],
+    "checkout" => ["home","cart","checkout"],
+    "cart" => ["home","cart"],
+    "404" => ["home","404"],
+    "500" => ["home","500"],
+    "about" => ["home","about"],
+    "categorymanage" => ["home","categorymanage"],
+    "productmanage" => ["home","productmanage"],
+    "adminordermanage" => ["home","adminordermanage"],
+    "newproduct" => ["home","productmanage","newproduct"],
+    "editproduct" => ["home","productmanage","editproduct"],
+    "addcategory" => ["home","categorymanage","addcategory"],
+    "addproduct" => ["home","productmanage","addproduct"],
+    "newcategory" => ["home","categorymanage","newcategory"],
+
 ];
 
 

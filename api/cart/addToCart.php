@@ -39,7 +39,7 @@ try{
         setcookie('cart', json_encode($new_array), time() + (86400 * 30), "/");
     }
 } catch(Exception $e){
-    create_error_page("Errore nell'aggiunta al carrello");
+    header("Location: ../../500.php");
 }
 header("Location: ../../productdetail.php?id=$product_id");
 exit();

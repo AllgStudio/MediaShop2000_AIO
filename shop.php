@@ -102,7 +102,7 @@ try {
 // get dicount map group by product_id
 echo create_page('template/index.html', [
     'header_title' => 'Shop | MediaShop2000',
-    'header_description' => 'La pagina di shop del sito MediaShop2000',
+    'header_description' => 'La pagina contiene il negozio',
     'header_keywords' => "Shop, media, games",
     'page_header' => create_page_header(),
 

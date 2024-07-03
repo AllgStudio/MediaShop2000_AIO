@@ -24,7 +24,7 @@ try{
         setcookie('cart', json_encode($new_cart), time() + (86400 * 30), "/");
     }
 } catch(Exception $e){
-    create_error_page("Errore nella rimozione dal carrello");
+    header("Location: ../../500.php");
 }
 
 header("Location: ../../cart.php");

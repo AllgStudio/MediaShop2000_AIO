@@ -1,4 +1,5 @@
 <?php
+include "../../includes/utils.php";
 $product_name = $_POST['product_name'] ?? "";
 $brand = $_POST['brand'] ?? "";
 $price = $_POST['price'] ?? 0.0;
@@ -18,38 +19,41 @@ if(isset($_COOKIE['user'])){
 }
 
 if ($product_name == "" || $brand == "" || $price == "" || $category_id == "" || $color == "") {
-    header("Location: ../../500.php");
+    create_error_page("Errore nella creazione del prodotto");
 }
 
 // SERVER VALIDATE CHECK
-if (!preg_match("/^[a-zA-Z0-9 ]*$/", $product_name)) {
-    header("Location: ../../500.php");
-}
 
-if (!preg_match("/^[a-zA-Z0-9 ]*$/", $brand)) {
-    header("Location: ../../500.php");
+if(strlen($product_name) < 3){
+    create_error_page("Il nome del prodotto deve essere di almeno 3 caratteri");
+}
+if(strlen($brand) < 3){
+    create_error_page("Il nome del brand deve essere di almeno 3 caratteri");
 }
 
 // check color if in right format
-// ex. white
-// ex. white,black
+$colors = explode(",", $color);
+if($colors[0] == " " || $colors[count($colors) - 1] == " " || trim($colors[0]) == ""){
+    create_error_page("Il colore non puo' iniziare o finire con una virgola");
+}
+
 if(!preg_match("/^[a-zA-Z0-9, ]*$/", $color)){
-    header("Location: ../../500.php");
+    create_error_page("Errore nella creazione del prodotto");
 }
 
 // price allow decimal
 if (!preg_match("/^[0-9.]*$/", $price)) {
-    header("Location: ../../500.php");
+    create_error_page("Il prezzo deve essere un numero");
 }
 
 // price_discount allow decimal
 if (!preg_match("/^[0-9.]*$/", $price_discount)) {
-    header("Location: ../../500.php");
+    create_error_page("Lo sconto deve essere un numero");
 }
 
-
-
-
+if($price < $price_discount){
+    create_error_page("Il prezzo non puo' essere minore del prezzo scontato");
+}
 
 
 try{
@@ -77,7 +81,7 @@ try{
     }
     $conn->close();
 } catch(Exception $e){
-    header("Location: ../../500.php");
+    create_error_page("Errore nella creazione del prodotto");
 }
 
 header("Location: ../../productmanage.php");
