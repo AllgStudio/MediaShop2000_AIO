@@ -14,6 +14,7 @@
         </aside>
 
         <div class="col-9">
+            
             <div class="d-flex flex-column card pa-4">
                 <div class="card-title">
                     <div class="d-flex space-between mb-4">
@@ -21,6 +22,75 @@
                         <h2 class="text-title">#{{ order_id }}</h2>
                     </div>
                 </div>
+
+
+                <div class="d-flex space-between flex-wrap">
+                    <div class="col-12 col-md-12 my-2">
+                        <h2 id="checkout_info" class="w-100">Informazioni personali</h2>
+                        <div class="horizontal-line"></div>
+                    </div>
+                    <div class="form-group col-6 col-md-12">
+                        <label for="name">Nome:</label>
+                        <input type="text" name="name" id="name" value="{{ name }}" disabled aria-disabled="true">
+                    </div>
+                    <div class="form-group col-6 col-md-12">
+                        <label for="surname">Cognome:</label>
+                        <input type="text" name="surname" id="surname"  value="{{ surname }}" disabled aria-disabled="true">
+                    </div>
+                    <div class="form-group col-6 col-md-12">
+                        <label for="email">Email:</label>
+                        <input type="email" name="email" id="email" value="{{ email }}" disabled aria-disabled="true">
+                    </div>
+                    <div class="form-group col-6 col-md-12">
+                        <label for="phone">Telefono:</label>
+                        <input type="tel" name="phone" id="phone" value="{{ phone }}" disabled aria-disabled="true">
+                    </div>
+                    <div class="form-group col-6 col-md-12">
+                        <label for="address">Indirizzo:</label>
+                        <input type="text" name="address" id="address" value="{{ address }}" disabled aria-disabled="true">
+                    </div>
+                    <div class="form-group col-6 col-md-12">
+                        <label for="city">Città:</label>
+                        <input type="text" name="city" id="city" value="{{ city }}" disabled aria-disabled="true">
+                    </div>
+                    <div class="form-group col-6 col-md-12">
+                        <label for="zip">CAP:</label>
+                        <input type="text" name="zip" id="zip" value="{{ zip }}" disabled aria-disabled="true">
+                    </div>
+                    <div class="form-group col-6 col-md-12">
+                        <label for="country">Nazione:</label>
+                        <input type="text" name="country" id="country" value="Italia" disabled aria-disabled="true" disabled aria-disabled="true">
+                    </div>
+                    <div class="w-100 my-2 col-12 col-md-12">
+                        <h2 class="w-100">Metodo di pagamento</h2>
+                        <div class="horizontal-line"></div>
+                    </div>
+                    <div class="form-group col-6 col-md-12">
+                        <label for="card">Carta di credito:</label>
+                        <input type="number" name="card" id="card" value="{{ card }}" disabled aria-disabled="true">
+                    </div>
+                    <div class="form-group col-6 col-md-6">
+                        <label for="expiry">Scadenza:</label>
+                        <input type="text" name="expiry" id="expiry" value="{{ expiry }}" disabled aria-disabled="true">
+                    </div>
+                    <div class="form-group col-6 col-md-6">
+                        <label for="cvv">CVV:</label>
+                        <input type="text" name="cvv" id="cvv" value="{{ cvv }}" disabled aria-disabled="true">
+                    </div>
+                    <div class="form-group col-12 col-md-12">
+                        <label for="total">Messaggio</label>
+                        <textarea name="message" id="message" rows="5" disabled aria-disabled="true">
+                            {{ message }}
+                        </textarea>
+                    </div>
+                </div>
+
+
+
+
+
+
+              
                 <div class="card-text overflow-x-auto">
                     <!-- accessible table -->
                     <table class="table text-center" aria-describedby="tableCaption">
@@ -46,6 +116,7 @@
                     
                 </div>
             </div>
+            
         </div>
 
     </div>

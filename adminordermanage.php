@@ -22,10 +22,10 @@
     $orders_html = "";
     foreach($orders as $order){
         $orders_html .= render(file_get_contents('template/admin/adminordermanage.item.html'), [
-            "order_id" => $order['order_id'],
-            "user" => $order['username'],
-            "date" => $order['order_datetime'],
-            "total" => $order['total'] . "€",
+            "order_id" => $order['order_id']??-1,
+            "user" => $order['username']??"",
+            "date" => $order['order_datetime']??"",
+            "total" => ($order['total']??0.0) . "€",
         ]);
     }
 

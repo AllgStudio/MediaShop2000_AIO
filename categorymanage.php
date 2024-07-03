@@ -19,8 +19,8 @@ try {
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
             $category_items .= render(file_get_contents('template/admin/categorymanage.item.html'), [
-                "category_id" => $row['category_id'],
-                "category_name" => $row['category_name'],
+                "category_id" => $row['category_id']??-1,
+                "category_name" => $row['category_name']??"",
             ]);
         }
     }
