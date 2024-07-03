@@ -60,11 +60,9 @@ FROM Product
 
     $stmt->execute();
 
-    create_error_page("Errore nel database");
-
     $result = $stmt->get_result();
 
-    $ratings_count = [0, 1, 0, 1, 0];
+    $ratings_count = [0, 0, 0, 0, 0];
     for ($result->data_seek(0); $row = $result->fetch_object();) {
         $ratings_count[$row->star_rating - 1]++;
     }
@@ -98,9 +96,11 @@ FROM Product
             "rate_star" => str_repeat("&#9733;", $row->star_rating),
             "rate" => $row->star_rating,
         ]);
+        $average_star_rating = $tot_rate ? round($avg_media_rate / $tot_rate, 1) : 1;
     }
 
     $avg_media_rate = $tot_rate ? $avg_media_rate / $tot_rate : 0;
+    $avg_star_rating = $tot_rate ? round($avg_media_rate / $tot_rate, 1) : 1;
 } catch (Exception $e) {
     create_error_page("Errore nel database");
 }
@@ -122,7 +122,8 @@ echo create_page('template/index.html', [
         "description" => $product->description,
         "colors" => $colors_html,
         "sizes" => $size_html,
-        "rate_star" => str_repeat("&#9733;", round($avg_media_rate / $tot_rate, 1) ?? 1) ?? "",
+        "rate_star" => str_repeat("&#9733;", $avg_star_rating),
+        // "rate_star" => str_repeat("&#9733;", round($avg_media_rate / $tot_rate, 1) ?? 1) ?? "",
         "rate" => round($avg_media_rate, 1) ?? 1,
         // "rate" => round($avg_media_rate / $tot_rate, 1) ?? 1,
         "comments" => $comments_html,
