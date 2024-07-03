@@ -61,7 +61,7 @@ FROM Product
 
     $result = $stmt->get_result();
 
-    $ratings_count = [0, 1, 0, 1, 0];
+    $ratings_count = [0, 0, 0, 0, 0];
     for ($result->data_seek(0); $row = $result->fetch_object();) {
         $ratings_count[$row->star_rating - 1]++;
     }
@@ -92,6 +92,7 @@ FROM Product
     }
 
     $avg_media_rate = $tot_rate ? $avg_media_rate / $tot_rate : 0;
+    $avg_star_rating = $tot_rate ? round($avg_media_rate / $tot_rate, 1) : 1;
 } catch (Exception $e) {
     create_error_page("Errore nel database");
 }
