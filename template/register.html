@@ -4,7 +4,7 @@
     
     <div class="panel">
         <!-- Accessible login form -->
-        <form id="loginForm" action="login.php" method="POST" aria-describedby="error-msg" onsubmit="return validateLoginForm();">
+        <form id="loginForm" action="register.php" method="POST" aria-describedby="error-msg" onsubmit="return validateLoginForm();">
             <div class="input">
                 <!-- Error message -->
                 <div role="alert" id="error-msg" class="text-paragraph red" aria-live="assertive">{{ error_msg }}</div>
@@ -20,11 +20,20 @@
                     <label for="password" lang="en">Password:</label>
                     <input type="password" id="password" name="password" placeholder="" required aria-required="true">
                 </div>
+
+                <div class="title">
+                    <label for="password_repeat" >Ripeti Password:</label>
+                    <input type="password_repeat" id="password_repeat" name="password_repeat" placeholder="" required aria-required="true">
+                </div>
                 
+                <div class="title">
+                    <label for="email" lang="en">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="" required aria-required="true">
+                </div>
+
                 <!-- Submit button -->
                 <div class="title">
-                    <a href="register.php" class="btn btn-secondary">Registrati</a>
-                    <input type="submit" value="Accedi" class="btn btn-primary">
+                    <input type="submit" value="Register" class="btn btn-primary">
                 </div>
             </div>
         </form>

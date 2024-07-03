@@ -1,25 +1,41 @@
 <?php 
-    session_start();
     include "includes/utils.php";
-    $i18n = include('i18n/lang.php');
-    $lang = get_language();
+    $id = $_GET['id'] ?? json_decode($_COOKIE['user'])->user_id ?? 0;
 
-
-
+    if ($id == 0) {
+        // go to login page
+        header("Location: login.php");
+        exit();
+    }
+    
     include "includes/db.php";
 
+    $sql = "SELECT * FROM `Orders` WHERE user_id = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("i", $id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $orders = [];
+    while($row = $result->fetch_object()){
+        $orders[] = $row;
+    }
+
+    $orders_html = "";
+    for($i=0; $i<count($orders); $i++){
+        $orders_html .= render(file_get_contents('template/user/userordermanage.item.html'), [
+            "order_id" => $orders[$i]->order_id,
+            "order_date" => $orders[$i]->order_datetime,
+            "total_price" => $orders[$i]->total,
+        ]);
+    }
+
     echo create_page('template/index.html',[
-        'lang' => $lang,
-        'header_title' =>$i18n['title'][$lang],
-        'header_description' => $i18n['description'][$lang],
-        'header_keywords' => "Shop, media, games",
-        'header_author' =>"Author",
-
-        'skip_to_main' => $i18n['skip_to_main'][$lang],
-
+        'header_title' => "I miei ordini | MediaShop2000",
+        'header_description' => "Gestisci i tuoi ordini, MediaShop2000",
+        'header_keywords' => "Ordini ,Shop, media, games",
         'page_header' => create_page_header(),
         'page_main' => render(file_get_contents('template/user/userordermanage.html'), [
-                            "hello" => "Hello World, orderdetails!",
+                            "orders" => $orders_html,
                         ]),
         'page_footer' => create_page_footer(),
     ]);

@@ -8,9 +8,16 @@ $error_msg = "";
 $username = isset($_POST['username']) ? $_POST['username'] : '';
 $password = isset($_POST['password']) ? $_POST['password'] : '';
 
-// TODO: check filds server side
+// check server side
+
+
+
 
 if (isset($_POST['username']) && isset($_POST['password'])) {
+    
+    if(($username) < 3 || ($password) < 3){
+    $error_msg = "Password o username troppo corti";
+    }
     if ($password == '' || $username == '') {
         $error_msg ='Campo nome utente o password è vuoto';
     } else {
@@ -59,10 +66,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 echo create_page('template/index.html', [
     'header_title' =>'Login | MediaShop2000',
     'header_description' => 'La pagina di login',
-    'header_keywords' => "Shop, media, games",
-    'header_author' => "MediaShop2000",
-
-    'skip_to_main' => 'Salta al contenuto principale',
+    'header_keywords' => "Login, Shop, media, games",
 
     'page_header' => create_page_header(),
     'page_main' => render(file_get_contents('template/login.html'), [

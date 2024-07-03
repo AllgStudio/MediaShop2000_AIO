@@ -1,13 +1,18 @@
-<div id="category_manager" class="container">
+<section id="category_manager" class="container" aria-labelledby="orderdetail_title">
+    <h2 id="orderdetail_title" class="text-bigtitle ml-4">Dettaglio Ordine</h2>
+
     <div class="d-flex flex-wrap w-100">
-        <aside class="bg-lightgray flex-shrink-0">
-            <ul class="list-group">
-                <li class="list-group-item">
+        
+        <aside class="bg-lightgray col-3 col-md-12">
+            <ul class="list-group flex-column flex-wrap">
+                <li class="list-group-item flex-grow-1">
                     <a href="{{ callback }}" aria-label="Torna in dietro" title="Torna in dietro">
                         <span class="mdi mdi-keyboard-backspace" aria-hidden="true">Torna in dietro</span>
                     </a>
                 </li>
+            </ul>
         </aside>
+
         <div class="col-9">
             <div class="d-flex flex-column card pa-4">
                 <div class="card-title">
@@ -19,7 +24,8 @@
                 <div class="card-text overflow-x-auto">
 
                     <!-- accessible table -->
-                    <table class="table text-center">
+                    <table class="table text-center" aria-describedby="tableCaption">
+                        <caption id="tableCaption" class="sr-only">La tabella mostra i dettagli dell'ordine</caption>
                         <thead>
                             <tr>
                                 <th scope="col">Prodotto</th>
@@ -44,4 +50,4 @@
         </div>
 
     </div>
-</div>
+</section>

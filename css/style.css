@@ -20,6 +20,7 @@
 @import url("./components/typography.css");
 @import url("./components/list.css");
 @import url("./components/table.css");
+@import url("./components/radio-group.css");
 /* @import url("./components/typography.css"); */
 
 
@@ -29,7 +30,7 @@
     padding: 0;
     font-family: "Noto Sans", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 400;
+    /* font-weight: 400; */
     font-style: normal;
     font-variation-settings: "wdth" 100;
 }
@@ -83,7 +84,7 @@ main{
 
 
 main .cover-image {
-    width: 100%;
+    /* width: calc(100%-80px); */
     height: 50vh;
     background-image: url(../img/cover.jpg);
     background-repeat: no-repeat;
@@ -101,6 +102,10 @@ main .cover-image {
 }
 
 
+section{
+    padding: 20px;
+    margin: 10px 0;
+}
 
 
 footer{

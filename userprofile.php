@@ -1,26 +1,41 @@
-<?php 
-    session_start();
-    include "includes/utils.php";
-    $i18n = include('i18n/lang.php');
-    $lang = get_language();
+<?php
+include "includes/utils.php";
+include "includes/db.php";
+
+$id = $_GET['id'] ?? json_decode($_COOKIE['user'])->user_id ?? 0;
+
+if ($id == 0) {
+    // go to login page
+    header("Location: login.php");
+    exit();
+}
 
 
 
-    include "includes/db.php";
+$sql = "SELECT * FROM User WHERE user_id = ?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("i", $id);
+$stmt->execute();
 
-    echo create_page('template/index.html',[
-        'lang' => $lang,
-        'header_title' =>$i18n['title'][$lang],
-        'header_description' => $i18n['description'][$lang],
-        'header_keywords' => "Shop, media, games",
-        'header_author' =>"Author",
+$result = $stmt->get_result();
+$user = $result->fetch_object();
+if (!$user) {
+    header("Location: 404.php");
+    exit();
+}
 
-        'skip_to_main' => $i18n['skip_to_main'][$lang],
 
-        'page_header' => create_page_header(),
-        'page_main' => render(file_get_contents('template/user/userprofile.html'), [
-                            "hello" => "Hello World, orderdetails!",
-                        ]),
-        'page_footer' => create_page_footer(),
-    ]);
-?>
+echo create_page('template/index.html', [
+    'header_title' => ($user->username . " - Profilo | MediaShop"),
+    'header_description' => "La pagina del profilo dell'utente " . $user->username . " su MediaShop.",
+    'header_keywords' => "Profile ,Shop, media, games",
+    'page_header' => create_page_header(),
+    'page_main' => render(file_get_contents('template/user/userprofile.html'), [
+        "username" => $user->username,
+        "created_at" => $user->creation_datetime,
+        "email" => $user->email,
+        "user_id" => $user->user_id,
+        "user_type_name" => $user->role == "admin" ? "Amministratore" : "Utente",
+    ]),
+    'page_footer' => create_page_footer(),
+]);

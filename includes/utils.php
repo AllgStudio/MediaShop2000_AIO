@@ -15,12 +15,48 @@ $PAGELINKS = [
         "name"=> "About",
         "url" => "about.php"
     ],
+    "productdetail" => [
+        "name"=> "Detaglio Prodotto",
+        "url" => "productdetail.php"
+    ],
+    "userprofile" => [
+        "name"=> "Profilo Utente",
+        "url" => "userprofile.php"
+    ],
+    "userordermanage" => [
+        "name"=> "Gestione Ordini",
+        "url" => "userordermanage.php"
+    ],
+    "orderdetails"=>[
+        "name"=> "Dettagli Ordine",
+        "url" => "orderdetails.php"
+    ],
+    "search" => [
+        "name"=> "Search",
+        "url" => "search.php"
+    ],
+    "register" => [
+        "name"=> "Register",
+        "url" => "register.php"
+    ],
+    "login" => [
+        "name"=> "Login",
+        "url" => "login.php"
+    ],
+
 ];
 
 $BREADCRUMB = [
     "index" => [],
     "shop" => ["home","shop"],
     "about" => ["home","about"],
+    "productdetail" => ["home","shop","productdetail"],
+    "userprofile" => ["home","userprofile"],
+    "userordermanage" => ["home","userprofile","userordermanage"],
+    "orderdetails" => ["home","userprofile","userordermanage","orderdetails"],
+    "search" => ["home","search"],
+    "register" => ["home","login", "register"],
+    "login" => ["home","login"],
 ];
 
 /**

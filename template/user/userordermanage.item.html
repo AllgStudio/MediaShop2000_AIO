@@ -1,0 +1,12 @@
+
+<tr>
+    <td>{{ order_id }}</td>
+    <td>{{ order_date }}</td>
+    <td>{{ total_price }}</td>
+    <td>
+        <a href="orderdetails.php?order_id={{ order_id }}" aria-label="Visualizza mio ordine {{ order_id }}" title="Visualizza ordine">
+            <button class="btn btn-icon bg-transparent blue">
+                <span class="mdi mdi-information-outline" aria-hidden="true"></span>
+            </button>
+        </a>
+</tr>

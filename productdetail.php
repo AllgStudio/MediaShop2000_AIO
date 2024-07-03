@@ -9,10 +9,13 @@ if ($product_id == "") {
     exit();
 }
 
-$sql = "SELECT * FROM Product 
-            INNER JOIN ProductImage ON Product.product_id = ProductImage.product_id
-            INNER JOIN CategoryProduct ON Product.product_id = CategoryProduct.product_id
-            INNER JOIN Category ON CategoryProduct.category_id = Category.category_id
+$sql = "SELECT Product.product_id, Product.product_name, Product.brand, Product.price,
+Product.description, Product.color, ProductImage.url, Category.category_name, PriceCut.discountInPercentage, PriceCut.new_price
+FROM Product 
+            LEFT JOIN ProductImage ON Product.product_id = ProductImage.product_id
+            LEFT JOIN CategoryProduct ON Product.product_id = CategoryProduct.product_id
+            LEFT JOIN Category ON CategoryProduct.category_id = Category.category_id
+            LEFT JOIN PriceCut ON Product.product_id = PriceCut.product_id
             WHERE Product.product_id = ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("s", $product_id);
@@ -20,12 +23,16 @@ $stmt->execute();
 $result = $stmt->get_result();
 $product = $result->fetch_object();
 
+if(!$product){
+    header("Location: 404.php");
+    exit();
+}
+
 $colors_html = "";
 $colors = str_contains($product->color, ",") ? explode(",", $product->color) : [$product->color];
-print_r($colors);
 foreach ($colors as $color) {
     $colors_html .= render(file_get_contents('template/productdetail.radio.html'), [
-        "id" => $product->product_id,
+        "id" => $product_id,
         "name" => $color,
         "key" => "color",
     ]);
@@ -34,7 +41,7 @@ foreach ($colors as $color) {
 $size_html = "";
 
 $size_html .= render(file_get_contents('template/productdetail.radio.html'), [
-    "id" => $product->product_id,
+    "id" => $product_id,
     "name" => "Normale",
     "key" => "size",
 ]);
@@ -62,22 +69,17 @@ for($result->data_seek(0); $row = $result->fetch_object();){
 
 
 echo create_page('template/index.html', [
-    'lang' => "it",
-    'header_title' => $product->product_name . " - Media Shop 2000",
+    'header_title' => $product->brand . " " . $product->product_name . " Media Shop 2000",
     'header_description' => $product->description,
     'header_keywords' => $product->product_name . ", media, games",
-    'header_author' => "Meida Shop 2000",
-
-    'skip_to_main' => "Salta al contenuto principale",
-
     'page_header' => create_page_header(),
     'page_main' => render(file_get_contents('template/productdetail.html'), [
-        "id" => $product->product_id,
+        "id" => $product_id,
         "url" => $product->url,
         "name" => $product->product_name,
         "brand" => $product->brand,
-        "new_price" => "€".$product->price,
-        "old_price" => "",
+        "new_price" => "€" . ($product->new_price??false?$product->new_price:$product->price),
+        "old_price" => "€" . ($product->new_price??false?$product->price:false),
         "specific" => $product->category_name,
         "description" => $product->description,
         "colors" => $colors_html,
@@ -85,6 +87,7 @@ echo create_page('template/index.html', [
         "rate_star" => str_repeat("⭐", round($avg_media_rate / $tot_rate, 1) ?? 1) ?? "",
         "rate" => round($avg_media_rate / $tot_rate, 1) ?? 1,
         "comments" => $comments_html,
+        "has_discount" => $product->new_price??false?"":"d-none",
     ]),
     'page_footer' => create_page_footer(),
 ]);

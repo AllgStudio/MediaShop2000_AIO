@@ -44,17 +44,17 @@
 
         <!-- Ricerca -->
         <div id="header_search_container" class="order-5 text-right align-content-center">
-            <form action="/search.php" method="get" class="desktop-only h-100">
+            <form action="search.php" method="get" class="desktop-only h-100">
                 <div class="form-group d-flex w-100 mb-0">
                     <label for="header_search" class="sr-only">Cerca</label>
-                    <input class="flex-grow-1" type="search" id="header_search" name="search" placeholder="Cerca" required>
+                    <input class="flex-grow-1" type="search" id="header_search" name="search" placeholder="Cerca">
                     <button class="btn btn-icon bg-transparent text-title" type="submit" aria-label="Cerca">
                         <span class="mdi mdi-magnify" aria-hidden="true"></span>
                     </button>
                 </div>
             </form>
-            <a class="btn btn-icon bg-transparent text-title small-screen-only h-100 "
-                type="submit" aria-label="Vai alla pagina di ricerca">
+            <a href="search.php" class="btn btn-icon bg-transparent text-title small-screen-only h-100 "
+                 aria-label="Vai alla pagina di ricerca">
                 <span class="mdi mdi-magnify" aria-hidden="true"></span>
             </a>
         </div>

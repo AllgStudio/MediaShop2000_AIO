@@ -35,6 +35,7 @@
             "description" => $orderdetail['description'],
             "quantity" => $orderdetail['quantity'],
             "total" => $orderdetail['price'] * $orderdetail['quantity'] . "€",
+            
         ]);
     }
 

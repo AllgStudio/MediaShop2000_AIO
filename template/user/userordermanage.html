@@ -1,76 +1,53 @@
-<div id="category_manager" class="container">
-    <div class="d-flex flex-wrap w-100">
-        <aside class="bg-lightgray flex-shrink-0">
-            <ul class="list-group">
-                <li class="list-group-item">
-                    <a href="userprofile.php" aria-label="Il mio profilo" title="Il mio profilo">
-                        <span class="mdi mdi-account-circle" aria-hidden="true">Il mio profilo</span>
+<section id="category_manager" class="container" aria-labelledby="userorder_title">
+    <h2 id="userorder_title" class="text-bigtitle ml-4">Il miei ordini</h2>
+
+    <div class="d-flex flex-row  flex-wrap  w-100">
+         
+        <aside class="bg-lightgray col-3 col-md-12">
+            <ul class="list-group flex-column flex-wrap">
+                <li class="list-group-item flex-grow-1">
+                    <a href="userprofile.php" aria-labelledby="my_profile" title="Il mio profilo">
+                        <span class="mdi mdi-account-circle" aria-hidden="true">
+                            <span id="my_profile">Il mio profilo</span>
+                        </span>
                     </a>
                 </li>
-                <li class="list-group-item active">
-                    <a href="userordermanage.php" aria-label="I miei ordini" title="I miei ordini">
-                        <span class="mdi mdi-format-list-bulleted" aria-hidden="true">I miei ordini</span>
+                <li class="list-group-item active flex-grow-1">
+                    <a href="userordermanage.php" aria-labelledby="my_orders" title="I miei ordini">
+                        <span class="mdi mdi-format-list-bulleted" aria-hidden="true">
+                            <span id="my_orders">I miei ordini</span></span>
                     </a>
                 </li>
             </ul>
         </aside>
-        <div class="col-9">
+
+        <div class="col-9 col-md-12 flex-grow-1">
             <div class="d-flex flex-column card pa-4">
                 <div class="card-title">
                     <div class="d-flex space-between mb-4">
                         <h2 class="text-title">Ordini</h2>
                     </div>
                 </div>
-                <div class="card-text">
-                    <ul class="list-group">
-                        <li class="list-group-item d-flex space-between">
-                            <div>
-                                <p>Numero di ordine</p>
-                                <p>data di ordine</p>
-                            </div>
-                            <a href="orderdetails.php" aria-label="I Miei Ordini" title="I Miei Ordini">
-                                <button class="btn btn-icon bg-transparent blue">
-                                    <span class="mdi mdi-information-outline" aria-hidden="true"></span>
-                                </button>
-                            </a>
-                        </li>
-                        <li class="list-group-item d-flex space-between">
-                            <div>
-                                <p>Numero di ordine</p>
-                                <p>data di ordine</p>
-                            </div>
-                            <a href="orderdetails.php" aria-label="I Miei Ordini" title="I Miei Ordini">
-                                <button class="btn btn-icon bg-transparent blue">
-                                    <span class="mdi mdi-information-outline" aria-hidden="true"></span>
-                                </button>
-                            </a>
-                        </li>
-                        <li class="list-group-item d-flex space-between">
-                            <div>
-                                <p>Numero di ordine</p>
-                                <p>data di ordine</p>
-                            </div>
-                            <a href="orderdetails.php" aria-label="I Miei Ordini" title="I Miei Ordini">
-                                <button class="btn btn-icon bg-transparent blue">
-                                    <span class="mdi mdi-information-outline" aria-hidden="true"></span>
-                                </button>
-                            </a>
-                        </li>
-                        <li class="list-group-item d-flex space-between">
-                            <div>
-                                <p>Numero di ordine</p>
-                                <p>data di ordine</p>
-                            </div>
-                            <a href="orderdetails.php" aria-label="I Miei Ordini" title="I Miei Ordini">
-                                <button class="btn btn-icon bg-transparent blue">
-                                    <span class="mdi mdi-information-outline" aria-hidden="true"></span>
-                                </button>
-                            </a>
-                        </li>
-                    </ul>
+                <div class="card-text overflow-y-auto">
+                    <!-- tabella accessibile --> 
+
+                    <table class="table" aria-describedby="tableCaption">
+                        <caption id="tableCaption" class="sr-only">La tabella mostra i tuoi ordini</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Numero di ordine</th>
+                                <th scope="col">Data di ordine</th>
+                                <th scope="col">Importo</th>
+                                <th scope="col">Azioni</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{ orders }}
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
 
     </div>
-</div>
+</section>

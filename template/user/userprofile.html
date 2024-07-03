@@ -1,44 +1,51 @@
-<div id="category_manager" class="container">
+<section id="category_manager" class="container" aria-labelledby="userprofile_title">
+    <h2 id="userprofile_title" class="text-bigtitle ml-4">Il mio profilo</h2>
+    
     <div class="d-flex flex-wrap w-100">
-        <aside class="bg-lightgray flex-shrink-0">
-            <ul class="list-group">
-                <li class="list-group-item active">
-                    <a href="userprofile.php" aria-label="Il mio profilo" title="Il mio profilo">
-                        <span class="mdi mdi-account-circle" aria-hidden="true">Il mio profilo</span>
+        <aside class="bg-lightgray col-3 col-md-12">
+            <ul class="list-group flex-column flex-wrap">
+                <li class="list-group-item active flex-grow-1">
+                    <a href="userprofile.php" aria-labelledby="my_profile" title="Il mio profilo">
+                        <span class="mdi mdi-account-circle" aria-hidden="true">
+                            <span id="my_profile">Il mio profilo</span>
+                        </span>
                     </a>
                 </li>
-                <li class="list-group-item">
-                    <a href="userordermanage.php" aria-label="I miei ordini" title="I miei ordini">
-                        <span class="mdi mdi-format-list-bulleted" aria-hidden="true">I miei ordini</span>
+                <li class="list-group-item flex-grow-1">
+                    <a href="userordermanage.php" aria-labelledby="my_orders" title="I miei ordini">
+                        <span class="mdi mdi-format-list-bulleted" aria-hidden="true">
+                            <span id="my_orders">I miei ordini</span></span>
                     </a>
                 </li>
             </ul>
         </aside>
-        <div class="col-9">
+        
+        <div class="flex-grow-1">
             <div class="d-flex flex-column card pa-4">
                 <div class="card-title">
                     <div class="d-flex space-between mb-4">
-                        <h2 class="text-title">User Name</h2>
+                        <h2 class="text-title">Benvenuto {{ username }} !!</h2>
                     </div>
                 </div>
                 <div class="card-text">
                     <ul class="list-group">
                         <li class="list-group-item d-flex space-between">
-                            <p>User ID</p>
+                            <b>Codice Utente:</b> {{ user_id }}
+                        </li>
+
+                        <li class="list-group-item d-flex space-between">
+                            <b>Email: </b> {{ email }}
                         </li>
                         <li class="list-group-item d-flex space-between">
-                            <p>Password</p>
+                            <b>Ruolo: </b> {{ user_type_name }}
                         </li>
                         <li class="list-group-item d-flex space-between">
-                            <p>Email</p>
-                        </li>
-                        <li class="list-group-item d-flex space-between">
-                            <p>Data di creazione account</p>
+                            <b>Data creazione: </b> {{ created_at }}
                         </li>
                     </ul>
                 </div>
             </div>
         </div>
-
     </div>
-</div>
+
+</section>
