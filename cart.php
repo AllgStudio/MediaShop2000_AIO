@@ -16,11 +16,12 @@ function findProductById($products, $id) {
     $total = 0;
     $cart_html = '';
 
-    $sql = 'SELECT Product.product_id as p_id, Product.product_name, Product.brand, Product.price, ProductImage.url, Category.category_name
+    $sql = 'SELECT Product.product_id as p_id, Product.product_name, Product.brand, Product.price, ProductImage.url, Category.category_name, PriceCut.new_price
             FROM Product 
             Left JOIN ProductImage ON Product.product_id = ProductImage.product_id
             LEFT JOIN CategoryProduct ON Product.product_id = CategoryProduct.product_id
-            left JOIN Category ON CategoryProduct.category_id = Category.category_id';
+            left JOIN Category ON CategoryProduct.category_id = Category.category_id
+            left JOIN PriceCut ON Product.product_id = PriceCut.product_id';
     $stmt = $conn->prepare($sql);
     try{
         $stmt->execute();
@@ -43,12 +44,12 @@ function findProductById($products, $id) {
         }
         $price = findProductById($products, $id)['new_price'] ?? findProductById($products, $id)['price'] ?? 0;
         // get price from pricecut if exsist else get price from product
-        $total += $price;
+        $total += ($item['quantity']??1) * $price;
         $cart_html .= render(file_get_contents('template/cart.item.html'), [
             'id' => $id,
             'brand' => findProductById($products, $id)['brand'] ?? "", // 'Apple
             'name' => findProductById($products, $id)['product_name'] ?? "Prodotto senza nome",
-            'price' => $price . "€",
+            'price' => (findProductById($products, $id)['new_price'] ?? findProductById($products, $id)['price'] ?? 0.0) . '€',
             'url' => findProductById($products, $id)['url']??'img/logo.png',
             'color' => $item['color']??"",
             'qty' => $item['quantity']??1,
