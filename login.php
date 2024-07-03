@@ -60,8 +60,8 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 
 
 echo create_page('template/index.html', [
-    'header_title' => 'Login | MediaShop2000',
-    'header_description' => 'La pagina di login',
+    'header_title' =>'Login | MediaShop2000',
+    'header_description' => 'La pagina consente di effettuare il login',
     'header_keywords' => "Login, Shop, media, games",
 
     'page_header' => create_page_header(),

@@ -4,7 +4,7 @@
 
     echo create_page('template/index.html',[
         'header_title' =>'Nuovo Categoria | MediaShop2000',
-        'header_description' => 'La pagina di crea categoria del sito MediaShop2000',
+        'header_description' => 'La pagina consente di creare nuove categorie',
         'header_keywords' => "categoria, Shop, media, games",
 
         'page_header' => create_page_header(),

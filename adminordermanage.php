@@ -31,8 +31,8 @@
 
 
     echo create_page('template/index.html',[
-        'header_title' => "Tutti i ordini | MediaShop2000",
-        'header_description' => "Il pagina del gestione di tutti gli ordini del sito",
+        'header_title' => "Tutti gli ordini | MediaShop2000",
+        'header_description' => "La pagina consente di gestire tutti gli ordini effettuati sul sito",
         'header_keywords' => "Shop, media, games",
         'header_author' =>"MediaShop2000",
 

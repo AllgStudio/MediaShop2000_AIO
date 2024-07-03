@@ -52,7 +52,7 @@ if (!$user) {
 
 echo create_page('template/index.html', [
     'header_title' => ($user->username . " - Profilo | MediaShop"),
-    'header_description' => "La pagina del profilo dell'utente " . $user->username . " su MediaShop.",
+    'header_description' => "La pagina consente di modificare il profilo dell'utente " . $user->username . " su MediaShop.",
     'header_keywords' => "Profile ,Shop, media, games",
     'page_header' => create_page_header(),
     'page_main' => render(file_get_contents('template/user/userprofileedit.html'), [

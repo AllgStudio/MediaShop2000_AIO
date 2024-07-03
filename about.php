@@ -4,7 +4,7 @@
 
     echo create_page('template/index.html',[
         'header_title' =>'Chi siamo | MediaShop2000',
-        'header_description' => 'La pagina di chi siamo',
+        'header_description' => 'La pagina contiene le informazioni inerenti al nostro gruppo',
         'header_keywords' => "info, about, media, games",
 
         'page_header' => create_page_header(),
