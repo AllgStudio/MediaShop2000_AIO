@@ -4,7 +4,10 @@
             Nuovo Prodotto
         </div>
         <div class="card-text">
-            <form action="api/product/addProduct.php" method="post">
+            <form id="newProductForm" action="api/product/addProduct.php" method="post" onsubmit="return validateNewProduct()">
+                <!-- Error message -->
+                <div role="alert" id="error-msg" class="text-paragraph red" aria-live="assertive"></div>
+                
                 <div class="text-center ">
                    <div class="form-group mx-auto">
                         <label for="product_name">Nome Prodotto</label>

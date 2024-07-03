@@ -24,7 +24,7 @@ try{
     $stmt->execute();
     $conn->close();
 } catch(Exception $e){
-    create_error_page("Errore nella creazione della categoria");
+    header("Location: ../../500.php");
 }
 
 

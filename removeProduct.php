@@ -25,7 +25,7 @@ try{
     $stmt->execute();
     $conn->close();
 } catch(Exception $e){
-    header("Location: ../../500.php");
+    create_error_page("Errore nella rimozione del prodotto");
 }
 
 header("Location: ../../productmanage.php");

@@ -4,40 +4,41 @@
             Modifica Prodotto
         </div>
         <div class="card-text">
-            <form action="api/product/addProduct.php" method="post">
+            <form id="newProductForm" action="api/product/addProduct.php" method="post" onsubmit="return validateNewProduct()">
                 <div class="text-center ">
-                   <div class="form-group mx-auto">
+                    <input type="hidden" name="product_id" value="{{ product_id }}"  aria-disabled="true" aria-hidden="true" required>
+                    <div class="form-group mx-auto">
                         <label for="product_name">Nome Prodotto</label>
-                        <input type="text" class="form-control" id="product_name" name="product_name" required>
+                        <input type="text" class="form-control" id="product_name" name="product_name" value="{{ product_name }}" required>
                     </div>
                     <div class="form-group mx-auto">
                         <label for="category">Categoria</label>
-                        <select id="category" name="category" required>
+                        <select id="category" name="category" value="{{ category_id }}" required>
                             {{ categories }}
                         </select>
                     </div>
                     <div class="form-group mx-auto">
                         <label for="brand">Marca</label>
-                        <input type="text" class="form-control" id="brand" name="brand" required>
+                        <input type="text" class="form-control" id="brand" name="brand" value="{{ brand }}" required>
                     </div>
                     <div class="form-group mx-auto">
                         <label for="color">Colore</label>
-                        <input type="text" class="form-control" id="color" name="color" 
+                        <input type="text" class="form-control" id="color" name="color" value="{{ color }}"
                         placeholder="Separare i colori con una virgola, se più di uno" required>
                     </div>
                     <div class="form-group mx-auto">
                         <label for="price">Prezzo</label>
-                        <input type="number" class="form-control" id="price" name="price" step="0.01" required>
+                        <input type="number" class="form-control" id="price" name="price" step="0.01" value="{{ price }}" required>
                     </div>
                     <div class="form-group mx-auto">
                         <label for="price_discouted">Prezzo scontato</label>
                         <input type="number" class="form-control" id="price_discouted" 
-                        placeholder="0 se non è scontato"
+                        placeholder="0 se non è scontato" value="{{ price_discouted }}"
                         name="price_discouted" step="0.01" required>
                     </div>
                     <div class="form-group mx-auto">
                         <label for="description">Descrizione</label>
-                        <textarea class="form-control" id="description" name="description" required></textarea>
+                        <textarea class="form-control" id="description" name="description" required>{{ description }}</textarea>
                     </div>
                 <button type="submit" class="btn btn-primary">Conferma Modifica</button>
             </form>

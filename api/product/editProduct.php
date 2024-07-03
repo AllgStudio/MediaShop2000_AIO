@@ -8,12 +8,45 @@ $description = $_POST['description'] ?? "";
 $category_id = $_POST['category'] ?? "";
 $color = $_POST['color'] ?? "";
 
+
 if (isset($_COOKIE['user'])) {
     $user = json_decode($_COOKIE['user'], true);
     if ($user['role'] != 'admin') {
         header("Location: ../../productmanage.php");
         exit();
     }
+}
+// SERVER VALIDATE CHECK
+
+if(strlen($product_name) < 3){
+    header("Location: ../../500.php");
+   
+}
+if(strlen($brand) < 3){
+    header("Location: ../../500.php");
+}
+// check color if in right format
+$colors = explode(",", $color);
+if($colors[0] == " " || $colors[count($colors) - 1] == " " || trim($colors[0]) == ""){
+    header("Location: ../../500.php");
+}
+
+if(!preg_match("/^[a-zA-Z0-9, ]*$/", $color)){
+    header("Location: ../../500.php");
+}
+
+// price allow decimal
+if (!preg_match("/^[0-9.]*$/", $price)) {
+    header("Location: ../../500.php");
+}
+
+// price_discount allow decimal
+if (!preg_match("/^[0-9.]*$/", $price_discount)) {
+    header("Location: ../../500.php");
+}
+
+if($price < $price_discount){
+    header("Location: ../../500.php");
 }
 
 include "../../includes/db.php";
@@ -78,8 +111,7 @@ try {
     header("Location: ../../productmanage.php");
 } catch (Exception $e) {
     $conn->rollback();
-    error_log($e->getMessage());
-    echo "Failed to update product. Please try again later.";
+    header("Location: ../../500.php");
 } finally {
     $conn->close();
     exit();
