@@ -12,20 +12,27 @@ if ($id == 0) {
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST['new_email'] ?? '';
+    $new_user = $_POST['new_username'] ?? '';
+    $password = $_POST['new_password'] ?? '';
+    try {
+        // Validate email
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            create_error_page($email);
+            exit();
+        }
+        $sql = "UPDATE User SET email = ? WHERE user_id = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("si", $email, $id);
 
-    echo $email;
-    // Validate email
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        create_error_page($email);
-        exit();
+        $stmt->execute();
+        if ($stmt->error) {
+            create_error_page("Errore nella aggiorna dell'email");
+            exit();
+        }
+    } catch (Exception $e) {
+        create_error_page("Errore nella database");
     }
-    // Update email in the database
-    $sql = "UPDATE User SET email = ? WHERE user_id = ?";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("si", $email, $id);
-    $stmt->execute();
-
-    // Redirect to userprofile.php
+    // Redirect to logout.php
     header("Location: userprofile.php");
     exit();
 }

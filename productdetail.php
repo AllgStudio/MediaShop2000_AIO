@@ -49,7 +49,6 @@ FROM Product
         "key" => "size",
     ]);
 
-    $comments_html = "";
     $avg_media_rate = 0.0;
     $tot_rate = 0;
     $star_rating = 0;
@@ -90,13 +89,6 @@ FROM Product
     for ($result->data_seek(0); $row = $result->fetch_object();) {
         $avg_media_rate += $row->star_rating;
         $tot_rate++;
-        $comments_html .= render(file_get_contents('template/productdetail.comment.html'), [
-            "name" => $row->username,
-            "comment" => $row->description,
-            "rate_star" => str_repeat("&#9733;", $row->star_rating),
-            "rate" => $row->star_rating,
-        ]);
-        $average_star_rating = $tot_rate ? round($avg_media_rate / $tot_rate, 1) : 1;
     }
 
     $avg_media_rate = $tot_rate ? $avg_media_rate / $tot_rate : 0;
@@ -122,11 +114,7 @@ echo create_page('template/index.html', [
         "description" => $product->description,
         "colors" => $colors_html,
         "sizes" => $size_html,
-        "rate_star" => str_repeat("&#9733;", $avg_star_rating),
-        // "rate_star" => str_repeat("&#9733;", round($avg_media_rate / $tot_rate, 1) ?? 1) ?? "",
         "rate" => round($avg_media_rate, 1) ?? 1,
-        // "rate" => round($avg_media_rate / $tot_rate, 1) ?? 1,
-        "comments" => $comments_html,
         "has_discount" => $product->new_price ?? false ? "" : "d-none",
         "bar_5" => "w-" . round($bar_fills[4], 0),
         "bar_4" => "w-" . round($bar_fills[3], 0),

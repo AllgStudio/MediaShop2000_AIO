@@ -27,14 +27,22 @@
                         <h2 class="text-title">Benvenuto {{ username }} !!</h2>
                     </div>
                 </div>
-                <form action="userprofileedit.php" method="post">
+                <form id="editUserForm" action="userprofileedit.php" method="post" onsubmit="return validateEditUserForm()">
+                    
+                    <div role="alert" id="error-msg" class="text-paragraph red" aria-live="assertive"></div>
                     <div class="card-text">
                         <ul class="list-group">
                             <li class="list-group-item d-flex space-between">
                                 <b>Codice Utente:</b> {{ user_id }}
                             </li>
                             <li class="list-group-item d-flex space-between">
-                                <b>Ruolo: </b> <input type="email" class="form-control" id="emailInput" name="new_email" value=" {{ email }}">
+                                <b>Nome utente: </b> <input type="text" name="new_username" value=" {{ username }}" disabled aria-disabled="true">
+                            </li>
+                            <li class="list-group-item d-flex space-between">
+                                <b>Email: </b> <input type="email"  id="emailInput" name="new_email" value=" {{ email }}" required>
+                            </li>
+                            <li class="list-group-item d-flex space-between">
+                                <b>Password: </b> <input type="text"   name="new_password" value="" disabled aria-disabled="true">
                             </li>
                             <li class="list-group-item d-flex space-between">
                                 <b>Ruolo: </b> {{ user_type_name }}
@@ -45,6 +53,7 @@
                         </ul>
                     </div>
                     <div class="d-flex space-between mb-4">
+                        <a href="userprofile.php" class="btn btn-secondary">Annulla</a>
                         <button type="submit" class="btn btn-primary">Salva</button>
                     </div>
                 </form>

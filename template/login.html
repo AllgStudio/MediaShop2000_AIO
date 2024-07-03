@@ -7,7 +7,7 @@
         <form id="loginForm" action="login.php" method="POST" aria-describedby="error-msg" onsubmit="return validateLoginForm();">
             <div class="input">
                 <!-- Error message -->
-                <div role="alert" id="error-msg" class="text-paragraph red" aria-live="assertive">{{ error_msg }}</div>
+                <div role="alert" id="error-msg" class="text-paragraph red" aria-live="assertive"></div>
                 
                 <!-- Username field -->
                 <div class="title">
@@ -30,28 +30,3 @@
         </form>
     </div>
 </section>
-
-<script>
-    function validateLoginForm() {
-    var form = document.getElementById('loginForm');
-    var username = form.username.value;
-    var password = form.password.value;
-
-    // 简单的用户名验证示例：必须包含至少 3 个字符
-    if (username.length < 3) {
-        document.getElementById('error-msg').innerText = 'Il nome utente deve contenere almeno 3 caratteri.';
-        document.getElementById('username').focus();
-        return false;
-    }
-
-    // 密码验证示例：确保密码长度至少为 3 个字符，并且确认密码一致
-    if (password.length < 3) {
-        document.getElementById('error-msg').innerText = 'La password deve contenere almeno 3 caratteri.';
-        document.getElementById('password').focus();
-        return false;
-    }
-
-    return true;
-}
-
-</script>

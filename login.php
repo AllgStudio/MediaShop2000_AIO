@@ -41,7 +41,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
                     setcookie("logged_in", true, $cookie_expiry, "/");
 
                     // Redirect to the home page
-                    header('Location: index.php');
+                    header('Location: userprofile.php');
                 } else {
                     // Password is incorrect
                     create_error_page("Password errata");

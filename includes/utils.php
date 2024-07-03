@@ -23,6 +23,10 @@ $PAGELINKS = [
         "name"=> "Profilo Utente",
         "url" => "userprofile.php"
     ],
+    "userprofileedit" => [
+        "name"=> "Modifica Profilo",
+        "url" => "userprofileedit.php"
+    ],
     "userordermanage" => [
         "name"=> "Gestione Ordini",
         "url" => "userordermanage.php"
@@ -52,6 +56,7 @@ $BREADCRUMB = [
     "about" => ["home","about"],
     "productdetail" => ["home","shop","productdetail"],
     "userprofile" => ["home","userprofile"],
+    "userprofileedit" => ["home","userprofile","userprofileedit"],
     "userordermanage" => ["home","userprofile","userordermanage"],
     "orderdetails" => ["home","userprofile","userordermanage","orderdetails"],
     "search" => ["home","search"],
@@ -59,25 +64,6 @@ $BREADCRUMB = [
     "login" => ["home","login"],
 ];
 
-/**
- * Creates a card
- *
- * @param array $card_data
- * [
- *  'card_image_url' => 'https://picsum.photos/200/300?a=szdf0',
- *  'card_image_desk' => 'A descriptive text about the content of the image 1',
- *  'card_title' => 'Card Title 1',
- *  'card_subtitle' => 'Card Subtitle 1',
- *  'card_text' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
- * ]
- * @return string html 
- */
-function create_card($card_data)
-{
-    $card_template = file_get_contents('template/card.html');
-    return render($card_template, $card_data);
-    return $card_template;
-}
 
 
 /**

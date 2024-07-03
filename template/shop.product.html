@@ -1,17 +1,28 @@
 <div class="col-4">
-        <div class="card pa-2 ma-2">
-            <img class="w-100" src="{{ url }}" alt="" role="presentation">
+    <div class="product card pa-2 ma-2">
+        <!-- Image -->
+        <img class="w-100" src="{{ url }}" alt="" role="presentation">
 
-            <div class="product-info">
-                <div id="product_price-{{ id }}" class="product-price">
-                    <p class="product-discount {{ discount_class }}" aria-label="Sconto di {{ discount }}">{{ discount }}</p>
-                    <p class="product-old-price flex-grow-1 text-right {{ discount_class }}" aria-label="Prezzo vecchio {{ old_price }}">{{ old_price }}</p>
-                    <p class="product-new-price flex-grow-1 text-right" aria-label="Prezzo attuale {{ new_price }}">{{ new_price }}</p>
+        <!-- Product info -->
+        <div class="product-info">
+            <div id="product_price-{{ id }}" class="product-price space-between">
+                <span class="product-discount align-content-center {{ discount_class }}" 
+                   aria-label="Sconto di {{ discount }}">{{ discount }} </span>
+                <div id="price-info-{{ id }}" class="product-price-info d-flex flex-column flex-grow-1 text-right ">
+                    <small class="product-old-price flex-grow-1 text-right {{ discount_class }}"
+                        aria-label="Prezzo vecchio {{ old_price }}">{{ old_price }}</small>
+                    <span class="product-new-price flex-grow-1 text-right align-content-flex-end" 
+                    aria-label="Prezzo attuale {{ new_price }}">{{ new_price }}</span>
                 </div>
-                <a href="productdetail.php?id={{ id }}" aria-describedby="product_price-{{ id }} product_rating-{{ id }} product_type-{{ id }}" class="product-name"><span>{{ brand }} {{ name }}</span></a>
-                <p id="product_rating-{{ id }}" class="product-rating" aria-label="Valutazione {{ rate_count }} stelle">{{ rate }}</p>
-                <p id="product_type-{{ id }}" class="product-tags" aria-label="Tipo {{ type }}">Tipo: {{ type }}</p>
             </div>
-        </div>
 
+            <a href="productdetail.php?id={{ id }}"
+                aria-describedby="product_price-{{ id }} product_rating-{{ id }} product_type-{{ id }}"
+                title="{{ brand }} {{ name }}"
+                class="product-name"><span>{{ brand }} {{ name }}</span></a>
+            <span id="product_rating-{{ id }}" class="product-rating" 
+               aria-label="Valutazione {{ rate_count }} stelle">{{ rate }}</span>
+            <span id="product_type-{{ id }}" class="product-tags" aria-label="Tipo {{ type }}">Tipo: {{ type }}</span>
+        </div>
+    </div>
 </div>
