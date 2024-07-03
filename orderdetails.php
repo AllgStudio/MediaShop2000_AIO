@@ -40,6 +40,17 @@ try {
 
         ]);
     }
+
+
+    $sql = "SELECT * FROM Orders WHERE order_id = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param('i', $order_id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $order = $result->fetch_assoc();
+    $stmt->close();
+
+
 } catch (Exception $e) {
     create_error_page("Errore nel database");
 }
@@ -51,6 +62,17 @@ echo create_page('template/index.html', [
 
     'page_header' => create_page_header(),
     'page_main' => render(file_get_contents('template/user/orderdetails.html'), [
+        "name" => $order['name']??"",
+        "surname" => $order['surname']??"",
+        "email" => $order['email']??"",
+        "phone" => $order['phone']??"",
+        "address" => $order['address']??"",
+        "city" => $order['city']??"",
+        "zip" => $order['zip']??"",
+        "card" => $order['card_number']??"",
+        "expiry" => $order['card_expiry']??"",
+        "cvv" => $order['card_cvv']??"",
+        "message" => $order['note']??"",
         "items" => $orderdetails_html,
         "order_id" => $order_id,
         "total" => $total . "€",

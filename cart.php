@@ -28,8 +28,7 @@ function findProductById($products, $id) {
         create_error_page("Errore nel database");
     }
     $result = $stmt->get_result();
-    // Array ( [0] => Array ( [product_id] => 1 [product_name] => iPhone 12 [brand] => Apple [color] => black,white [price] => 299.99 [description] => A high-end smartphone [image_id] => 1 [url] => https://picsum.photos/200/200?a=ggj0 [discountInPercentage] => 10 [new_price] => 269.99 ) [1] => Array ( [product_id] => 2 [product_name] => MacBook Pro [brand] => Apple [color] => silver [price] => 999.99 [description] => A powerful laptop [image_id] => 2 [url] => https://picsum.photos/200/200?a=fgj0 [discountInPercentage] => 20 [new_price] => 799.99 ) )
-    $products = [];
+     $products = [];
     while($row = $result->fetch_assoc()){
         $products[] = $row;
     }
@@ -51,8 +50,8 @@ function findProductById($products, $id) {
             'name' => findProductById($products, $id)['product_name'] ?? "Prodotto senza nome",
             'price' => $price . "€",
             'url' => findProductById($products, $id)['url']??'img/logo.png',
-            'color' => $item['color'],
-            'qty' => $item['quantity'],
+            'color' => $item['color']??"",
+            'qty' => $item['quantity']??1,
         ]);
     }
 

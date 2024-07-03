@@ -12,7 +12,7 @@ $color = $_POST['color'] ?? "";
 
 if(isset($_COOKIE['user'])){
     $user = json_decode($_COOKIE['user'], true);
-    if($user['role'] != 'admin'){
+    if($user['role']??"" != 'admin'){
         header("Location: ../../productmanage.php");
         exit();
     }
@@ -32,7 +32,7 @@ if(strlen($brand) < 3){
 }
 
 // check color if in right format
-$colors = explode(",", $color);
+$colors = explode(",", $color)??[];
 if($colors[0] == " " || $colors[count($colors) - 1] == " " || trim($colors[0]) == ""){
     create_error_page("Il colore non puo' iniziare o finire con una virgola");
 }
