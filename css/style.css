@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 /* https://pictogrammers.com/library/mdi/ */
 @import url("https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css");
+
 @import url("./components/utilities.css");
 @import url("./components/header.css");
 @import url("./components/color.css");
@@ -25,7 +26,6 @@
 /* @import url("./components/typography.css"); */
 
 @import url("./print.css");
-
 
 *{
     /*rimuovo i margini prefdefiniti dal browser*/
