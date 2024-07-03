@@ -1,38 +1,46 @@
-<div id="category_manager" class="container">
+<section id="category_manager" class="container" aria-labelledby="productmanage_title">
+    <h2 id="productmanage_title" class="text-bigtitle ml-4">Tutti i prodotti</h2>
+
     <div class="d-flex flex-wrap w-100">
-        <aside class="bg-lightgray flex-shrink-0">
-            <ul class="list-group">
-                <li class="list-group-item">
-                    <a href="categorymanage.php" aria-label="Gestione Categorie" title="Gestione Categorie">
-                        <span class="mdi mdi-shape-plus" aria-hidden="true">Gestione Categorie</span>
+        <aside class="bg-lightgray col-3 col-md-12">
+            <ul class="list-group flex-column flex-wrap">
+                <li class="list-group-item  flex-grow-1">
+                    <a href="categorymanage.php" aria-labelledby="product_manager_category" title="Gestione Categorie">
+                        <span class="mdi mdi-shape-plus" aria-hidden="true">
+                            <span id="product_manager_category">Gestione Categorie</span>
+                        </span>
                     </a>
                 </li>
-                <li class="list-group-item active">
-                    <a href="productmanage.php" aria-label="Gestione Prodotti" title="Gestione Prodotti">
-                        <span class="mdi mdi-store" aria-hidden="true">Gestione Prodotti</span>
+                <li class="list-group-item active flex-grow-1">
+                    <a href="productmanage.php" aria-labelledby="product_manager_category" title="Gestione Prodotti">
+                        <span class="mdi mdi-store" aria-hidden="true">
+                            <span id="product_manager_prodotti">Gestione Prodotti</span>
+                        </span>
                     </a>
                 </li>
-                <li class="list-group-item">
-                    <a href="adminordermanage.php" aria-label="Gestione Ordini" title="Gestione Ordini">
-                        <span class="mdi mdi-format-list-bulleted" aria-hidden="true">Gestione Ordini</span>
+                <li class="list-group-item  flex-grow-1">
+                    <a href="adminordermanage.php" aria-labelledby="product_manager_allorder" title="Gestione Ordini">
+                        <span class="mdi mdi-format-list-bulleted" aria-hidden="true">
+                            <span id="product_manager_allorder">Gestione Ordini</span>
+                        </span>
                     </a>
                 </li>
             </ul>
         </aside>
-        <div class="col-9">
+
+        <div class="col-9 col-md-12 flex-grow-1">
             <div class="d-flex flex-column card pa-4">
                 <div class="card-title">
                     <div class="d-flex space-between mb-4">
                         <h2 class="text-title">Prodotti</h2>
                         <!-- button -->
                         <a href="newproduct.php" class="btn btn-primary">
-                            <span class="mdi mdi-plus" aria-hidden="true"></span>Nuovo
+                            <span class="mdi mdi-plus" aria-hidden="true"></span>
+                            Nuovo
                          </a>
-                        
                     </div>
                 </div>
                 <div class="card-text overflow-x-auto">
-                    
                     <table class="table" aria-describedby="tableCaption">
                         <caption id="tableCaption" class="sr-only">La tabella mostra i prodotti in <span lang="en">database</span>.</caption>
                         <thead>
@@ -53,4 +61,4 @@
             </div>
         </div>
     </div>
-</div>
+</section>

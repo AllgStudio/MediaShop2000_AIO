@@ -57,3 +57,16 @@ function validateRegisterForm() {
 
     return true;
 }
+
+function validateEditUserForm(){
+    var form = document.getElementById('editUserForm');
+    var email = form.new_email.value;
+    // check email
+    if (email.length < 5 || email.indexOf('@') === -1 || email.indexOf('.') === -1) {
+        document.getElementById('error-msg').innerText = 'Email non valida.';
+        document.getElementById('emailInput').focus();
+        return false;
+    }
+
+    return true;
+}

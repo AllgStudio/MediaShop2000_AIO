@@ -23,6 +23,10 @@ $PAGELINKS = [
         "name"=> "Profilo Utente",
         "url" => "userprofile.php"
     ],
+    "userprofileedit" => [
+        "name"=> "Modifica Profilo",
+        "url" => "userprofileedit.php"
+    ],
     "userordermanage" => [
         "name"=> "Gestione Ordini",
         "url" => "userordermanage.php"
@@ -52,6 +56,7 @@ $BREADCRUMB = [
     "about" => ["home","about"],
     "productdetail" => ["home","shop","productdetail"],
     "userprofile" => ["home","userprofile"],
+    "userprofileedit" => ["home","userprofile","userprofileedit"],
     "userordermanage" => ["home","userprofile","userordermanage"],
     "orderdetails" => ["home","userprofile","userordermanage","orderdetails"],
     "search" => ["home","search"],
