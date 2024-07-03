@@ -1,7 +1,7 @@
 <?php 
 function findProductById($products, $id) {
     foreach ($products as $product) {
-        if ($product['product_id'] == $id) {
+        if ($product['p_id'] == $id) {
             return $product;
         }
     }
@@ -16,9 +16,11 @@ function findProductById($products, $id) {
     $total = 0;
     $cart_html = '';
 
-    $sql = 'SELECT * FROM Product 
-            INNER JOIN ProductImage ON Product.product_id = ProductImage.product_id
-            INNER JOIN PriceCut ON PriceCut.product_id = Product.product_id';
+    $sql = 'SELECT Product.product_id as p_id, Product.product_name, Product.brand, Product.price, ProductImage.url, Category.category_name
+            FROM Product 
+            Left JOIN ProductImage ON Product.product_id = ProductImage.product_id
+            LEFT JOIN CategoryProduct ON Product.product_id = CategoryProduct.product_id
+            left JOIN Category ON CategoryProduct.category_id = Category.category_id';
     $stmt = $conn->prepare($sql);
     try{
         $stmt->execute();
@@ -34,21 +36,21 @@ function findProductById($products, $id) {
     $stmt->close();
     
 
-    for($i = 0; $i < count($cart); $i++) {
+    for($i = 0; $i < count($cart??[]); $i++) {
         $item = $cart[$i];
         $id = $item['product_id']?? null;
         if(!$id) {
             continue;
         }
-        $price = findProductById($products, $id)['new_price'] ?? findProductById($products, $id)['price'];
+        $price = findProductById($products, $id)['new_price'] ?? findProductById($products, $id)['price'] ?? 0;
         // get price from pricecut if exsist else get price from product
         $total += $price;
         $cart_html .= render(file_get_contents('template/cart.item.html'), [
             'id' => $id,
-            'brand' => findProductById($products, $id)['brand'], // 'Apple
-            'name' => findProductById($products, $id)['product_name'],
-            'price' => $price,
-            'url' => findProductById($products, $id)['url'],
+            'brand' => findProductById($products, $id)['brand'] ?? "", // 'Apple
+            'name' => findProductById($products, $id)['product_name'] ?? "Prodotto senza nome",
+            'price' => $price . "€",
+            'url' => findProductById($products, $id)['url']??'img/logo.png',
             'color' => $item['color'],
             'qty' => $item['quantity'],
         ]);

@@ -10,20 +10,16 @@ if ($product_id == "") {
 try{
     // remove from cart cookie by id
     if (isset($_COOKIE['cart'])) {
-        $cart = json_decode($_COOKIE['cart'], true)??[];
+        $cart = json_decode($_COOKIE['cart'], true) ?? [];
         $new_cart = [];
 
-        // rimovi valore invalidi
-        for ($i = 0; $i < count($cart); $i++) {
-            // se non esiste product_id, salta
-            if ($cart[$i]['product_id']??-1 == -1) {
+        // remove invalid values
+        foreach ($cart as $item) {
+            // if product_id is equal to the one we want to remove, skip it
+            if ($item['product_id'] == $product_id) {
                 continue;
             }
-            // se product_id è uguale a quello che vogliamo rimuovere, salta
-            if ($cart[$i]['product_id']??-1 == $product_id) {
-                continue;
-            }
-            $new_cart[] = $cart[$i];
+            $new_cart[] = $item;
         }
         setcookie('cart', json_encode($new_cart), time() + (86400 * 30), "/");
     }

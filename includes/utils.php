@@ -150,7 +150,7 @@ function create_page_header()
     }
         $count = 0;
         if (isset($_COOKIE['cart'])) {
-            $cart = json_decode($_COOKIE['cart'], true);
+            $cart = json_decode($_COOKIE['cart'], true)??[];
             foreach($cart as $item) {
                 $count += $item['quantity']??0;
             }

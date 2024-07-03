@@ -14,7 +14,7 @@ CREATE TABLE Category (
 
 -- Create the Product table
 CREATE TABLE Product (
-    product_id INT PRIMARY KEY,
+    product_id INT AUTO_INCREMENT PRIMARY KEY,
     product_name VARCHAR(50) NOT NULL,
     brand VARCHAR(50),
     color TEXT,
@@ -65,6 +65,18 @@ CREATE TABLE Orders(
     total DECIMAL(20,2),
     order_datetime DATETIME DEFAULT CURRENT_TIMESTAMP,
     user_id INT,
+    name VARCHAR(50),
+    surname VARCHAR(50),
+    email VARCHAR(50),
+    phone VARCHAR(50),
+    address VARCHAR(50),
+    city VARCHAR(50),
+    zip VARCHAR(50),
+    country VARCHAR(50) DEFAULT 'Italia',
+    card_number VARCHAR(50),
+    card_expiry VARCHAR(50),
+    card_cvv VARCHAR(50),
+    note VARCHAR(255),
     FOREIGN KEY (user_id) REFERENCES User(user_id) ON DELETE CASCADE
 );
 -- Create the OrderDetail table
@@ -92,7 +104,7 @@ INSERT INTO Category (category_id, category_name) VALUES (2, 'Computer');
 INSERT INTO Category (category_id, category_name) VALUES (3, 'Game Station');
 INSERT INTO Category (category_id, category_name) VALUES (4, 'Smartwatch');
 
-INSERT INTO Product (product_id, product_name, brand, color, size, price, description) 
+INSERT INTO Product (product_id, product_name, brand, color, price, description) 
 VALUES (1, 'iPhone 12', 'Apple', 'black,white', 299.99, 'A high-end smartphone'),
        (2, 'MacBook Pro', 'Apple', 'silver',  999.99, 'A powerful laptop'),
        (3, 'PlayStation 5', 'Sony', 'black,White', 499.99, 'A next-gen game console'),
@@ -117,10 +129,10 @@ INSERT INTO User(user_id, username, password, email, role) VALUES (1,'admin', '$
 INSERT INTO User(user_id, username, password, email, role) VALUES (2,'user', '$2y$10$/XHfArdPL0gGkMEpKMfmde4sw5XfdqW/hoqBHKQi9N4rjbEw7Xb06','user@user.com', 'user');
 INSERT INTO User(user_id, username, password, email, role) VALUES (3,'test', '$2y$10$/XHfArdPL0gGkMEpKMfmde4sw5XfdqW/hoqBHKQi9N4rjbEw7Xb06','test@user.com', 'user');
 
-INSERT INTO Orders(order_id, total, user_id) VALUES (1, 1099.98, 1, 1);
-INSERT INTO Orders(order_id, total, user_id) VALUES (2, 19.99, 0, 2);
-INSERT INTO Orders(order_id, total, user_id) VALUES (3, 24.99, 0, 2);
-INSERT INTO Orders(order_id, total, user_id) VALUES (4, 109.99, 1, 1);
+INSERT INTO Orders(order_id, total, user_id) VALUES (1, 1099.98, 1);
+INSERT INTO Orders(order_id, total, user_id) VALUES (2, 19.99,2);
+INSERT INTO Orders(order_id, total, user_id) VALUES (3, 24.99, 2);
+INSERT INTO Orders(order_id, total, user_id) VALUES (4, 109.99, 1);
 
 INSERT INTO OrderDetail (quantity, order_id, product_id) VALUES (1, 1, 1);
 INSERT INTO OrderDetail (quantity, order_id, product_id) VALUES (2, 1, 2);

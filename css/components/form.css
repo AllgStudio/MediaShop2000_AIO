@@ -10,7 +10,7 @@
 
 
 .form-group input[type="text"], .form-group input[type="email"], .form-group input[type="password"], select, .form-group input[type="search"] {
-    width: 100%;
+    width: calc(100% - 4*0.5rem);
     padding: 0.5rem;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -22,7 +22,7 @@
 }
 
 .form-group input[type="number"] {
-    width: 100%;
+    width: calc(100% - 4*0.5rem);
     padding: 0.5rem;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -34,7 +34,7 @@
 }
 
 .form-group input[type="tel"] {
-    width: 100%;
+    width: calc(100% - 4*0.5rem);
     padding: 0.5rem;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -45,8 +45,12 @@
     border-color: var(--primaryColor);
 }
 
-
-
+.form-group textarea {
+    width: calc(100% - 4*0.5rem);
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
 
 
 .form-group input[type="submit"] {

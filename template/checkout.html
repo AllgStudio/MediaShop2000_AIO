@@ -1,90 +1,91 @@
 <!-- Purpose: This file is for the checkout page. -->
-<section>
-    <h2 class="text-title">Checkout</h2>
-    <div class="d-flex w-100">
-        <div id="checkout_detail" class="flex-shrink-0">
-            <div class="card pa-3">
-                <div class="card-body">
-                    <div class="card-title mb-2">Detaglio del ordine</div>
-                    <div class="card-subtitle">
-                        <div class="d-flex space-between">
-                            <span class="mdi mdi-cart text-bold">Lista dei prodotti</span>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="card-text">
-                        {{ items }}
-                        <hr>
-                        <div class="d-flex space-between">
-                            <div class="text-bold">TOTALE</div>
-                            <div class="text-bold">€{{ total }}</div>
-                        </div>
-                        <a href="cart.php">Vai a Carello</a>
+<section class="container" aria-labelledby="checkout_title">
+    <h2 id="checkout_title" class="text-title" lang="en">Checkout</h2>
+    <div class="d-flex w-100 flex-wrap">
+        <aside id="checkout_detail" class="flex-shrink-0 col-4 col-md-12">
+            <div class="card pa-3 ma-2">
+                <div class="card-title mb-2">Detaglio del ordine</div>
+                <div class="card-subtitle">
+                    <div class="d-flex space-between">
+                        <span class="mdi mdi-cart text-bold">Lista dei prodotti</span>
                     </div>
                 </div>
-            </div>
-        </div>
-
-        <div id="checkout_form" class="d-flex flex-wrap flex-grow-1 ml-3">
-            <div class="card pa-3">
+                <div class="horizontal-line"></div>
                 <div class="card-text">
-                    <form action="#" method="post">
+                    {{ items }}
+                    <div class="horizontal-line"></div>
+                    <div class="d-flex space-between">
+                        <div class="text-bold">TOTALE</div>
+                        <div class="text-bold">€{{ total }}</div>
+                    </div>
+                    <a href="cart.php" class="btn btn-info">Vai a Carello</a>
+                </div>
+            </div>
+        </aside>
+
+        <section id="checkout_form" class="pa-0 ma-0 flex-wrap flex-grow-1 col-8 col-md-12" aria-labelledby="checkout_info">
+            <div class="card pa-3 ma-2">
+                <div class="card-text">
+                    <form id="checkoutForm" action="#" method="post" onsubmit="return validateCheckoutForm()">
+                        <!-- Error message -->
+                        <div role="alert" id="error-msg" class="text-paragraph red" aria-live="assertive"></div>
+                
                         <div class="d-flex space-between flex-wrap">
-                            <div class="w-100 my-2">
-                                <h2 class="w-100">Informazioni personali</h2>
-                                <hr>
+                            <div class="col-12 col-md-12 my-2">
+                                <h2 id="checkout_info" class="w-100">Informazioni personali</h2>
+                                <div class="horizontal-line"></div>
                             </div>
-                            <div class="form-group">
-                                <label for="name">Nome</label>
-                                <input type="text" name="name" id="name"  required>
+                            <div class="form-group col-6 col-md-12">
+                                <label for="name">Nome:*</label>
+                                <input type="text" name="name" id="name" required>
                             </div>
-                            <div class="form-group">
-                                <label for="surname">Cognome</label>
-                                <input type="text" name="surname" id="surname"  required>
+                            <div class="form-group col-6 col-md-12">
+                                <label for="surname">Cognome:*</label>
+                                <input type="text" name="surname" id="surname" required>
                             </div>
-                            <div class="form-group">
-                                <label for="email">Email</label>
-                                <input type="email" name="email" id="email"  required>
+                            <div class="form-group col-6 col-md-12">
+                                <label for="email">Email:*</label>
+                                <input type="email" name="email" id="email" required>
                             </div>
-                            <div class="form-group">
-                                <label for="phone">Telefono</label>
-                                <input type="tel" name="phone" id="phone"  required>
+                            <div class="form-group col-6 col-md-12">
+                                <label for="phone">Telefono:*</label>
+                                <input type="tel" name="phone" id="phone" required>
                             </div>
-                            <div class="form-group">
-                                <label for="address">Indirizzo</label>
-                                <input type="text" name="address" id="address"  required>
+                            <div class="form-group col-6 col-md-12">
+                                <label for="address">Indirizzo:*</label>
+                                <input type="text" name="address" id="address" required>
                             </div>
-                            <div class="form-group">
-                                <label for="city">Città</label>
-                                <input type="text" name="city" id="city"  required>
+                            <div class="form-group col-6 col-md-12">
+                                <label for="city">Città:*</label>
+                                <input type="text" name="city" id="city" required>
                             </div>
-                            <div class="form-group">
-                                <label for="zip">CAP</label>
-                                <input type="text" name="zip" id="zip"  required>
+                            <div class="form-group col-6 col-md-12">
+                                <label for="zip">CAP:*</label>
+                                <input type="text" name="zip" id="zip" required>
                             </div>
-                            <div class="form-group">
-                                <label for="country">Nazione</label>
-                                <input type="text" name="country" id="country"  required>
+                            <div class="form-group col-6 col-md-12">
+                                <label for="country">Nazione:*</label>
+                                <input type="text" name="country" id="country" value="Italia" disabled aria-disabled="true" required>
                             </div>
-                            <div class="w-100 my-2">
+                            <div class="w-100 my-2 col-12 col-md-12">
                                 <h2 class="w-100">Metodo di pagamento</h2>
-                                <hr>
+                                <div class="horizontal-line"></div>
                             </div>
-                            <div class="form-group">
-                                <label for="card">Carta di credito</label>
-                                <input type="text" name="card" id="card"  required>
+                            <div class="form-group col-6 col-md-12">
+                                <label for="card">Carta di credito:*</label>
+                                <input type="number" name="card" id="card" required>
                             </div>
-                            <div class="form-group">
-                                <label for="expiry">Scadenza</label>
-                                <input type="text" name="expiry" id="expiry"  required>
+                            <div class="form-group col-6 col-md-6">
+                                <label for="expiry">Scadenza:*</label>
+                                <input type="text" name="expiry" id="expiry" required>
                             </div>
-                            <div class="form-group">
-                                <label for="cvv">CVV</label>
-                                <input type="text" name="cvv" id="cvv"  required>
+                            <div class="form-group col-6 col-md-6">
+                                <label for="cvv">CVV:*</label>
+                                <input type="text" name="cvv" id="cvv" required>
                             </div>
-                            <div class="form-group">
-                                <label for="total">Totale</label>
-                                <input type="text" name="total" id="total"  required>
+                            <div class="form-group col-12 col-md-12">
+                                <label for="total">Messaggio</label>
+                                <textarea name="message" id="message" rows="5"></textarea>
                             </div>
                         </div>
                         <div class="d-flex justify-end">
@@ -93,7 +94,7 @@
                     </form>
                 </div>
             </div>
-        </div>
+        </section>
     </div>
 
 </section>

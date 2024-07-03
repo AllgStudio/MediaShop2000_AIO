@@ -4,13 +4,13 @@
             <img role="presentation" src="{{ url }}" alt="Immagine del prodotto {{ brand }} {{ name }}">
         </div>
         <div class="desc">
-            <h2 class="title">{{brand}} {{ name }}</h2>
+            <h2 class="title">{{ brand }} {{ name }}</h2>
             <p class="price">{{ price }}</p>
-            <p class="text">Colore: {{ color }}</p>
+            <p class="text"><b>Colore:</b> {{ color }}</p>
         </div>
     </div>
     <div class="bottons">
-        <input type="number" id="quantity-input" value="{{ qty }}" disabled aria-label="Quantità di {{ name }}">
+        <input type="number" id="quantity-input" value="{{ qty }}" disabled aria-disabled="true"  aria-label="Quantità di {{ name }} è {{ qty }}">
         <a href="api/cart/removeFromCart.php?id={{ id }}" class="btn btn-danger w-60 delete">Elimina</a>
     </div>
 </div>
