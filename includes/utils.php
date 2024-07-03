@@ -74,9 +74,16 @@ function create_page_header()
 
     $is_logged_in = isset($_COOKIE['logged_in']) ? $_COOKIE['logged_in'] : false;
     if ($is_logged_in) {
+        $count = 0;
+        if (isset($_COOKIE['cart'])) {
+            $cart = json_decode($_COOKIE['cart'], true);
+            foreach($cart as $item) {
+                $count += $item['quantity'];
+            }
+        }
         $login_logout  = render(file_get_contents("template/header.logged.html"), [
             'isAdmin' => $userRoleClass,
-            'cart_count' => isset($_COOKIE['cart'])? count(json_decode($_COOKIE['cart'], true)??[]) : 0,
+            'cart_count' => $count,
         ]);
     } else {
         $login_logout = render(file_get_contents("template/header.nologin.html"),[]);

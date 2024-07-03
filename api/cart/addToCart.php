@@ -11,11 +11,11 @@ if(isset($_COOKIE['cart'])){
         "quantity" => $quantity
     ]);
 
-    $cart = json_decode($_COOKIE['cart'], true);
+    $cart = json_decode($_COOKIE['cart'], true)??[];
     // check if product already in cart
-    foreach($cart as $item){
-        if($item['product_id'] == $product_id && $item['color'] == $color){
-            $item['quantity'] += $quantity;
+    for($i = 0; $i < count($cart); $i++){
+        if($cart[$i]['product_id'] == $product_id && $cart[$i]['color'] == $color){
+            $cart[$i]['quantity'] += $quantity;
             setcookie('cart', json_encode($cart), time() + (86400 * 30), "/");
             header("Location: ../../productdetail.php?id=$product_id");
             exit();
@@ -27,7 +27,7 @@ if(isset($_COOKIE['cart'])){
     setcookie('cart', json_encode([$product_id]), time() + (86400 * 30), "/");
 }
 
-// go back to product detail and dont let possible go back this page
+// // go back to product detail and dont let possible go back this page
 header("Location: ../../productdetail.php?id=$product_id");
 exit();
 

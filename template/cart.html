@@ -1,71 +1,12 @@
 <div class="cart container">
     <h2 class="text-title">Carello</h2>
     <div class="list">
-        <div class="item">
-            <div class="item-detail">
-                <div class="image">
-                    <img src="img/logo.png">
-                </div>
-                <div class="desc">  
-                    <div class="title">Nome prodotto loooooo ooooooog</div>
-                    <div class="price">100€</div>
-                    <div class="text">Branch: Genshin On!</div>
-                    <div class="text">Size: 18cm</div>
-                    <div class="text">Color: yellow</div>
-                </div>
-            </div>
-            <div class="bottons">
-                <input type="number" id="quantity-input" value="1" min="1" max="99">
-                <botton class="edit">Modifica</botton>
-                <botton class="delete">Elimina</botton>
-            </div>
-        </div>
 
-
-        <div class="item">
-            <div class="item-detail">
-                <div class="image">
-                    <img src="img/logo.png">
-                </div>
-                <div class="desc">  
-                    <div class="title">Bananaphone</div>
-                    <div class="price">999€</div>
-                    <div class="text">Branch: Pear</div>
-                    <div class="text">Size: 222cm</div>
-                    <div class="text">Color: green</div>
-                </div>
-            </div>
-            <div class="bottons">
-                <input type="number" id="quantity-input" value="1" min="1" max="99">
-                <botton class="edit">Modifica</botton>
-                <botton class="delete">Elimina</botton>
-            </div>
-        </div>
-
-        <div class="item">
-            <div class="item-detail">
-                <div class="image">
-                    <img src="img/logo.png">
-                </div>
-                <div class="desc">  
-                    <div class="title">Nome prodotto loooooo ooooooog</div>
-                    <div class="price">100€</div>
-                    <div class="text">Branch: Genshin On!</div>
-                    <div class="text">Size: 18cm</div>
-                    <div class="text">Color: yellow</div>
-                </div>
-            </div>
-            <div class="bottons">
-                <input type="number" id="quantity-input" value="1" min="1" max="99">
-                <botton class="edit">Modifica</botton>
-                <botton class="delete">Elimina</botton>
-            </div>
-        </div>
-
+        {{ items }}
 
     </div>
     <div class="total">
-        <div class="text">Totale: 200€</div>
+        <div class="text">Totale: {{ total }}€</div>
     </div>
 <div class="d-flex space-between flex-wrap ">
     <a href="shop.php" class="btn ma-2">Continua lo shopping</a>
