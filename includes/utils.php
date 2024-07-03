@@ -141,15 +141,9 @@ function create_page_header()
            
         ]);
     } else {
-        $count = 0;
-        if (isset($_COOKIE['cart'])) {
-            $cart = json_decode($_COOKIE['cart'], true);
-            foreach($cart as $item) {
-                $count += $item['quantity']??0;
-            }
-        }
+
         $login_logout = render(file_get_contents("template/header.nologin.html"),[
-            'cart_count' => $count,
+           
         ]);
     }
     
@@ -168,7 +162,16 @@ function create_page_header()
             }
         }
     }
+        $count = 0;
+        if (isset($_COOKIE['cart'])) {
+            $cart = json_decode($_COOKIE['cart'], true);
+            foreach($cart as $item) {
+                $count += $item['quantity']??0;
+            }
+        }
+
     return render(file_get_contents('template/header.html'), [
+        'cart_count' => $count,
         'login_logout' => $login_logout,
         "aria_label_attr" => $BREADCRUMB[$CURRENT_PAGE]??false?"aria-label='percorso di navigazione'":'',
         'breadcrumbs' => $breadcrumb_html,
