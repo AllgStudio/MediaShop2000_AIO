@@ -35,7 +35,7 @@
 
     echo create_page('template/index.html',[
         'header_title' => "Gestione Prodotti | MediaShop2000",
-        'header_description' => "La pagina di gestione dei prodotti del sito MediaShop2000",
+        'header_description' => "La pagina consente di gestire i prodotti",
         'header_keywords' => "gestione, prodotto, media, games",
         'header_author' =>"MediaShop2000",
 

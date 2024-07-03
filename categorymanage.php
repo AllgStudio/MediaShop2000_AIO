@@ -28,7 +28,7 @@
 
     echo create_page('template/index.html',[
         'header_title' =>'Gestione categoria',
-        'header_description' => 'Il pagina del gestione delle categorie del sito',
+        'header_description' => 'La pagina consente di gestire le categorie presenti sul sito',
         'header_keywords' => "Shop, category, media, games",
         'header_author' =>"MediaShop2000",
 

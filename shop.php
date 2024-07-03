@@ -96,7 +96,7 @@
 
     echo create_page('template/index.html',[
         'header_title' =>'Shop | MediaShop2000',
-        'header_description' => 'La pagina di shop del sito MediaShop2000',
+        'header_description' => 'La pagina contiene il negozio',
         'header_keywords' => "Shop, media, games",
         'header_author' =>"MediaShop2000",
 

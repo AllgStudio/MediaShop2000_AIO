@@ -17,7 +17,7 @@
 
     echo create_page('template/index.html',[
         'header_title' =>'Modifica Prodotto | MediaShop2000',
-        'header_description' => 'La pagina di modifica prodotto del sito MediaShop2000',
+        'header_description' => 'La pagina consente di modificare il singolo prodotto',
         'header_keywords' => "prodotto, Shop, media, games",
         'header_author' =>"MediaShop2000",
 

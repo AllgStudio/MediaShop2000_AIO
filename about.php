@@ -9,7 +9,7 @@
     echo create_page('template/index.html',[
         // 'lang' => $lang,
         'header_title' =>'Chi siamo | MediaShop2000',
-        'header_description' => 'La pagina di chi siamo',
+        'header_description' => 'La pagina contiene le informazioni inerenti al nostro gruppo',
         'header_keywords' => "info, about, media, games",
         'header_author' =>"MediaShop2000",
 

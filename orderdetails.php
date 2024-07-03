@@ -40,8 +40,8 @@
     }
 
     echo create_page('template/index.html',[
-        'header_title' =>'Order Details | MediaShop2000',
-        'header_description' => "Il pagina del dettagli dell'ordine del sito",
+        'header_title' =>'Dettagli Ordine | MediaShop2000',
+        'header_description' => "La pagina contiene i dettagli dell'ordine",
         'header_keywords' => "ordine, media, games",
         'header_author' => "MediaShop2000",
 
