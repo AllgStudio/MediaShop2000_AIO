@@ -10,8 +10,8 @@
         </div>
     </div>
     <div class="bottons">
-        <input type="number" id="quantity-input" value="1" min="1" max="99">
-        <a href="#" class="edit">Modifica</a>
-        <a href="#" class="delete">Elimina</a>
+        <input type="number" id="quantity-input" value="{{ qty }}" disabled aria-label="Quantità di {{ name }}">
+        <a href="#" class="btn btn-info edit">Modifica</a>
+        <a href="#" class="btn btn-danger delete">Elimina</a>
     </div>
 </div>

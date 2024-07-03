@@ -12,9 +12,10 @@ if(isset($_COOKIE['cart'])){
     ]);
 
     $cart = json_decode($_COOKIE['cart'], true)??[];
+
     // check if product already in cart
     for($i = 0; $i < count($cart); $i++){
-        if($cart[$i]['product_id'] == $product_id && $cart[$i]['color'] == $color){
+        if($cart[$i]['product_id']??"" == $product_id && $cart[$i]['color']??"" == $color){
             $cart[$i]['quantity'] += $quantity;
             setcookie('cart', json_encode($cart), time() + (86400 * 30), "/");
             header("Location: ../../productdetail.php?id=$product_id");
