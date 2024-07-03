@@ -44,6 +44,7 @@ function findProductById($products, $id) {
         // get price from pricecut if exsist else get price from product
         $total += $price;
         $cart_html .= render(file_get_contents('template/cart.item.html'), [
+            'id' => $id,
             'name' => findProductById($products, $id)['product_name'],
             'price' => $price,
             'url' => findProductById($products, $id)['url'],
@@ -54,12 +55,9 @@ function findProductById($products, $id) {
 
     echo create_page('template/index.html',[
 
-        'header_title' =>'title',
-        'header_description' => 'description',
-        'header_keywords' => "Shop, media, games",
-        'header_author' =>"Author",
-
-        'skip_to_main' => 'skip_to_main',
+        'header_title' =>'Carrello | MediaShop2000',
+        'header_description' => 'Il tuo carrello su MediaShop2000',
+        'header_keywords' => "carrello, Shop, media, games",
 
         'page_header' => create_page_header(),
         'page_main' => render(file_get_contents('template/cart.html'), [

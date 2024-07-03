@@ -11,7 +11,6 @@
     </div>
     <div class="bottons">
         <input type="number" id="quantity-input" value="{{ qty }}" disabled aria-label="Quantità di {{ name }}">
-        <a href="#" class="btn btn-info edit">Modifica</a>
-        <a href="#" class="btn btn-danger delete">Elimina</a>
+        <a href="api/cart/removeFromCart.php?id={{ id }}" class="btn btn-danger w-60 delete">Elimina</a>
     </div>
 </div>

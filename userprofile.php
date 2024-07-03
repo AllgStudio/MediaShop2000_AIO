@@ -9,19 +9,20 @@ if ($id == 0) {
     header("Location: login.php");
     exit();
 }
+try {
+    $sql = "SELECT * FROM User WHERE user_id = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("i", $id);
+    $stmt->execute();
 
-
-
-$sql = "SELECT * FROM User WHERE user_id = ?";
-$stmt = $conn->prepare($sql);
-$stmt->bind_param("i", $id);
-$stmt->execute();
-
-$result = $stmt->get_result();
-$user = $result->fetch_object();
-if (!$user) {
-    header("Location: 404.php");
-    exit();
+    $result = $stmt->get_result();
+    $user = $result->fetch_object();
+    if (!$user) {
+        header("Location: 404.php");
+        exit();
+    }
+} catch (Exception $e) {
+    create_error_page("Errore nel database");
 }
 
 

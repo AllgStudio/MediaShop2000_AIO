@@ -13,14 +13,16 @@ if(isset($_COOKIE['user'])){
         exit();
     }
 }
-
-include "../../includes/db.php";
-
-$sql = "DELETE FROM Category WHERE category_id = ?";
-$stmt = $conn->prepare($sql);
-$stmt->bind_param('i', $category_id);
-$stmt->execute();
-$conn->close();
+try{
+    include "../../includes/db.php";
+    $sql = "DELETE FROM Category WHERE category_id = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param('i', $category_id);
+    $stmt->execute();
+    $conn->close();
+} catch(Exception $e){
+    create_error_page("Errore nella rimozione della categoria");
+}
 
 header("Location: ../../categorymanage.php");
 exit();
