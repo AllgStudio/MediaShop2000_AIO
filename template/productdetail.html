@@ -1,84 +1,111 @@
 <section class="container card pa-2" aria-labelledby="product_detail_page">
     <h1 class="text-bigtitle ml-4" id="product_detail_page">Detaglio del Prodotto</h1>
-    <div class="card-text">
 
-        <section class="my-2" aria-labelledby="product_detail_name">
-            <form action="api/cart/addToCart.php" method="post">
-                <!-- Hidden input for product id -->
-                <input tabindex="-1" type="hidden" name="id" value="{{ id }}">
+    <section class="my-2" aria-labelledby="product_detail_name">
+        <form action="api/cart/addToCart.php" method="post">
+            <!-- Hidden input for product id -->
+            <input tabindex="-1" type="hidden" name="id" value="{{ id }}">
 
-                <div class="d-flex flex-wrap">
-                    <div id="detail_image" class="flex-shrink-0">
-                        <img role="presentation" src="{{ url }}" alt="Immagine del prodotto {{ brand }} {{ name }}"class="w-100">
-                    </div>
-                    <div id="detail_info" class="d-flex flex-column space-between">
-                        
-                        <div class="d-flex space-between flex-wrap">
-                            <div class="flex-shrink-0 flex-grow-1">
-                                <h1 id="product_detail_name" class="text-title no-wrap">{{ brand }} {{ name }}</h1>
-                                <p class="text-paragraph no-wrap">{{ specific }}</p>
-                            </div>
-                            <div class="d-flex flex-shrink-0 flex-grow-1 justify-end">
-                                <p class="text-subtitle no-wrap {{ has_discount }}" aria-label="Vecchio prezzo è {{ old_price }}"><del>{{ old_price }}</del></p>
-                                <p class="text-bigtitle no-wrap" aria-label="Prezzo attuale è {{ new_price }}">{{ new_price }}</p>
-                            </div>
-                        </div>
-
-                        <div class="horizontal-line"></div>
-
-                        <h2 class="text-title mt-2">Colore</h2>
-                        <div class="d-flex mx-4 flex-wrap">
-                            {{ colors }}
-                        </div>
-
-                        <h2 class="text-title mt-2">Misura</h2>
-                        <div class="mx-4 flex-wrap">
-                            {{ sizes }}
-                        </div>
-
-                        <h2 class="text-title mt-2">Quantità</h2>
-                        <div class="mx-4">
-                            <label for="quantity" class="sr-only">Quantity</label>
-                                <input type="number" id="quantity" name="quantity" value="1" min="1" max="10"
-                                aria-label="Quantity">
-                        </div>
-
-                        <div class="d-flex flex-wrap mx-2">
-                            <button type="submit" class="btn btn-success ma-2" aria-label="Add to cart">Aggiunge a
-                                carello</button>
-                        </div>
-                    </div>
-                </div>
-            </form>
-        </section>
-
-        <div class="horizontal-line"></div>
-
-        <!-- Product description-->
-        <section class="my-2" aria-labelledby="product_detail_desc">
-            <h2 id="product_detail_desc" class="text-title">Descrizione</h2>
-            <p class="text-paragraph">
-                {{ description }}
-            </p>
-        </section>
-
-        <div class="horizontal-line"></div>
-
-        <!-- comment -->
-        <section class="my-2" aria-labelledby="product_detail_comment">
-            <h2 id="product_detail_comment" class="text-title">Commenti</h2>
             <div class="d-flex flex-wrap">
-                <!-- 产品评分 -->
-                <div id="detail_rate" class="card pa-2 ma-2">
-                    <div class="card-title text-center" aria-label="Rating">Voto</div>
-                    <div class="card-text text-center" role="img" aria-label="Valutazione {{ rate }} stelle su 5">{{ rate_star }}</div>
-                    <div class="card-text text-center">{{ rate }}/5</div>
+                <div id="detail_image" class="flex-shrink-0">
+                    <img role="presentation" src="{{ url }}" alt="Immagine del prodotto {{ brand }} {{ name }}"
+                        class="w-100">
                 </div>
-                <div id="detail_comment" class="d-flex flex-wrap">
-                    {{ comments }}
+                <div id="detail_info" class="d-flex flex-column space-between">
+
+                    <div class="d-flex space-between flex-wrap">
+                        <div class="flex-shrink-0 flex-grow-1">
+                            <h1 id="product_detail_name" class="text-title no-wrap">{{ brand }} {{ name }}</h1>
+                            <p class="text-paragraph no-wrap">{{ specific }}</p>
+                        </div>
+                        <div class="d-flex flex-shrink-0 flex-grow-1 justify-end">
+                            <p class="text-subtitle no-wrap {{ has_discount }}"
+                                aria-label="Vecchio prezzo è {{ old_price }}"><del>{{ old_price }}</del></p>
+                            <p class="text-bigtitle no-wrap" aria-label="Prezzo attuale è {{ new_price }}">{{ new_price }}</p>
+                        </div>
+                    </div>
+
+                    <div class="horizontal-line"></div>
+
+                    <h2 class="text-title mt-2">Colore</h2>
+                    <div class="d-flex mx-4 flex-wrap">
+                        {{ colors }}
+                    </div>
+
+                    <h2 class="text-title mt-2">Misura</h2>
+                    <div class="mx-4 flex-wrap">
+                        {{ sizes }}
+                    </div>
+
+                    <h2 class="text-title mt-2">Quantità</h2>
+                    <div class="mx-4">
+                        <label for="quantity" class="sr-only">Quantity</label>
+                        <input type="number" id="quantity" name="quantity" value="1" min="1" max="10"
+                            aria-label="Quantity">
+                    </div>
+
+                    <div class="d-flex flex-wrap mx-2">
+                        <button type="submit" class="btn btn-success ma-2" aria-label="Add to cart">Aggiunge a carello</button>
+                    </div>
                 </div>
             </div>
-        </section>
-    </div>
+        </form>
+    </section>
+
+    <div class="horizontal-line"></div>
+
+    <!-- Product description-->
+    <section class="my-2" aria-labelledby="product_detail_desc">
+        <h2 id="product_detail_desc" class="text-title">Descrizione</h2>
+        <p class="text-paragraph">
+            {{ description }}
+        </p>
+    </section>
+
+    <div class="horizontal-line"></div>
+
+    <!-- comment -->
+    <section class="my-2">
+        <h2 class="text-title" tabindex="0">Commenti</h2>
+        <div class="d-flex flex-wrap">
+            <div id="rating" class="card pa-2 ma-2" tabindex="0">
+                <div id="rate_vote" class="card-title text-center">{{ rate }}/5</div>
+                <div class="card-text text-center">
+                    <input type="radio" id="star5" name="rating" value="1">
+                    <label for="star5"></label>
+                    <input type="radio" id="star4" name="rating" value="2">
+                    <label for="star4"></label>
+                    <input type="radio" id="star3" name="rating" value="3">
+                    <label for="star3"></label>
+                    <input type="radio" id="star2" name="rating" value="4">
+                    <label for="star2"></label>
+                    <input type="radio" id="star1" name="rating" value="5">
+                    <label for="star1"></label>
+                </div>
+            </div>
+            <div class="bar-chart pa-2 ma-2">
+                <div class="bar-single">
+                    <div class="bar-label">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <div class="bar-fill {{ bar_5 }}"></div>
+                </div>
+                <div class="bar-single">
+                    <div class="bar-label">&#9733;&#9733;&#9733;&#9733;</div>
+                    <div class="bar-fill {{ bar_4 }}"></div>
+                </div>
+                <div class="bar-single">
+                    <div class="bar-label">&#9733;&#9733;&#9733;</div>
+                    <div class="bar-fill {{ bar_3 }}"></div>
+                </div>
+                <div class="bar-single">
+                    <div class="bar-label">&#9733;&#9733;</div>
+                    <div class="bar-fill {{ bar_2 }}"></div>
+                </div>
+                <div class="bar-single">
+                    <div class="bar-label">&#9733;</div>
+                    <div class="bar-fill {{ bar_1 }}"></div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 </section>
