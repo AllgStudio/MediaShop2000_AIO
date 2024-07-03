@@ -91,7 +91,7 @@ FROM Product
         $tot_rate++;
     }
 
-    $avg_media_rate = $tot_rate ? $avg_media_rate / $tot_rate : 0;
+    $avg_media_rate = $tot_rate ? $avg_media_rate / $tot_rate : 5;
     $avg_star_rating = $tot_rate ? round($avg_media_rate / $tot_rate, 1) : 1;
 } catch (Exception $e) {
     create_error_page("Errore nel database");
