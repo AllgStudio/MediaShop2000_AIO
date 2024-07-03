@@ -24,6 +24,8 @@
 @import url("./components/radio-group.css");
 /* @import url("./components/typography.css"); */
 
+@import url("./print.css");
+
 
 *{
     /*rimuovo i margini prefdefiniti dal browser*/
