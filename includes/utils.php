@@ -135,19 +135,22 @@ function create_page_header()
 
     $is_logged_in = isset($_COOKIE['logged_in']) ? $_COOKIE['logged_in'] : false;
     if ($is_logged_in) {
+
+        $login_logout  = render(file_get_contents("template/header.logged.html"), [
+            'isAdmin' => $userRoleClass,
+           
+        ]);
+    } else {
         $count = 0;
         if (isset($_COOKIE['cart'])) {
             $cart = json_decode($_COOKIE['cart'], true);
             foreach($cart as $item) {
-                $count += $item['quantity'];
+                $count += $item['quantity']??0;
             }
         }
-        $login_logout  = render(file_get_contents("template/header.logged.html"), [
-            'isAdmin' => $userRoleClass,
+        $login_logout = render(file_get_contents("template/header.nologin.html"),[
             'cart_count' => $count,
         ]);
-    } else {
-        $login_logout = render(file_get_contents("template/header.nologin.html"),[]);
     }
     
     $breadcrumb_html = "";
@@ -206,4 +209,19 @@ function create_page($template, $data)
     $page = file_get_contents($template);
     $page = render($page, $data);
     return $page;
+}
+
+function create_error_page($error)
+{
+    echo create_page('template/index.html',[
+        'header_title' =>'500 Internal error | MediaShop2000',
+        'header_description' => 'La pagina di errore 500',
+        'header_keywords' => "errore, about, media, games",
+        'page_header' => create_page_header(),
+        'page_main' => render(file_get_contents('template/500.html'), [
+            "error" => $error
+        ]),
+        'page_footer' => create_page_footer(),
+    ]);
+    exit();
 }
