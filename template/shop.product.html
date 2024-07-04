@@ -1,7 +1,7 @@
 <div class="col-4">
     <div class="product card pa-2 ma-2">
         <!-- Image -->
-        <img class="w-100" src="{{ url }}" alt="" role="presentation">
+        <img class="w-100" src="{{ url }}" alt="Immagine di prodotto {{ brand }} {{ name }}">
 
         <!-- Product info -->
         <div class="product-info">
@@ -20,9 +20,11 @@
                 aria-describedby="product_price-{{ id }} product_rating-{{ id }} product_type-{{ id }}"
                 title="{{ brand }} {{ name }}"
                 class="product-name"><span>{{ brand }} {{ name }}</span></a>
+            
             <span id="product_rating-{{ id }}" class="product-rating" 
-               aria-label="Valutazione {{ rate_count }} stelle">{{ rate }}</span>
-            <span id="product_type-{{ id }}" class="product-tags" aria-label="Tipo {{ type }}">Tipo: {{ type }}</span>
+               aria-label="Valutazione {{ rate_count }} stelle">{{ rate }}
+            </span>
+            <span id="product_type-{{ id }}" class="product-tags">Tipo: {{ type }}</span>
         </div>
     </div>
 </div>

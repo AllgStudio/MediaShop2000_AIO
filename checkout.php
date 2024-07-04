@@ -2,10 +2,10 @@
 include "includes/utils.php";
 include "includes/db.php";
 
-if (!isset($_COOKIE['user'])) {
-    header("Location: login.php");
-    exit();
-}
+// if (!isset($_COOKIE['user'])) {
+//     header("Location: login.php");
+//     exit();
+// }
 
 function findProductById($products, $id) {
     foreach ($products as $product) {
