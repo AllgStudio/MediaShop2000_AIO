@@ -3,6 +3,11 @@
     include "includes/db.php";
     $product_id = $_GET['id'] ?? 0;
 
+    if($product_id == 0){
+        header("Location: login.php");
+        exit();
+    }
+
 
     $sql = "Select * from Category";
     $stmt = $conn->prepare($sql);
