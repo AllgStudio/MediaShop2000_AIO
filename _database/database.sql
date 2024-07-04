@@ -76,7 +76,7 @@ CREATE TABLE Orders(
     card_number VARCHAR(50),
     card_expiry VARCHAR(50),
     card_cvv VARCHAR(50),
-    note VARCHAR(255),
+    note TEXT,
     FOREIGN KEY (user_id) REFERENCES User(user_id) ON DELETE CASCADE
 );
 -- Create the OrderDetail table

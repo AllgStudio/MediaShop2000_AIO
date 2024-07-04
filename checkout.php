@@ -21,11 +21,12 @@ $checkout = isset($_COOKIE['cart']) ? json_decode($_COOKIE['cart'], true) : [];
 $total = 0;
 $checkout_html = ''; // 修正变量名
 try {
-    $sql = 'SELECT Product.product_id as p_id, Product.product_name, Product.brand, Product.price, ProductImage.url, Category.category_name
+    $sql = 'SELECT Product.product_id as p_id, Product.product_name, Product.brand, Product.price, ProductImage.url, Category.category_name, PriceCut.new_price
             FROM Product 
             Left JOIN ProductImage ON Product.product_id = ProductImage.product_id
             LEFT JOIN CategoryProduct ON Product.product_id = CategoryProduct.product_id
-            left JOIN Category ON CategoryProduct.category_id = Category.category_id';
+            left JOIN Category ON CategoryProduct.category_id = Category.category_id
+            left JOIN PriceCut ON Product.product_id = PriceCut.product_id';
     $stmt = $conn->prepare($sql);
 
     $stmt->execute();
@@ -50,7 +51,7 @@ try {
             $total += $price;
             $checkout_html .= render(file_get_contents('template/checkout.item.html'), [
                 'name' => $product['product_name'],
-                'price' => $price,
+                'price' => $price . '€',
                 'quantity' => $item['quantity'],
                 'color' => $item['color'],
             ]);
