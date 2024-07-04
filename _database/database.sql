@@ -160,14 +160,10 @@ VALUES
 INSERT INTO PriceCut (discountInPercentage, new_price, product_id)
 VALUES 
     (10, 179.99, 1),    -- iPhone 4S
-    (5, 142.49, 2),     -- Samsung Galaxy S3
-    (0, 499.99, 3),     -- Dell Inspiron 15
-    (0, 249.99, 9),     -- Nintendo Wii
-    (10, 134.99, 10),   -- Garmin Forerunner 405
-    (0, 179.99, 11),    -- Sony Cyber-shot DSC-WX50
-    (0, 149.99, 18),    -- Samsung Gear Fit
-    (0, 499.99, 19),    -- Olympus PEN E-PL1
-    (0, 1499.99, 20);   -- Alienware Gaming Laptop
+    (20, 119.99, 2),    -- Samsung Galaxy S3
+    (15, 424.99, 3),    -- Dell Inspiron 15
+    (5, 284.99, 4),     -- PlayStation 3
+    (10, 179.99, 6),    -- Canon PowerShot SX240
 
 INSERT INTO ProductImage (url, product_id)
 VALUES
