@@ -159,26 +159,26 @@ VALUES
 
 INSERT INTO ProductImage (url, product_id)
 VALUES
-    ('upload/Apple-iPhone-4S.jpg', 1),
-    ('upload/Galaxy 3s.jpg', 2),
-    ('upload/Dell-inspiron15.jpg', 3),
+    ('upload/Apple_iPhone_4S.jpg', 1),
+    ('upload/Galaxy_3s.jpg', 2),
+    ('upload/Dell_inspiron15.jpg', 3),
     ('upload/Ps3.jpg', 4),
-    ('upload/fitbit-versa-2-wifi-gris.jpg', 5),
-    ('upload/Canon PowerShot SX240.jpg', 6),
-    ('upload/nokia Lumia 920.jpg', 7),
-    ('upload/HP Pavilion Desktop.jpg', 8),
-    ('upload/1200px-Wii-console.jpg', 9),
-    ('upload/Garmin Forerunner 405.jpg', 10),
+    ('upload/fitbit_versa.jpg', 5),
+    ('upload/Canon_PowerShot_SX240.jpg', 6),
+    ('upload/Nokia_Lumia_920.jpg', 7),
+    ('upload/HP_Pavilion_Desktop.jpg', 8),
+    ('upload/Nintendo_Wii.jpg', 9),
+    ('upload/Garmin_Forerunner_405.jpg', 10),
     ('upload/Sony Cyber-shot DSC-WX50.jpg', 11),
-    ('upload/Acer Aspire One.jpg', 12),
-    ('upload/Xbox 360.jpg', 13),
-    ('upload/Pebble Smartwatch_.jpg', 14),
-    ('upload/Canon EOS 550D.jpg', 15),
-    ('upload/Apple MacBook Air.jpg', 16),
-    ('upload/nintendo ds lite.jpg', 17),
-    ('upload/Samsung Gear Fit.jpg', 18),
-    ('upload/Olympus PEN E-PL1.jpg', 19),
-    ('upload/Alienware Gaming Lapto.jpg', 20);
+    ('upload/Acer_Aspire_One.jpg', 12),
+    ('upload/Xbox_360.jpg', 13),
+    ('upload/Pebble_Smartwatch_.jpg', 14),
+    ('upload/Canon_EOS_550D.jpg', 15),
+    ('upload/Apple_MacBook_Air.jpg', 16),
+    ('upload/Nintendo_ds_lite.jpg', 17),
+    ('upload/Samsung_Gear_Fit.jpg', 18),
+    ('upload/Olympus_PEN_E-PL1.jpg', 19),
+    ('upload/Alienware_Gaming_Laptop.jpg', 20);
     
 INSERT INTO Feedback (star_rating, description, product_id, user_id)
 VALUES
