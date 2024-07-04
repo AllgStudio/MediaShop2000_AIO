@@ -169,7 +169,7 @@ VALUES
     ('upload/HP_Pavilion_Desktop.jpg', 8),
     ('upload/Nintendo_Wii.jpg', 9),
     ('upload/Garmin_Forerunner_405.jpg', 10),
-    ('upload/Sony Cyber-shot DSC-WX50.jpg', 11),
+    ('upload/Sony_Cyber-shot.jpg', 11),
     ('upload/Acer_Aspire_One.jpg', 12),
     ('upload/Xbox_360.jpg', 13),
     ('upload/Pebble_Smartwatch_.jpg', 14),

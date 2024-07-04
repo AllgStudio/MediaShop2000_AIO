@@ -51,7 +51,7 @@
 }
 
 .btn-primary {
-    background-color: #007bff;
+    background-color: #2929FF;
     border-color: #007bff;
     color: #fff;
 }
@@ -70,7 +70,7 @@
 }
 
 .btn-secondary {
-    background-color: #6c757d;
+    background-color: #525252;
     border-color: #6c757d;
     color: #fff;
 }
@@ -89,7 +89,7 @@
 }
 
 .btn-success {
-    background-color: #28a745;
+    background-color: #1B6522;
     border-color: #28a745;
     color: #fff;
 }
@@ -146,7 +146,7 @@
 }
 
 .btn-info {
-    background-color: #17a2b8;
+    background-color: #0E5B67;
     border-color: #17a2b8;
     color: #fff;
 }

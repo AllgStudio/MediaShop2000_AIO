@@ -36,13 +36,16 @@
                                 <b>Codice Utente:</b> {{ user_id }}
                             </li>
                             <li class="list-group-item d-flex space-between">
-                                <b>Nome utente: </b> <input type="text" name="new_username" value=" {{ username }}" disabled aria-disabled="true">
+                                <label for="new_user"><b>Nome utente:</b> </label> 
+                                <input id="new_user" type="text" name="new_username" value=" {{ username }}" disabled aria-disabled="true">
                             </li>
                             <li class="list-group-item d-flex space-between">
-                                <b>Email: </b> <input type="email"  id="emailInput" name="new_email" value=" {{ email }}" required>
+                                <label for="new_email" ><b>Email: </b></label>
+                                <input id="new_email" type="email"  id="emailInput" name="new_email" value=" {{ email }}" required>
                             </li>
                             <li class="list-group-item d-flex space-between">
-                                <b>Password: </b> <input type="text"   name="new_password" value="" disabled aria-disabled="true">
+                                <label for="new_pass"><b>Password: </b></label>
+                                <input id="new_pass" type="text"   name="new_password" value="" disabled aria-disabled="true">
                             </li>
                             <li class="list-group-item d-flex space-between">
                                 <b>Ruolo: </b> {{ user_type_name }}

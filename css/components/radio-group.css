@@ -16,7 +16,7 @@
 }
 
 .radio-group input[type="radio"]:checked + label {
-    background-color: #007bff;
+    background-color: #3440CB;
     color: white;
 }
 

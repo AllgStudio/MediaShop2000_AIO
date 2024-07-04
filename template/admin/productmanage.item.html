@@ -4,12 +4,12 @@
     <td>{{ product_name }}</td>
     <td>{{ category_name }}</td>
     <td>{{ price }}</td>
-    <td>
-        <a class="red" href="api/product/removeProduct.php?product_id={{ product_id }}"
+    <td class="d-flex">
+        <a class="red btn btn-icon bg-transparent align-content-center" href="api/product/removeProduct.php?product_id={{ product_id }}"
             aria-label="Elimina {{ product_name }}" title="Elimina {{ product_name }}">
             <span class="mdi mdi-delete" aria-hidden="true"></span>
         </a>
-        <a class="blue" href="editproduct.php?id={{ product_id }}"
+        <a class="btn btn-icon bg-transparent blue align-content-center" href="editproduct.php?id={{ product_id }}"
             aria-label="Modifica {{ product_name }}" title="Modifica {{ product_name }}">
             <span class="mdi mdi-pencil" aria-hidden="true"></span>
         </a>
