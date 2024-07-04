@@ -175,9 +175,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($product) {
             $quantity = $item['quantity'];
 
-            $sql_insert_detail = "INSERT INTO OrderDetail (quantity, order_id, product_id) VALUES (?, ?, ?)";
+            $sql_insert_detail = "INSERT INTO OrderDetail (quantity, order_id, product_id, color) VALUES (?, ?, ?,?)";
             $stmt = $conn->prepare($sql_insert_detail);
-            $stmt->bind_param('iii', $quantity, $order_id, $id);
+            $stmt->bind_param('iiis', $quantity, $order_id, $id, $item['color']);
             $stmt->execute();
             if ($stmt->error) {
                 create_error_page("Errore nel database");
