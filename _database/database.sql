@@ -163,7 +163,7 @@ VALUES
     (20, 119.99, 2),    -- Samsung Galaxy S3
     (15, 424.99, 3),    -- Dell Inspiron 15
     (5, 284.99, 4),     -- PlayStation 3
-    (10, 179.99, 6)   -- Canon PowerShot SX240
+    (10, 179.99, 6);   -- Canon PowerShot SX240
 
 INSERT INTO ProductImage (url, product_id)
 VALUES
