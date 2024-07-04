@@ -157,6 +157,18 @@ VALUES
     (5, 19),   -- Olympus PEN E-PL1
     (2, 20);   -- Alienware Gaming Laptop
 
+INSERT INTO PriceCut (discountInPercentage, new_price, product_id)
+VALUES 
+    (10, 179.99, 1),    -- iPhone 4S
+    (5, 142.49, 2),     -- Samsung Galaxy S3
+    (0, 499.99, 3),     -- Dell Inspiron 15
+    (0, 249.99, 9),     -- Nintendo Wii
+    (10, 134.99, 10),   -- Garmin Forerunner 405
+    (0, 179.99, 11),    -- Sony Cyber-shot DSC-WX50
+    (0, 149.99, 18),    -- Samsung Gear Fit
+    (0, 499.99, 19),    -- Olympus PEN E-PL1
+    (0, 1499.99, 20);   -- Alienware Gaming Laptop
+
 INSERT INTO ProductImage (url, product_id)
 VALUES
     ('upload/Apple_iPhone_4S.jpg', 1),

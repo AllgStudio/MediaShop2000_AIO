@@ -107,11 +107,6 @@
 .pr-4 { padding-right: 1.5rem !important; }
 .pr-5 { padding-right: 2rem !important; }
 
-.pl-auto { padding-left: auto !important; }
-.pr-auto { padding-right: auto !important; }
-.pa-auto { padding: auto !important; }
-.pt-auto { padding-top: auto !important; }
-.pb-auto { padding-bottom: auto !important; }
 
 .w-100 { width: 100% !important; }
 .w-95 { width: 95% !important; }

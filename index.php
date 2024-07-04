@@ -60,7 +60,6 @@ try {
 
 
 echo create_page('template/index.html', [
-
     'header_title' => 'MediaShop 2000',
     'header_description' => 'MediaShop 2000, il negozio online per i tuoi acquisti multimediali!',
     'header_keywords' => "Shop, media, games",

@@ -34,7 +34,7 @@
 .product-info {
     display: flex;
     flex-flow: column;
-    align-items: left;
+    /* align-items: left; */
     text-align: left;
 }
 
@@ -59,7 +59,7 @@
 .product-price{
     display: flex;
     flex-direction: row;
-    align-items: left;
+    /* align-items: left; */
     width: 100%;
 }
 
