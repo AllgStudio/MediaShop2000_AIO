@@ -2,9 +2,9 @@ CREATE DATABASE IF NOT EXISTS `tecweb` DEFAULT CHARACTER SET utf8 COLLATE utf8_g
 
 USE `tecweb`;
 
-DROP DATABASE mediashop2000;
-CREATE DATABASE IF NOT EXISTS mediashop2000;
-USE mediashop2000;
+-- DROP DATABASE mediashop2000;
+-- CREATE DATABASE IF NOT EXISTS mediashop2000;
+-- USE mediashop2000;
 
 -- Create the Category table
 CREATE TABLE Category (
